@@ -1,74 +1,81 @@
 # Yash Sonawane Portfolio
 
-Business Systems Analyst | Financial Data | SQL Validation | UAT | Tableau  
-Fullerton, CA
+**Business Systems Analyst | Financial Data | SQL Validation | UAT | Tableau**
+📍 Fullerton, CA
 
 ---
 
 ## Live Portfolio Website
 
-https://portfolio-delta-silk-82.vercel.app
+🔗 https://portfolio-delta-silk-82.vercel.app
 
 ---
 
 ## About
 
-This portfolio showcases projects focused on financial reporting systems,
-data validation frameworks, and reconciliation analytics used to improve
-reporting accuracy and audit readiness.
+This repository hosts my **personal portfolio website**, showcasing projects focused on **financial reporting systems, data validation frameworks, and reconciliation analytics** designed to improve reporting accuracy and support audit-ready financial reporting pipelines.
 
 ---
 
 ## Featured Projects
 
-### Financial Reconciliation Framework
-SQL reconciliation system detecting mismatches between source
-transaction systems and reporting datasets.
+### SQL Reconciliation Framework
 
-Tech:
-SQL, Window Functions, CTEs
+SQL reconciliation system used to detect mismatches between source transaction systems and downstream financial reporting datasets.
 
-Repo:
-https://github.com/Sonawane250398/financial-reconciliation-framework
+**Tech Stack**
+
+SQL • CTEs • Window Functions • Data Validation
+
+**Repository**
+
+https://github.com/Sonawane250398/sql-reconciliation-framework
 
 ---
 
-### Reporting Control Framework
-Monitoring layer tracking validation checkpoints across financial
-reporting domains such as revenue, P&L, and expenses.
+### Financial Reporting Control Framework
 
-Tech:
-SQL, Data Validation
+Monitoring framework that tracks validation checkpoints across financial reporting domains such as revenue, P&L, and expense reporting pipelines.
 
-Repo:
-https://github.com/Sonawane250398/reporting-control-framework
+**Tech Stack**
+
+SQL • Data Validation • Financial Reporting Controls
+
+**Repository**
+
+https://github.com/Sonawane250398/financial-reporting-control-framework
 
 ---
 
 ### Financial Reporting UAT Framework
-Structured methodology for validating financial reporting releases
-through repeatable test scenarios and discrepancy monitoring.
 
-Tech:
-SQL, UAT Design
+Structured testing methodology for validating financial reporting releases using repeatable test scenarios and discrepancy monitoring.
 
-Repo:
-https://github.com/Sonawane250398/uat-framework
+**Tech Stack**
+
+SQL • UAT Design • Data Testing
+
+**Repository**
+
+https://github.com/Sonawane250398/financial-reporting-uat-framework
 
 ---
 
 ## Tech Stack
 
-SQL  
-Tableau  
-Python  
-TypeScript  
-Financial Data Analysis  
+SQL
+Tableau
+Python
+TypeScript
+Financial Data Analysis
 UAT / SDLC
 
 ---
 
-## Contact
+## Connect
 
-LinkedIn  
+💼 LinkedIn
 https://linkedin.com/in/yash-sonawane25
+
+🌐 Portfolio
+https://portfolio-delta-silk-82.vercel.app
