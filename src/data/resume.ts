@@ -197,6 +197,6 @@ WHERE transaction_id IN (
   ],
   awards: [],
   extra: [
-    "Open to: Data Analyst | Finance Data Analyst | Product Analyst | Analytics Engineer"
+    "Open to: Business Analyst | Senior Business Analyst | Business Systems Analyst | Financial Systems Analyst"
   ]
 };
