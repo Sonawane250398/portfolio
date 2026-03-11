@@ -43,22 +43,21 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-2">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-slate-300 hover:text-white transition-colors relative group"
+              className="text-sm font-medium text-slate-300 hover:text-emerald-400 hover:bg-emerald-400/10 px-4 py-2 rounded-lg transition-all duration-200"
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
           <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-full bg-white text-slate-950 text-sm font-semibold hover:bg-slate-200 transition-colors"
+            className="ml-4 px-5 py-2.5 rounded-full bg-white text-slate-950 text-sm font-semibold hover:bg-emerald-400 hover:text-slate-950 transition-colors"
           >
             Resume
           </a>
@@ -82,13 +81,13 @@ export default function Navbar() {
         }}
         className="md:hidden overflow-hidden bg-slate-950/95 backdrop-blur-xl border-b border-white/10"
       >
-        <div className="flex flex-col px-6 py-4 gap-4">
+        <div className="flex flex-col px-6 py-4 gap-2">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-lg font-medium text-slate-300 hover:text-white transition-colors py-2"
+              className="text-lg font-medium text-slate-300 hover:text-emerald-400 hover:bg-emerald-400/10 px-4 py-3 rounded-lg transition-all duration-200"
             >
               {link.name}
             </a>
@@ -98,7 +97,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="mt-4 px-6 py-3 rounded-xl bg-white text-slate-950 text-center font-semibold hover:bg-slate-200 transition-colors"
+            className="mt-4 px-6 py-3 rounded-xl bg-white text-slate-950 text-center font-semibold hover:bg-emerald-400 transition-colors"
           >
             Download Resume
           </a>
