@@ -11,7 +11,7 @@ export const resumeData = {
       { name: "LinkedIn", url: "https://www.linkedin.com/in/yash-sonawane25" },
       { name: "GitHub", url: "https://github.com/Sonawane250398" }
     ],
-    openTo: ["Data Analyst", "Finance Data Analyst", "Product Analyst", "Analytics Engineer"]
+    openTo: ["Business Analyst", "Senior Business Analyst", "Business Systems Analyst", "Financial Systems Analyst"]
   },
   architecture: {
     title: "Financial Reporting Data Architecture",
@@ -168,10 +168,7 @@ WHERE transaction_id IN (
       category: "Business Analysis",
       items: ["Requirements gathering", "BRD/FRD documentation", "User stories", "UAT coordination", "Stakeholder workshops", "SDLC support"]
     },
-    {
-      category: "Data Platforms",
-      items: ["Snowflake", "dbt"]
-    },
+
     {
       category: "Tools & Methods",
       items: ["Jira", "Confluence", "Git", "Agile/Scrum"]
