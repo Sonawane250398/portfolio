@@ -1,20 +1,74 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Yash Sonawane Portfolio
 
-# Run and deploy your AI Studio app
+Business Systems Analyst | Financial Data | SQL Validation | UAT | Tableau  
+Fullerton, CA
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/9941fbee-1919-441f-8649-2cffac070304
+## Live Portfolio Website
 
-## Run Locally
+https://portfolio-delta-silk-82.vercel.app
 
-**Prerequisites:**  Node.js
+---
 
+## About
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+This portfolio showcases projects focused on financial reporting systems,
+data validation frameworks, and reconciliation analytics used to improve
+reporting accuracy and audit readiness.
+
+---
+
+## Featured Projects
+
+### Financial Reconciliation Framework
+SQL reconciliation system detecting mismatches between source
+transaction systems and reporting datasets.
+
+Tech:
+SQL, Window Functions, CTEs
+
+Repo:
+https://github.com/Sonawane250398/financial-reconciliation-framework
+
+---
+
+### Reporting Control Framework
+Monitoring layer tracking validation checkpoints across financial
+reporting domains such as revenue, P&L, and expenses.
+
+Tech:
+SQL, Data Validation
+
+Repo:
+https://github.com/Sonawane250398/reporting-control-framework
+
+---
+
+### Financial Reporting UAT Framework
+Structured methodology for validating financial reporting releases
+through repeatable test scenarios and discrepancy monitoring.
+
+Tech:
+SQL, UAT Design
+
+Repo:
+https://github.com/Sonawane250398/uat-framework
+
+---
+
+## Tech Stack
+
+SQL  
+Tableau  
+Python  
+TypeScript  
+Financial Data Analysis  
+UAT / SDLC
+
+---
+
+## Contact
+
+LinkedIn  
+https://linkedin.com/in/yash-sonawane25
