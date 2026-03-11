@@ -2,13 +2,26 @@ export const resumeData = {
   basics: {
     name: "Yash Sonawane",
     title: "Business Analyst",
-    summary: "Business Analyst with 4+ years of experience building scalable data solutions, SQL validation frameworks, and reporting infrastructure at the intersection of finance, engineering, and operations. Delivered measurable production impact — reducing reconciliation discrepancies by 20%, eliminating 6–8 hours of manual reporting weekly, and analyzing multi-layer financial datasets. M.S. in Computer Science (CSUDH). Fluent across the full analytics stack from data modeling to executive dashboards; seeking high-impact data analytics or product analytics roles.",
+    subtitle: "Financial Systems · SQL Validation · UAT · Tableau",
+    summary: "Business Analyst with 4+ years of experience building and owning financial and operational reporting systems through SQL-based validation, Tableau dashboards, UAT processes, and auditable controls. Reduced reconciliation discrepancies by 20%, eliminated 6–8 hours of manual reporting weekly, and supported 6 consecutive releases with zero critical post-deployment issues. Skilled in requirements gathering, BRD/FRD documentation, user stories, stakeholder coordination, and reporting controls.",
     location: "Fullerton, California, United States",
-    email: "yash@kakarx.com",
+    email: "yashsonawane25.work@gmail.com",
     phone: "(562) 455-7892",
     links: [
       { name: "LinkedIn", url: "https://www.linkedin.com/in/yash-sonawane25" },
       { name: "GitHub", url: "https://github.com/Sonawane250398" }
+    ],
+    openTo: ["Data Analyst", "Finance Data Analyst", "Product Analyst", "Analytics Engineer"]
+  },
+  architecture: {
+    title: "Financial Reporting Data Architecture",
+    description: "End-to-end data pipeline I designed and own — from raw transaction sources to executive dashboards.",
+    steps: [
+      { label: "Source Transaction Systems", detail: "Raw financial & operational data" },
+      { label: "SQL Reconciliation Framework", detail: "CTEs · Joins · Aggregations · Variance Detection" },
+      { label: "Reporting Control Framework", detail: "5 domains · Checkpoint validation · Audit trails" },
+      { label: "UAT Validation Framework", detail: "Edge case coverage · Release stability" },
+      { label: "Executive Dashboards", detail: "Tableau · 12 KPIs · Finance & Engineering leadership" }
     ]
   },
   experience: [
@@ -52,27 +65,90 @@ export const resumeData = {
   projects: [
     {
       title: "SQL-Based Financial Reconciliation Framework",
-      stack: ["SQL", "CTEs", "Window Functions"],
+      stack: ["SQL", "CTEs", "Window Functions", "Aggregations"],
       bullets: [
         "Designed multi-layer reconciliation logic using CTEs and window functions to compare source and reporting outputs; introduced automated validation checkpoints that cut recurring discrepancies by ~15% and reduced manual investigation cycles."
       ],
-      links: []
+      sqlSnippet: `SELECT
+  s.account_id,
+  SUM(s.amount)                    AS source_total,
+  SUM(r.amount)                    AS reporting_total,
+  SUM(s.amount) - SUM(r.amount)    AS variance,
+  CASE
+    WHEN ABS(SUM(s.amount) - SUM(r.amount)) > 1000 THEN 'HIGH'
+    WHEN ABS(SUM(s.amount) - SUM(r.amount)) > 100  THEN 'MEDIUM'
+    ELSE 'LOW'
+  END AS severity
+FROM source_transactions s
+LEFT JOIN reporting_table r
+  ON s.account_id = r.account_id
+GROUP BY s.account_id
+HAVING SUM(s.amount) <> SUM(r.amount);`,
+      exampleOutput: {
+        source: "$1,205,432",
+        reporting: "$1,201,211",
+        variance: "$4,221",
+        status: "MISMATCH",
+        severity: "HIGH"
+      },
+      links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/sql-reconciliation-framework" }]
     },
     {
       title: "Financial Reporting Control Framework",
-      stack: ["Validation Templates", "Control Checkpoints"],
+      stack: ["Validation Templates", "Control Checkpoints", "SQL", "Audit Trails"],
       bullets: [
         "Standardized validation templates and defined control checkpoints across 5 reporting domains; improved traceability for audit reviews and reduced manual adjustments by streamlining exception management."
       ],
-      links: []
+      sqlSnippet: `WITH control_status AS (
+  SELECT
+    domain,
+    checkpoint_name,
+    expected_value,
+    actual_value,
+    CASE WHEN expected_value = actual_value
+         THEN 'PASS' ELSE 'FAIL'
+    END AS status
+  FROM reporting_controls
+)
+SELECT domain,
+  COUNT(*) FILTER (WHERE status = 'FAIL') AS failures,
+  COUNT(*) AS total_checks
+FROM control_status
+GROUP BY domain
+ORDER BY failures DESC;`,
+      links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/financial-reporting-control-framework" }]
     },
     {
       title: "UAT Framework for Financial Reporting Releases",
-      stack: ["UAT", "Methodology"],
+      stack: ["UAT Methodology", "Test Scenarios", "Edge Case Coverage", "Release Validation"],
       bullets: [
         "Built a repeatable UAT methodology aligned to reporting controls and edge cases; framework adopted across 6 releases, improving release stability and eliminating critical post-deployment issues."
       ],
-      links: []
+      sqlSnippet: `-- Edge case: negative amount detection
+SELECT
+  transaction_id,
+  account_id,
+  amount,
+  'NEGATIVE_AMOUNT' AS issue_type
+FROM staging_transactions
+WHERE amount < 0
+
+UNION ALL
+
+-- Edge case: duplicate transaction IDs
+SELECT
+  transaction_id,
+  account_id,
+  amount,
+  'DUPLICATE_ID' AS issue_type
+FROM staging_transactions
+WHERE transaction_id IN (
+  SELECT transaction_id
+  FROM staging_transactions
+  GROUP BY transaction_id
+  HAVING COUNT(*) > 1
+);`,
+      links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/financial-reporting-uat-framework" }]
     }
   ],
   skills: [
@@ -82,18 +158,18 @@ export const resumeData = {
     },
     {
       category: "Analytics & BI",
-      items: ["Tableau", "KPI definition", "trend analysis", "variance analysis", "A/B testing fundamentals", "data integrity monitoring"]
+      items: ["Tableau", "KPI definition", "Trend analysis", "Variance analysis", "A/B testing fundamentals", "Data integrity monitoring"]
     },
     {
       category: "Data & Reporting",
-      items: ["Data reconciliation", "ETL validation", "record-level integrity checks", "data lineage documentation", "exception management"]
+      items: ["Data reconciliation", "ETL validation", "Record-level integrity checks", "Data lineage documentation", "Exception management"]
     },
     {
       category: "Business Analysis",
-      items: ["Requirements gathering", "BRD/FRD documentation", "user stories", "UAT coordination", "stakeholder workshops", "SDLC support"]
+      items: ["Requirements gathering", "BRD/FRD documentation", "User stories", "UAT coordination", "Stakeholder workshops", "SDLC support"]
     },
     {
-      category: "Modern Stack",
+      category: "Data Platforms",
       items: ["Snowflake", "dbt"]
     },
     {

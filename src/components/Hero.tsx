@@ -1,9 +1,16 @@
 import { motion } from 'motion/react';
-import { ArrowDown, Download, ExternalLink, Github, Linkedin } from 'lucide-react';
+import { ArrowDown, Download, Github, Linkedin, ExternalLink } from 'lucide-react';
 import { resumeData } from '../data/resume';
 
 export default function Hero() {
-  const { name, title, summary, links } = resumeData.basics;
+  const { name, title, subtitle, summary, links, openTo } = resumeData.basics;
+
+  const stats = [
+    { metric: "20%", label: "fewer reconciliation discrepancies" },
+    { metric: "6–8 hrs", label: "manual reporting eliminated/week" },
+    { metric: "0", label: "critical issues across 6 releases" },
+    { metric: "4+", label: "years in financial data systems" },
+  ];
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-6 lg:px-12 overflow-hidden">
@@ -14,7 +21,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex flex-col items-start gap-6"
         >
-          {/* Tagline / Subtitle */}
+          {/* Availability badge */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -25,14 +32,19 @@ export default function Hero() {
             Available for new opportunities
           </motion.div>
 
-          {/* Name & Title */}
-          <div className="space-y-4">
+          {/* Name */}
+          <div className="space-y-3">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white">
               {name}
             </h1>
-            <h2 className="text-2xl md:text-4xl font-medium text-slate-400">
+            {/* Primary title */}
+            <h2 className="text-2xl md:text-3xl font-semibold text-slate-300">
               {title}
             </h2>
+            {/* Subtitle / specialisation line */}
+            <p className="text-base md:text-lg text-emerald-400 font-medium tracking-wide">
+              {subtitle}
+            </p>
           </div>
 
           {/* Summary */}
@@ -45,12 +57,30 @@ export default function Hero() {
             {summary}
           </motion.p>
 
+          {/* Key stats row */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.75 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full mt-2"
+          >
+            {stats.map((s, i) => (
+              <div
+                key={i}
+                className="rounded-xl bg-white/[0.03] border border-white/10 px-5 py-4 flex flex-col gap-1"
+              >
+                <span className="text-2xl font-bold text-emerald-400">{s.metric}</span>
+                <span className="text-xs text-slate-400 leading-snug">{s.label}</span>
+              </div>
+            ))}
+          </motion.div>
+
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex flex-col sm:flex-row items-center gap-4 mt-8 w-full sm:w-auto"
+            transition={{ duration: 0.6, delay: 0.9 }}
+            className="flex flex-col sm:flex-row items-center gap-4 mt-4 w-full sm:w-auto"
           >
             <a
               href="#experience"
@@ -74,8 +104,8 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1 }}
-            className="flex items-center gap-6 mt-12"
+            transition={{ duration: 0.6, delay: 1.05 }}
+            className="flex items-center gap-6 mt-6"
           >
             {links.map((link) => (
               <a
@@ -91,6 +121,26 @@ export default function Hero() {
               </a>
             ))}
           </motion.div>
+
+          {/* Open to roles */}
+          {openTo && openTo.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+              className="flex flex-wrap items-center gap-2 mt-2"
+            >
+              <span className="text-xs text-slate-500 uppercase tracking-widest font-medium mr-1">Open to</span>
+              {openTo.map((role, i) => (
+                <span
+                  key={i}
+                  className="px-3 py-1 text-xs font-medium text-slate-300 bg-white/5 rounded-full border border-white/10"
+                >
+                  {role}
+                </span>
+              ))}
+            </motion.div>
+          )}
         </motion.div>
       </div>
 
