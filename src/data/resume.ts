@@ -2,7 +2,7 @@ export const resumeData = {
   basics: {
     name: "Yash Sonawane",
     title: "Business Analyst",
-    subtitle: "Financial Systems · SQL Validation · UAT · Tableau",
+    subtitle: "Financial Systems · SQL Validation · UAT · Tableau · BRD Documentation",
     summary: "Business Analyst with 4+ years of experience building and owning financial and operational reporting systems through SQL-based validation, Tableau dashboards, UAT processes, and auditable controls. Reduced reconciliation discrepancies by 20%, eliminated 6–8 hours of manual reporting weekly, and supported 6 consecutive releases with zero critical post-deployment issues. Skilled in requirements gathering, BRD/FRD documentation, user stories, stakeholder coordination, and reporting controls.",
     location: "Fullerton, California, United States",
     email: "yashsonawane25.work@gmail.com",
@@ -149,6 +149,29 @@ WHERE transaction_id IN (
   HAVING COUNT(*) > 1
 );`,
       links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/financial-reporting-uat-framework" }]
+    },
+    {
+      title: "Requirements Traceability Matrix (RTM)",
+      stack: ["Requirements Management", "Excel", "SQL", "Agile", "UAT"],
+      bullets: [
+        "Built a complete RTM mapping 13 functional requirements to user stories, test cases, and sprint delivery for a SQL-based financial reconciliation system.",
+        "Achieved 100% requirement coverage across 4 sprints with zero open defects at UAT sign-off.",
+        "Includes Coverage Summary dashboard with auto-calculated pass rate and Sprint Tracker showing delivery by sprint."
+      ],
+      sqlSnippet: `SELECT
+  category,
+  COUNT(DISTINCT req_id)                          AS total_reqs,
+  COUNT(DISTINCT test_case_id)                    AS test_cases_linked,
+  COUNT(DISTINCT CASE WHEN coverage_status = 'Covered'
+      THEN req_id END)                            AS covered,
+  ROUND(
+    COUNT(DISTINCT CASE WHEN coverage_status = 'Covered'
+        THEN req_id END) * 100.0 /
+    COUNT(DISTINCT req_id), 0)                    AS coverage_pct
+FROM rtm
+GROUP BY category
+ORDER BY total_reqs DESC;`,
+      links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/requirements-traceability-matrix" }]
     }
   ],
   skills: [
