@@ -54,7 +54,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="/resume.pdf"
+            href="https://drive.google.com/file/d/1zu_mg474cROYei6JutU4z9pi0wDtER83/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="ml-4 px-5 py-2.5 rounded-full bg-white text-slate-950 text-sm font-semibold hover:bg-emerald-400 hover:text-slate-950 transition-colors"
@@ -93,7 +93,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="/resume.pdf"
+            href="https://drive.google.com/file/d/1zu_mg474cROYei6JutU4z9pi0wDtER83/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsMobileMenuOpen(false)}

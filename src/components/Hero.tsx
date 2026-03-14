@@ -90,7 +90,7 @@ export default function Hero() {
               <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
             </a>
             <a
-              href="/resume.pdf"
+              href="https://drive.google.com/file/d/1zu_mg474cROYei6JutU4z9pi0wDtER83/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/5 text-white border border-white/10 hover:bg-white/10 transition-colors flex items-center justify-center gap-2 group"
