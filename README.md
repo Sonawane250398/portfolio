@@ -7,7 +7,7 @@
 
 ## Live Portfolio Website
 
-🔗 https://portfolio-delta-silk-82.vercel.app
+🔗 https://yashsonawane.vercel.app
 
 ---
 
@@ -78,4 +78,4 @@ UAT / SDLC
 https://linkedin.com/in/yash-sonawane25
 
 🌐 Portfolio
-https://portfolio-delta-silk-82.vercel.app
+https://yashsonawane.vercel.app
