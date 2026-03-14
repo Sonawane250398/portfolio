@@ -2,8 +2,8 @@ export const resumeData = {
   basics: {
     name: "Yash Sonawane",
     title: "Business Analyst",
-    subtitle: "Financial Systems · SQL Validation · UAT · Tableau · BRD Documentation",
-    summary: "Business Analyst with 4+ years of experience building and owning financial and operational reporting systems through SQL-based validation, Tableau dashboards, UAT processes, and auditable controls. Reduced reconciliation discrepancies by 20%, eliminated 6–8 hours of manual reporting weekly, and supported 6 consecutive releases with zero critical post-deployment issues. Skilled in requirements gathering, BRD/FRD documentation, user stories, stakeholder coordination, and reporting controls.",
+    subtitle: "Financial Reporting · Reconciliation · UAT & Reporting Controls",
+    summary: "Business Analyst with 4+ years of experience in financial reporting, reconciliation, UAT, and reporting controls. Reduced reporting discrepancies by 20%, cut break investigation time by 30%, shortened reporting cycles by 2 days, and supported 6 consecutive releases with zero critical post-deployment issues. Strong in SQL-based validation, requirements translation, exception monitoring, and release-ready reporting delivery.",
     location: "Fullerton, California, United States",
     email: "yashsonawane25.work@gmail.com",
     phone: "(562) 455-7892",
@@ -27,28 +27,26 @@ export const resumeData = {
   experience: [
     {
       company: "Kakar Ventures",
-      role: "Business Analyst – Financial Systems",
-      dates: "Sep 2024 – Present (1 year 7 months)",
-      location: "Fullerton, California, United States",
+      role: "Business Analyst – Financial Reporting Systems",
+      dates: "Sep 2024 – Present",
+      location: "Fullerton, CA",
       bullets: [
-        "Owned end-to-end requirements lifecycle for 3 internal financial reporting systems serving finance, operations, and engineering — producing BRDs, user stories, and traceability matrices that accelerated sprint delivery to 8–10 stories per sprint.",
-        "Engineered multi-layer SQL reconciliation framework using CTEs, joins, and aggregations to compare source vs. reporting datasets; eliminated 20% of recurring discrepancies and reduced break investigation time by ~30%.",
-        "Designed repeatable UAT test scenarios covering edge cases in financial controls and release validation; drove zero critical post-deployment issues across 6 consecutive releases.",
-        "Led variance and break analysis across release cycles by validating record counts, field-level aggregates, and control checkpoints — strengthening audit readiness and reporting accuracy.",
-        "Defined and tracked 12 reporting KPIs across delivery, accuracy, and cycle time dimensions; surfaced through Tableau dashboards to engineering and finance leadership, improving reporting cycle predictability by 20%."
+        "Reduced recurring reporting discrepancies by 20% and break investigation time by 30% by building a reusable SQL reconciliation framework across source, transformed, and reporting-layer datasets.",
+        "Led requirements clarification for 3 financial reporting systems, translating finance and business needs into structured validation logic, reporting rules, and delivery scope.",
+        "Delivered Tableau dashboards tracking 12 KPIs across reporting accuracy, cycle time, and delivery performance, improving visibility into exceptions, delays, and reporting quality.",
+        "Supported 6 consecutive releases with zero critical post-deployment issues by defining UAT scenarios, validating business rules, documenting defects, and coordinating release-readiness checks across dependent workflows."
       ]
     },
     {
       company: "Yash Industrials",
       role: "Business Analyst",
-      dates: "May 2019 – Aug 2022 (3 years 4 months)",
-      location: "Pune, Maharashtra, India",
+      dates: "May 2019 – Jul 2022",
+      location: "Pune, India",
       bullets: [
-        "Analyzed trade and transactional datasets using SQL and Excel across 3 product lines, identifying variance drivers that reduced month-end reporting errors by 15% and shortened reporting cycle time by 2 days.",
-        "Built executive KPI dashboards in Tableau tracking revenue, inventory velocity, and operational throughput — eliminating 6–8 hours of manual reporting effort per week across 4 stakeholder teams.",
-        "Designed and enforced record-level validation checks and standardized reporting templates, reducing manual adjustment rate by ~25% and improving cross-team data consistency.",
-        "Documented full data lineage across operational systems, reporting databases, and BI layers — enabling audit traceability and accelerating onboarding for new analysts.",
-        "Reconciled operational records against summarized financial outputs monthly; detected and resolved discrepancies before management review, improving accuracy of P&L inputs."
+        "Reduced month-end reporting errors by 15% and shortened reporting cycle time by 2 days by analyzing trade and transactional data across 3 product lines using SQL and Excel.",
+        "Eliminated 6–8 hours of weekly manual reporting by building Tableau dashboards for revenue, inventory velocity, and operational throughput used by 4 stakeholder groups.",
+        "Documented data lineage and reporting logic across operational systems, reporting databases, and BI layers, improving traceability and accelerating analyst onboarding.",
+        "Reconciled operational records against summarized financial outputs each month, identifying discrepancies before management review and improving reporting accuracy for P&L inputs."
       ]
     }
   ],
@@ -64,10 +62,10 @@ export const resumeData = {
   ],
   projects: [
     {
-      title: "SQL-Based Financial Reconciliation Framework",
+      title: "Source-to-Report Financial Reconciliation Platform",
       stack: ["SQL", "CTEs", "Window Functions", "Aggregations"],
       bullets: [
-        "Designed multi-layer reconciliation logic using CTEs and window functions to compare source and reporting outputs; introduced automated validation checkpoints that cut recurring discrepancies by ~15% and reduced manual investigation cycles."
+        "Built a SQL-based reconciliation workflow comparing source, transformed, and reporting-layer finance data to detect missing records, duplicate entries, mapping errors, and balance variances across validation checkpoints; produced exception outputs and reconciliation summaries to improve reporting accuracy before final reporting."
       ],
       sqlSnippet: `SELECT
   s.account_id,
@@ -94,10 +92,10 @@ HAVING SUM(s.amount) <> SUM(r.amount);`,
       links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/sql-reconciliation-framework" }]
     },
     {
-      title: "Financial Reporting Control Framework",
+      title: "Financial Reporting Controls Monitoring Model",
       stack: ["Validation Templates", "Control Checkpoints", "SQL", "Audit Trails"],
       bullets: [
-        "Standardized validation templates and defined control checkpoints across 5 reporting domains; improved traceability for audit reviews and reduced manual adjustments by streamlining exception management."
+        "Built a SQL-based controls layer to monitor reporting exceptions across revenue, P&L, inventory, expenses, and payroll; standardized variance checks and exception monitoring to improve reporting integrity across financial domains."
       ],
       sqlSnippet: `WITH control_status AS (
   SELECT
@@ -119,10 +117,10 @@ ORDER BY failures DESC;`,
       links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/financial-reporting-control-framework" }]
     },
     {
-      title: "UAT Framework for Financial Reporting Releases",
+      title: "Financial Reporting UAT and Release Readiness Framework",
       stack: ["UAT Methodology", "Test Scenarios", "Edge Case Coverage", "Release Validation"],
       bullets: [
-        "Built a repeatable UAT methodology aligned to reporting controls and edge cases; framework adopted across 6 releases, improving release stability and eliminating critical post-deployment issues."
+        "Designed a structured UAT framework for a reporting enhancement, including business requirements, user stories, acceptance criteria, test cases, defect tracking, and release-readiness checkpoints; improved test coverage, requirement traceability, and deployment readiness across reporting workflows."
       ],
       sqlSnippet: `-- Edge case: negative amount detection
 SELECT
@@ -176,38 +174,61 @@ ORDER BY total_reqs DESC;`,
   ],
   skills: [
     {
-      category: "Languages & Query",
-      items: ["SQL (CTEs, window functions, joins, aggregations, subqueries)", "Python (pandas, NumPy)", "Advanced Excel (PivotTables, VLOOKUP/INDEX-MATCH, Power Query)"]
-    },
-    {
-      category: "Analytics & BI",
-      items: ["Tableau", "KPI definition", "Trend analysis", "Variance analysis", "A/B testing fundamentals", "Data integrity monitoring"]
-    },
-    {
-      category: "Data & Reporting",
-      items: ["Data reconciliation", "ETL validation", "Record-level integrity checks", "Data lineage documentation", "Exception management"]
-    },
-    {
       category: "Business Analysis",
-      items: ["Requirements gathering", "BRD/FRD documentation", "User stories", "UAT coordination", "Stakeholder workshops", "SDLC support"]
+      items: [
+        "Requirements gathering",
+        "User stories",
+        "Acceptance criteria",
+        "Requirements traceability",
+        "Stakeholder management",
+        "SDLC support"
+      ]
     },
-
     {
-      category: "Tools & Methods",
-      items: ["Jira", "Confluence", "Git", "Agile/Scrum"]
+      category: "Testing & Delivery",
+      items: [
+        "UAT",
+        "Test scenario design",
+        "Defect documentation",
+        "Release readiness",
+        "Cross-system validation"
+      ]
+    },
+    {
+      category: "Financial & Reporting Systems",
+      items: [
+        "Financial reporting",
+        "Reconciliation",
+        "Reporting controls",
+        "Variance analysis",
+        "Data lineage",
+        "Source-to-report validation"
+      ]
+    },
+    {
+      category: "Data & Tools",
+      items: [
+        "SQL",
+        "Tableau",
+        "Advanced Excel",
+        "ETL validation",
+        "Jira",
+        "Confluence",
+        "Agile/Scrum"
+      ]
     }
   ],
   education: [
     {
       institution: "California State University, Dominguez Hills",
-      degree: "Master of Science (M.S.), Computer Science",
-      location: "Fullerton, CA",
+      degree: "Master of Science in Computer Science",
+      location: "Carson, CA",
       dates: "Aug 2022 – Aug 2024",
       details: "Courses: Database Management, Data Mining, Machine Learning, Software Engineering, Algorithms"
     },
     {
       institution: "MIT College of Engineering, Pune",
-      degree: "Bachelor of Engineering (B.E.), Information Technology",
+      degree: "Bachelor of Engineering in Information Technology",
       location: "Pune, India",
       dates: "Aug 2016 – May 2021",
       details: "Courses: Cloud Computing, Operating Systems, Data Structures, Computer Networks, Machine Learning"
