@@ -31,9 +31,9 @@ export const resumeData = {
       dates: "Sep 2024 – Present",
       location: "Fullerton, CA",
       bullets: [
-        "Reduced recurring reporting discrepancies by 20% and break investigation time by 30% by building a reusable SQL reconciliation framework across source, transformed, and reporting-layer datasets.",
-        "Led requirements clarification for 3 financial reporting systems, translating finance and business needs into structured validation logic, reporting rules, and delivery scope.",
-        "Delivered Tableau dashboards tracking 12 KPIs across reporting accuracy, cycle time, and delivery performance, improving visibility into exceptions, delays, and reporting quality.",
+        "Reduced recurring reporting discrepancies by 20% and break investigation time by 30% through a reusable SQL-based reconciliation framework across source, transformed, and reporting-layer datasets.",
+        "Led requirements clarification across financial reporting workflows, translating finance and business needs into validation logic, reporting rules, and delivery scope.",
+        "Delivered reporting dashboards and KPI visibility for stakeholders, improving visibility into exceptions, delays, and reporting quality.",
         "Supported 6 consecutive releases with zero critical post-deployment issues by defining UAT scenarios, validating business rules, documenting defects, and coordinating release-readiness checks across dependent workflows."
       ]
     },
@@ -43,9 +43,9 @@ export const resumeData = {
       dates: "May 2019 – Jul 2022",
       location: "Pune, India",
       bullets: [
-        "Reduced month-end reporting errors by 15% and shortened reporting cycle time by 2 days by analyzing trade and transactional data across 3 product lines using SQL and Excel.",
-        "Eliminated 6–8 hours of weekly manual reporting by building Tableau dashboards for revenue, inventory velocity, and operational throughput used by 4 stakeholder groups.",
-        "Documented data lineage and reporting logic across operational systems, reporting databases, and BI layers, improving traceability and accelerating analyst onboarding.",
+        "Reduced month-end reporting errors and shortened reporting cycle time through transaction analysis and reporting validation across multiple product lines.",
+        "Eliminated weekly manual reporting effort by building Tableau dashboards used by cross-functional stakeholder groups.",
+        "Documented reporting logic and data lineage across systems, improving traceability and onboarding efficiency.",
         "Reconciled operational records against summarized financial outputs each month, identifying discrepancies before management review and improving reporting accuracy for P&L inputs."
       ]
     }

@@ -40,7 +40,7 @@ export default function Navbar() {
             </span>
           </div>
           <span className="hidden sm:inline text-xs text-slate-400 whitespace-nowrap">
-            BA · Reporting & Controls
+            Business Analyst · Reporting & Controls
           </span>
         </a>
 

@@ -31,7 +31,7 @@ export default function About() {
               About
             </h2>
             <p className="text-slate-400 text-sm md:text-base max-w-lg leading-relaxed">
-              Business Analyst with 4+ years in financial reporting, reconciliation, UAT, and reporting controls — focused on making reporting more reliable and release-ready.
+              Business Analyst with 4+ years of experience in financial reporting, reconciliation, UAT, and reporting controls, focused on making reporting more reliable, traceable, and release-ready.
             </p>
           </div>
           <div>
@@ -39,9 +39,9 @@ export default function About() {
               Strengths
             </h3>
             <ul className="space-y-2 text-sm text-slate-300">
-              <li>Financial reporting and reconciliation across source to report.</li>
-              <li>UAT and release readiness for reporting and controls.</li>
-              <li>Requirements and stakeholder alignment with testable business rules.</li>
+              <li>Financial reporting and reconciliation across source-to-report workflows.</li>
+              <li>UAT and release readiness for reporting enhancements and controls changes.</li>
+              <li>Requirements and stakeholder alignment with clear, testable business rules.</li>
             </ul>
           </div>
         </motion.div>

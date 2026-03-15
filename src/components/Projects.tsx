@@ -4,21 +4,21 @@ const caseStudies = [
   {
     title: 'Financial Reconciliation Platform',
     problem: 'Reporting mismatches across source, transformed, and reporting-layer datasets.',
-    built: 'SQL-based reconciliation workflow with validation checkpoints, exception outputs, and reconciliation summaries.',
+    built: 'Reconciliation workflow with validation checkpoints, exception outputs, and reconciliation summaries; analyzed and validated source-to-report data flows.',
     impact: 'Improved reporting accuracy by catching missing records, duplicates, mapping errors, and balance variances before final reporting.',
     tools: 'SQL, reconciliation logic, reporting validation',
   },
   {
     title: 'UAT & Release Readiness Framework',
     problem: 'Reporting enhancements needed stronger test coverage, traceability, and release confidence.',
-    built: 'Structured UAT framework with requirements, user stories, acceptance criteria, test cases, defect tracking, and release checkpoints.',
+    built: 'Structured UAT framework with business requirements, user stories, acceptance criteria, test cases, defect tracking, and release-readiness checkpoints.',
     impact: 'Improved test coverage, requirement traceability, and deployment readiness across reporting workflows.',
     tools: 'UAT, Jira, documentation, release validation',
   },
   {
     title: 'Controls Monitoring Model',
     problem: 'Reporting exceptions across revenue, P&L, inventory, expenses, and payroll needed consistent monitoring.',
-    built: 'SQL-based controls layer with standardized variance checks and exception monitoring.',
+    built: 'Reporting controls layer with standardized variance checks and exception monitoring across financial domains.',
     impact: 'Improved reporting integrity and control visibility across multiple financial domains.',
     tools: 'SQL, controls monitoring, variance analysis',
   },
@@ -41,7 +41,7 @@ export default function Projects() {
             Selected Case Studies
           </h2>
           <p className="text-slate-500 text-sm max-w-xl">
-            How I apply SQL, UAT, and reporting controls to improve financial reporting outcomes.
+            Business analysis and validation work that improved reporting accuracy, traceability, and release readiness.
           </p>
         </motion.div>
 

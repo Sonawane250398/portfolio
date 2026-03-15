@@ -42,7 +42,7 @@ export default function Hero() {
                 Business Analyst · Financial Reporting, Reconciliation & UAT
               </h2>
               <p className="text-slate-400 text-base max-w-xl leading-relaxed">
-                Helping finance teams improve reporting accuracy, reduce discrepancies, and support release-ready systems through analysis, validation, and controls.
+                Helping finance teams improve reporting accuracy, reduce discrepancies, and support release-ready systems through analysis, validation, and reporting controls.
               </p>
             </div>
 

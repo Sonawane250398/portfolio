@@ -19,7 +19,7 @@ export default function Education() {
             Education & Credentials
           </h2>
           <p className="text-slate-500 text-sm max-w-xl">
-            Academic background and certifications.
+            Academic background and credentials supporting business analysis and reporting work.
           </p>
         </motion.div>
 

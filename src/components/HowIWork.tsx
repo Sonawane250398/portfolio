@@ -3,11 +3,11 @@ import { motion } from 'motion/react';
 const steps = [
   {
     label: 'Understand reporting requirements',
-    description: 'Clarify business rules, reporting expectations, and downstream consumers.',
+    description: 'Clarify business rules, reporting expectations, and downstream stakeholder needs.',
   },
   {
     label: 'Validate data and test logic',
-    description: 'Use SQL, scenarios, and controls to validate data and business logic.',
+    description: 'Use SQL, scenarios, and controls to validate reporting data and business logic.',
   },
   {
     label: 'Support release readiness',
@@ -30,7 +30,7 @@ export default function HowIWork() {
             How I Work
           </h2>
           <p className="text-slate-500 text-sm max-w-xl">
-            A simple approach for improving reporting reliability and control.
+            A repeatable approach for reporting reliability, validation, and release readiness.
           </p>
         </motion.div>
 

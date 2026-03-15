@@ -3,15 +3,15 @@ import { motion } from 'motion/react';
 const toolGroups = [
   {
     title: 'Business Analysis',
-    items: ['Requirements gathering', 'User stories & acceptance criteria', 'Traceability', 'Stakeholder alignment'],
+    items: ['Requirements gathering', 'User stories', 'Acceptance criteria', 'Traceability', 'Stakeholder management'],
   },
   {
     title: 'Testing & Delivery',
     items: ['UAT', 'Test scenario design', 'Defect documentation', 'Release readiness'],
   },
   {
-    title: 'Reporting & Tools',
-    items: ['SQL', 'Tableau', 'Excel', 'Jira', 'Confluence', 'Agile/Scrum'],
+    title: 'Financial Reporting & Tools',
+    items: ['Financial reporting', 'Reconciliation', 'Reporting controls', 'Variance analysis', 'Source-to-report validation', 'SQL', 'Tableau', 'Excel', 'Jira', 'Confluence', 'Agile/Scrum'],
   },
 ];
 
@@ -30,7 +30,7 @@ export default function Skills() {
             Tools & Workflow
           </h2>
           <p className="text-slate-500 text-sm max-w-xl">
-            Tools I use to validate data, monitor exceptions, and deliver reliable financial reporting.
+            Tools and practices I use to validate data, support reporting controls, and deliver reliable financial reporting.
           </p>
         </motion.div>
 
