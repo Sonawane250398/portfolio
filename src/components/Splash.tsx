@@ -38,13 +38,13 @@ export default function Splash({ onComplete }: { onComplete: () => void }) {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          YS<span className="text-emerald-400">.</span>
+          YS<span className="text-sky-400">.</span>
         </motion.div>
 
         {/* Loading Bar */}
         <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden">
           <motion.div
-            className="h-full bg-emerald-400"
+            className="h-full bg-sky-500"
             style={{ width: `${progress}%` }}
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}

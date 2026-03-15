@@ -1,61 +1,55 @@
 import { motion } from 'motion/react';
-import { resumeData } from '../data/resume';
-import { Code2, Database, LineChart, Target, Layers, Wrench } from 'lucide-react';
+
+const toolGroups = [
+  {
+    title: 'Business Analysis',
+    items: ['Requirements gathering', 'User stories & acceptance criteria', 'Traceability', 'Stakeholder alignment'],
+  },
+  {
+    title: 'Testing & Delivery',
+    items: ['UAT', 'Test scenario design', 'Defect documentation', 'Release readiness'],
+  },
+  {
+    title: 'Reporting & Tools',
+    items: ['SQL', 'Tableau', 'Excel', 'Jira', 'Confluence', 'Agile/Scrum'],
+  },
+];
 
 export default function Skills() {
-  const { skills } = resumeData;
-  const icons = [
-    <Code2 className="w-6 h-6 text-emerald-400" />,
-    <LineChart className="w-6 h-6 text-blue-400" />,
-    <Database className="w-6 h-6 text-purple-400" />,
-    <Target className="w-6 h-6 text-amber-400" />,
-    <Layers className="w-6 h-6 text-rose-400" />,
-    <Wrench className="w-6 h-6 text-cyan-400" />,
-  ];
-
   return (
-    <section id="skills" className="py-24 px-6 lg:px-12 relative z-10 bg-slate-950/50 backdrop-blur-sm border-y border-white/5">
-      <div className="max-w-5xl mx-auto">
+    <section id="skills" className="py-20 px-6 lg:px-12 relative z-10">
+      <div className="max-w-4xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5 }}
+          className="mb-10"
         >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
-            Technical Skills & Data Stack
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white mb-2">
+            Tools & Reporting Stack
           </h2>
-          <div className="h-1 w-20 bg-emerald-500 rounded-full mx-auto" />
+          <p className="text-slate-500 text-sm max-w-xl">
+            Tools I use to validate data, monitor exceptions, and deliver reliable financial reporting.
+          </p>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skills.map((skillGroup, index) => (
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {toolGroups.map((group, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
+              key={group.title}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] hover:border-emerald-500/20 transition-all duration-300 group"
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5"
             >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:scale-110 transition-transform duration-300">
-                  {icons[index % icons.length]}
-                </div>
-                <h3 className="text-xl font-bold text-white tracking-tight">
-                  {skillGroup.category}
-                </h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {skillGroup.items.map((item, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1.5 text-sm font-medium text-slate-300 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 hover:text-white transition-colors cursor-default"
-                  >
-                    {item}
-                  </span>
+              <h3 className="text-sm font-semibold text-white mb-3">{group.title}</h3>
+              <ul className="space-y-1.5 text-sm text-slate-400">
+                {group.items.map((item) => (
+                  <li key={item}>{item}</li>
                 ))}
-              </div>
+              </ul>
             </motion.div>
           ))}
         </div>

@@ -6,43 +6,41 @@ export default function Footer() {
   const { name, email, phone, links } = resumeData.basics;
 
   return (
-    <footer className="relative z-10 border-t border-white/10 bg-slate-950/80 backdrop-blur-md py-12 px-6 lg:px-12">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+    <footer className="relative z-10 border-t border-white/[0.06] bg-slate-950/60 py-12 px-6 lg:px-12">
+      <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col items-center md:items-start gap-2"
+          transition={{ duration: 0.4 }}
+          className="flex flex-col items-center md:items-start gap-1"
         >
-          <h2 className="text-2xl font-bold tracking-tighter text-white">
-            {name}
-          </h2>
-          <p className="text-slate-400 text-sm">
-            Building scalable data solutions.
+          <h2 className="text-xl font-semibold tracking-tight text-white">{name}</h2>
+          <p className="text-slate-500 text-sm">
+            Business Analyst focused on reporting quality, reconciliation, and release-ready delivery.
           </p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-6"
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className="flex flex-wrap justify-center gap-6 text-slate-500"
         >
           <a
             href={`mailto:${email}`}
-            className="flex items-center gap-2 text-slate-400 hover:text-emerald-400 transition-colors"
+            className="flex items-center gap-2 text-sm hover:text-slate-300 transition-colors"
           >
-            <Mail className="w-5 h-5" />
-            <span className="text-sm font-medium hidden sm:inline">{email}</span>
+            <Mail className="w-4 h-4" />
+            <span className="hidden sm:inline">{email}</span>
           </a>
           <a
             href={`tel:${phone.replace(/\D/g, '')}`}
-            className="flex items-center gap-2 text-slate-400 hover:text-emerald-400 transition-colors"
+            className="flex items-center gap-2 text-sm hover:text-slate-300 transition-colors"
           >
-            <Phone className="w-5 h-5" />
-            <span className="text-sm font-medium hidden sm:inline">{phone}</span>
+            <Phone className="w-4 h-4" />
+            <span className="hidden sm:inline">{phone}</span>
           </a>
           {links.map((link) => (
             <a
@@ -50,10 +48,10 @@ export default function Footer() {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-slate-400 hover:text-emerald-400 transition-colors"
+              className="flex items-center gap-2 text-sm hover:text-slate-300 transition-colors"
             >
-              {link.name === 'LinkedIn' ? <Linkedin className="w-5 h-5" /> : <Github className="w-5 h-5" />}
-              <span className="text-sm font-medium hidden sm:inline">{link.name}</span>
+              {link.name === 'LinkedIn' ? <Linkedin className="w-4 h-4" /> : <Github className="w-4 h-4" />}
+              <span className="hidden sm:inline">{link.name}</span>
             </a>
           ))}
         </motion.div>
@@ -63,8 +61,8 @@ export default function Footer() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        className="max-w-5xl mx-auto mt-12 pt-8 border-t border-white/5 text-center text-slate-500 text-xs"
+        transition={{ duration: 0.4, delay: 0.2 }}
+        className="max-w-4xl mx-auto mt-10 pt-8 border-t border-white/[0.04] text-center text-slate-600 text-xs"
       >
         <p>© {new Date().getFullYear()} {name}. All rights reserved.</p>
       </motion.div>

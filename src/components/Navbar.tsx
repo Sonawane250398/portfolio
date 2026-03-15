@@ -10,16 +10,15 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Experience', href: '#experience' },
-    { name: 'Impact', href: '#achievements' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
+    { name: 'Case Studies', href: '#projects' },
+    { name: 'Outcomes', href: '#achievements' },
+    { name: 'About', href: '#about' },
+    { name: 'How I Work', href: '#how-i-work' },
     { name: 'Education', href: '#education' },
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -28,27 +27,29 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled ? 'bg-slate-950/80 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-6'
+        isScrolled ? 'bg-slate-950/90 backdrop-blur-md border-b border-white/[0.06] py-3' : 'bg-transparent py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
-        {/* Logo */}
-        <a
-          href="#home"
-          className="text-2xl font-bold tracking-tighter text-white hover:text-emerald-400 transition-colors"
-        >
-          {name.split(' ').map(n => n[0]).join('')}<span className="text-emerald-400">.</span>
+      <div className="max-w-5xl mx-auto px-6 lg:px-12 flex items-center justify-between">
+        <a href="#home" className="flex items-center gap-2.5">
+          <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.05] border border-white/[0.08]">
+            <span className="text-xs font-semibold tracking-tight text-slate-200">
+              {name.split(' ').map((n) => n[0]).join('')}
+            </span>
+          </div>
+          <span className="hidden sm:inline text-sm text-slate-400">
+            Business Analyst · Reporting & Controls
+          </span>
         </a>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-2">
+        <div className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-slate-300 hover:text-emerald-400 hover:bg-emerald-400/10 px-4 py-2 rounded-lg transition-all duration-200"
+              className="text-sm text-slate-400 hover:text-slate-200 px-3 py-2 rounded-lg hover:bg-white/[0.04] transition-colors"
             >
               {link.name}
             </a>
@@ -57,37 +58,33 @@ export default function Navbar() {
             href="https://drive.google.com/file/d/1zu_mg474cROYei6JutU4z9pi0wDtER83/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-4 px-5 py-2.5 rounded-full bg-white text-slate-950 text-sm font-semibold hover:bg-emerald-400 hover:text-slate-950 transition-colors"
+            className="ml-2 px-4 py-2 rounded-lg bg-sky-500 text-slate-950 text-sm font-semibold hover:bg-sky-400 transition-colors"
           >
             Resume
           </a>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 text-slate-300 hover:text-white transition-colors"
+          className="lg:hidden p-2 text-slate-400 hover:text-white transition-colors"
+          aria-label="Toggle navigation"
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Nav */}
       <motion.div
         initial={false}
-        animate={{
-          height: isMobileMenuOpen ? 'auto' : 0,
-          opacity: isMobileMenuOpen ? 1 : 0,
-        }}
-        className="md:hidden overflow-hidden bg-slate-950/95 backdrop-blur-xl border-b border-white/10"
+        animate={{ height: isMobileMenuOpen ? 'auto' : 0, opacity: isMobileMenuOpen ? 1 : 0 }}
+        className="lg:hidden overflow-hidden bg-slate-950/95 backdrop-blur-xl border-b border-white/[0.06]"
       >
-        <div className="flex flex-col px-6 py-4 gap-2">
+        <div className="flex flex-col px-6 py-4 gap-0.5">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-lg font-medium text-slate-300 hover:text-emerald-400 hover:bg-emerald-400/10 px-4 py-3 rounded-lg transition-all duration-200"
+              className="text-sm text-slate-300 hover:text-white py-2.5 px-3 rounded-lg hover:bg-white/[0.04] transition-colors"
             >
               {link.name}
             </a>
@@ -97,9 +94,9 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="mt-4 px-6 py-3 rounded-xl bg-white text-slate-950 text-center font-semibold hover:bg-emerald-400 transition-colors"
+            className="mt-3 py-2.5 px-4 rounded-lg bg-sky-500 text-slate-950 text-sm font-semibold text-center hover:bg-sky-400 transition-colors"
           >
-            Download Resume
+            Resume
           </a>
         </div>
       </motion.div>

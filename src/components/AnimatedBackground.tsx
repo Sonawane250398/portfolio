@@ -109,7 +109,7 @@ export default function AnimatedBackground() {
     <div className="fixed inset-0 z-[-1] pointer-events-none bg-slate-950 overflow-hidden">
       {/* Soft gradient mesh */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-900/20 via-slate-950 to-slate-950"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-emerald-900/10 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-slate-800/20 via-transparent to-transparent"></div>
       
       <canvas
         ref={canvasRef}

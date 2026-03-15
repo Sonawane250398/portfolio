@@ -1,9 +1,9 @@
 export const resumeData = {
   basics: {
     name: "Yash Sonawane",
-    title: "Business Analyst",
-    subtitle: "Financial Reporting · Reconciliation · UAT & Reporting Controls",
-    summary: "Business Analyst with 4+ years of experience in financial reporting, reconciliation, UAT, and reporting controls. Reduced reporting discrepancies by 20%, cut break investigation time by 30%, shortened reporting cycles by 2 days, and supported 6 consecutive releases with zero critical post-deployment issues. Strong in SQL-based validation, requirements translation, exception monitoring, and release-ready reporting delivery.",
+    title: "Business Analyst | Financial Reporting, Reconciliation & UAT",
+    subtitle: "Financial reporting · reconciliation · UAT · reporting controls",
+    summary: "Business Analyst with 4+ years of experience in financial reporting, reconciliation, UAT, and reporting controls, focused on SQL-based validation, requirements translation, exception monitoring, and release-ready reporting delivery.",
     location: "Fullerton, California, United States",
     email: "yashsonawane25.work@gmail.com",
     phone: "(562) 455-7892",

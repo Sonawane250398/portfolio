@@ -7,11 +7,12 @@ import { useState, useEffect } from 'react';
 import AnimatedBackground from './components/AnimatedBackground';
 import Splash from './components/Splash';
 import Hero from './components/Hero';
+import About from './components/About';
 import Experience from './components/Experience';
-import Achievements from './components/Achievements';
 import Projects from './components/Projects';
-import DataArchitecture from './components/DataArchitecture';
+import Achievements from './components/Achievements';
 import Skills from './components/Skills';
+import HowIWork from './components/HowIWork';
 import Education from './components/Education';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -29,7 +30,7 @@ export default function App() {
   }, [showSplash]);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 font-sans selection:bg-emerald-500/30 selection:text-emerald-200">
+    <div className="min-h-screen bg-slate-950 text-slate-50 font-sans selection:bg-sky-500/30 selection:text-sky-100">
       {showSplash && <Splash onComplete={() => setShowSplash(false)} />}
       
       <AnimatedBackground />
@@ -40,10 +41,11 @@ export default function App() {
           <main className="relative z-10">
             <Hero />
             <Experience />
-            <Achievements />
-            <DataArchitecture />
             <Projects />
+            <Achievements />
+            <About />
             <Skills />
+            <HowIWork />
             <Education />
           </main>
           <Footer />
