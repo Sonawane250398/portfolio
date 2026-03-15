@@ -17,14 +17,14 @@ const capabilities = [
 
 export default function About() {
   return (
-    <section id="about" className="py-20 px-6 lg:px-12 relative z-10">
+    <section id="about" className="py-20 px-6 lg:px-12 relative z-10 scroll-mt-20">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
-          className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-12 md:gap-16 mb-24"
+          className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-12 md:gap-16 mb-20"
         >
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white mb-4">
@@ -46,11 +46,11 @@ export default function About() {
           </div>
         </motion.div>
 
-        <div id="capabilities" className="space-y-6">
+        <div id="capabilities" className="space-y-5">
           <h3 className="text-xl font-semibold tracking-tight text-white">
             Capabilities
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {capabilities.map((cap, index) => (
               <motion.div
                 key={cap.title}
@@ -58,7 +58,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="rounded-xl bg-white/[0.02] border border-white/[0.06] p-6"
+                className="rounded-xl bg-white/[0.02] border border-white/[0.05] p-5"
               >
                 <h4 className="text-base font-semibold text-white mb-2">{cap.title}</h4>
                 <p className="text-sm text-slate-400 leading-relaxed">{cap.description}</p>

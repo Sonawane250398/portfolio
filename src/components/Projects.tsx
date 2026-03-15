@@ -2,21 +2,21 @@ import { motion } from 'motion/react';
 
 const caseStudies = [
   {
-    title: 'Source-to-Report Financial Reconciliation Platform',
+    title: 'Financial Reconciliation Platform',
     problem: 'Reporting mismatches across source, transformed, and reporting-layer datasets.',
     built: 'SQL-based reconciliation workflow with validation checkpoints, exception outputs, and reconciliation summaries.',
     impact: 'Improved reporting accuracy by catching missing records, duplicates, mapping errors, and balance variances before final reporting.',
     tools: 'SQL, reconciliation logic, reporting validation',
   },
   {
-    title: 'Financial Reporting UAT and Release Readiness Framework',
+    title: 'UAT & Release Readiness Framework',
     problem: 'Reporting enhancements needed stronger test coverage, traceability, and release confidence.',
     built: 'Structured UAT framework with requirements, user stories, acceptance criteria, test cases, defect tracking, and release checkpoints.',
     impact: 'Improved test coverage, requirement traceability, and deployment readiness across reporting workflows.',
     tools: 'UAT, Jira, documentation, release validation',
   },
   {
-    title: 'Financial Reporting Controls Monitoring Model',
+    title: 'Controls Monitoring Model',
     problem: 'Reporting exceptions across revenue, P&L, inventory, expenses, and payroll needed consistent monitoring.',
     built: 'SQL-based controls layer with standardized variance checks and exception monitoring.',
     impact: 'Improved reporting integrity and control visibility across multiple financial domains.',
@@ -28,7 +28,7 @@ const labelClass = "text-[10px] font-semibold tracking-[0.2em] text-slate-500 up
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 px-6 lg:px-12 relative z-10">
+    <section id="projects" className="py-20 px-6 lg:px-12 relative z-10 scroll-mt-20">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -53,7 +53,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 md:p-7"
+              className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6"
             >
               <h3 className="text-lg font-semibold text-white mb-6">{cs.title}</h3>
               <dl className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-sm">

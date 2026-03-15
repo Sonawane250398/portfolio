@@ -33,14 +33,14 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-5xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-4">
-        <a href="#home" className="flex items-center gap-2.5 min-w-0 shrink">
+        <a href="#home" className="flex items-center gap-2.5 shrink-0">
           <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.05] border border-white/[0.08] shrink-0">
             <span className="text-xs font-semibold tracking-tight text-slate-200">
               {name.split(' ').map((n) => n[0]).join('')}
             </span>
           </div>
-          <span className="hidden sm:inline text-xs text-slate-400 whitespace-nowrap truncate max-w-[180px] xl:max-w-none">
-            Business Analyst · Reporting & Controls
+          <span className="hidden sm:inline text-xs text-slate-400 whitespace-nowrap">
+            BA · Reporting & Controls
           </span>
         </a>
 

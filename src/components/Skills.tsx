@@ -17,24 +17,24 @@ const toolGroups = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 px-6 lg:px-12 relative z-10">
+    <section id="skills" className="py-16 px-6 lg:px-12 relative z-10 scroll-mt-20">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
-          className="mb-10"
+          className="mb-8"
         >
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white mb-2">
-            Tools & Reporting Stack
+            Tools & Workflow
           </h2>
           <p className="text-slate-500 text-sm max-w-xl">
             Tools I use to validate data, monitor exceptions, and deliver reliable financial reporting.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {toolGroups.map((group, index) => (
             <motion.div
               key={group.title}

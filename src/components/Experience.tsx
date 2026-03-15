@@ -14,14 +14,14 @@ export default function Experience() {
   }));
 
   return (
-    <section id="experience" className="py-20 px-6 lg:px-12 relative z-10">
+    <section id="experience" className="pt-24 pb-20 px-6 lg:px-12 relative z-10 scroll-mt-20">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
-          className="mb-12"
+          className="mb-10"
         >
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white mb-2">
             Experience
@@ -43,11 +43,11 @@ export default function Experience() {
             >
               <button
                 onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
-                className="w-full text-left p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 focus:outline-none"
+                className="w-full text-left p-4 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 rounded-xl"
               >
-                <div className="space-y-1">
+                <div className="space-y-0.5">
                   <h3 className="text-lg font-semibold text-white">{job.role}</h3>
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-slate-500">
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-0.5 text-sm text-slate-500">
                     <span className="flex items-center gap-1.5">
                       <Building2 className="w-3.5 h-3.5" />
                       {job.company}
@@ -80,8 +80,8 @@ export default function Experience() {
                 transition={{ duration: 0.25, ease: 'easeInOut' }}
                 className="overflow-hidden"
               >
-                <div className="px-4 sm:px-5 pb-4 sm:pb-5 pt-0 border-t border-white/[0.04]">
-                  <ul className="space-y-1.5 mt-3">
+                <div className="px-4 sm:px-4 pb-4 pt-0 border-t border-white/[0.04]">
+                  <ul className="space-y-1.5 mt-2.5">
                     {job.bullets.map((bullet, i) => (
                       <li
                         key={i}

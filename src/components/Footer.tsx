@@ -16,7 +16,7 @@ export default function Footer() {
             transition={{ duration: 0.4 }}
             className="flex flex-col items-center md:items-start gap-1 text-center md:text-left"
           >
-            <h2 className="text-xl font-semibold tracking-tight text-white">{name}</h2>
+            <h2 className="text-lg font-semibold tracking-tight text-white">{name}</h2>
             <p className="text-slate-500 text-sm max-w-sm">
               Business Analyst focused on reporting quality, reconciliation, and release-ready delivery.
             </p>
@@ -27,18 +27,18 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="flex flex-wrap items-center justify-center md:justify-end gap-x-8 gap-y-3 text-slate-500"
+            className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-2 text-slate-500"
           >
             <a
               href={`mailto:${email}`}
-              className="flex items-center gap-2 text-sm hover:text-slate-300 transition-colors"
+              className="flex items-center gap-1.5 text-sm hover:text-slate-300 transition-colors"
             >
               <Mail className="w-4 h-4 shrink-0" />
               <span className="hidden sm:inline">{email}</span>
             </a>
             <a
               href={`tel:${phone.replace(/\D/g, '')}`}
-              className="flex items-center gap-2 text-sm hover:text-slate-300 transition-colors"
+              className="flex items-center gap-1.5 text-sm hover:text-slate-300 transition-colors"
             >
               <Phone className="w-4 h-4 shrink-0" />
               <span className="hidden sm:inline">{phone}</span>
@@ -49,7 +49,7 @@ export default function Footer() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm hover:text-slate-300 transition-colors"
+                className="flex items-center gap-1.5 text-sm hover:text-slate-300 transition-colors"
               >
                 {link.name === 'LinkedIn' ? <Linkedin className="w-4 h-4 shrink-0" /> : <Github className="w-4 h-4 shrink-0" />}
                 <span className="hidden sm:inline">{link.name}</span>

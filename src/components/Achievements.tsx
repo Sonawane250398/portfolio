@@ -46,14 +46,14 @@ const AnimatedCounter = ({ value }: { value: string }) => {
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="py-20 px-6 lg:px-12 relative z-10">
+    <section id="achievements" className="py-20 px-6 lg:px-12 relative z-10 scroll-mt-20">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
-          className="mb-10"
+          className="mb-8"
         >
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white mb-2">
             Reporting Outcomes
@@ -71,9 +71,9 @@ export default function Achievements() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.4, delay: index * 0.06 }}
-              className="rounded-xl border border-white/[0.04] bg-white/[0.02] p-5"
+              className="rounded-xl border border-white/[0.04] bg-white/[0.02] p-4"
             >
-              <p className="text-2xl md:text-3xl font-semibold text-white mb-1.5 tracking-tight">
+              <p className="text-2xl md:text-3xl font-semibold text-white mb-1 tracking-tight">
                 <AnimatedCounter value={outcome.metric} />
               </p>
               <p className="text-[13px] text-slate-500 leading-relaxed">{outcome.context}</p>

@@ -17,14 +17,14 @@ const steps = [
 
 export default function HowIWork() {
   return (
-    <section id="how-i-work" className="py-20 px-6 lg:px-12 relative z-10">
+    <section id="how-i-work" className="py-16 px-6 lg:px-12 relative z-10 scroll-mt-20">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
-          className="mb-10"
+          className="mb-8"
         >
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white mb-2">
             How I Work

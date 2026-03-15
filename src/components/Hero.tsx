@@ -20,7 +20,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center pt-28 pb-24 px-6 lg:px-12 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center pt-28 pb-20 px-6 lg:px-12 overflow-hidden scroll-mt-0"
     >
       <div className="max-w-5xl mx-auto w-full z-10">
         <motion.div
@@ -29,12 +29,12 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex flex-col lg:grid lg:grid-cols-[1fr_280px] lg:gap-12 xl:gap-16 lg:items-start gap-10"
         >
-          <div className="flex flex-col items-start gap-10 min-w-0">
+          <div className="flex flex-col items-start gap-8 min-w-0">
             <p className="text-xs font-medium tracking-[0.2em] uppercase text-slate-500">
               Business Analyst · Financial Reporting & Controls
             </p>
 
-            <div className="space-y-5">
+            <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white">
                 {name}
               </h1>
@@ -42,7 +42,7 @@ export default function Hero() {
                 Business Analyst · Financial Reporting, Reconciliation & UAT
               </h2>
               <p className="text-slate-400 text-base max-w-xl leading-relaxed">
-                Helping finance teams improve reporting accuracy, reduce discrepancies, and support release-ready systems through structured analysis, validation, and controls.
+                Helping finance teams improve reporting accuracy, reduce discrepancies, and support release-ready systems through analysis, validation, and controls.
               </p>
             </div>
 
