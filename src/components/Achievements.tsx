@@ -71,12 +71,12 @@ export default function Achievements() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.4, delay: index * 0.06 }}
-              className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6"
+              className="rounded-xl border border-white/[0.04] bg-white/[0.02] p-5"
             >
-              <p className="text-2xl md:text-3xl font-semibold text-white mb-2">
+              <p className="text-2xl md:text-3xl font-semibold text-white mb-1.5 tracking-tight">
                 <AnimatedCounter value={outcome.metric} />
               </p>
-              <p className="text-sm text-slate-400 leading-relaxed">{outcome.context}</p>
+              <p className="text-[13px] text-slate-500 leading-relaxed">{outcome.context}</p>
             </motion.div>
           ))}
         </div>

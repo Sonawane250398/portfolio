@@ -32,19 +32,19 @@ export default function Navbar() {
         isScrolled ? 'bg-slate-950/90 backdrop-blur-md border-b border-white/[0.06] py-3' : 'bg-transparent py-5'
       }`}
     >
-      <div className="max-w-5xl mx-auto px-6 lg:px-12 flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2.5">
-          <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.05] border border-white/[0.08]">
+      <div className="max-w-5xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-4">
+        <a href="#home" className="flex items-center gap-2.5 min-w-0 shrink">
+          <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.05] border border-white/[0.08] shrink-0">
             <span className="text-xs font-semibold tracking-tight text-slate-200">
               {name.split(' ').map((n) => n[0]).join('')}
             </span>
           </div>
-          <span className="hidden sm:inline text-sm text-slate-400">
+          <span className="hidden sm:inline text-xs text-slate-400 whitespace-nowrap truncate max-w-[180px] xl:max-w-none">
             Business Analyst · Reporting & Controls
           </span>
         </a>
 
-        <div className="hidden lg:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-1 shrink-0">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -66,7 +66,7 @@ export default function Navbar() {
 
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden p-2 text-slate-400 hover:text-white transition-colors"
+          className="lg:hidden p-2 text-slate-400 hover:text-white transition-colors shrink-0"
           aria-label="Toggle navigation"
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

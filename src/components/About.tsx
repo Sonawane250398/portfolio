@@ -24,13 +24,13 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
-          className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-12 md:gap-16 mb-16"
+          className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-12 md:gap-16 mb-24"
         >
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white mb-4">
               About
             </h2>
-            <p className="text-slate-400 text-sm md:text-base max-w-xl leading-relaxed">
+            <p className="text-slate-400 text-sm md:text-base max-w-lg leading-relaxed">
               Business Analyst with 4+ years in financial reporting, reconciliation, UAT, and reporting controls — focused on making reporting more reliable and release-ready.
             </p>
           </div>

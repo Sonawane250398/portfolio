@@ -43,9 +43,9 @@ export default function Experience() {
             >
               <button
                 onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
-                className="w-full text-left p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 focus:outline-none"
+                className="w-full text-left p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 focus:outline-none"
               >
-                <div className="space-y-1.5">
+                <div className="space-y-1">
                   <h3 className="text-lg font-semibold text-white">{job.role}</h3>
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-slate-500">
                     <span className="flex items-center gap-1.5">
@@ -80,12 +80,12 @@ export default function Experience() {
                 transition={{ duration: 0.25, ease: 'easeInOut' }}
                 className="overflow-hidden"
               >
-                <div className="px-6 pb-6 pt-0 border-t border-white/[0.04]">
-                  <ul className="space-y-2.5 mt-4">
+                <div className="px-4 sm:px-5 pb-4 sm:pb-5 pt-0 border-t border-white/[0.04]">
+                  <ul className="space-y-1.5 mt-3">
                     {job.bullets.map((bullet, i) => (
                       <li
                         key={i}
-                        className="flex items-start gap-3 text-sm text-slate-400 leading-relaxed"
+                        className="flex items-start gap-2.5 text-sm text-slate-400 leading-snug"
                       >
                         <span className="mt-1.5 w-1 h-1 rounded-full bg-slate-500 shrink-0" />
                         <span>{bullet}</span>

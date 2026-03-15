@@ -42,10 +42,10 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5"
+              className="rounded-xl border border-white/[0.04] bg-white/[0.015] p-5"
             >
-              <h3 className="text-sm font-semibold text-white mb-3">{group.title}</h3>
-              <ul className="space-y-1.5 text-sm text-slate-400">
+              <h3 className="text-sm font-medium text-slate-400 mb-3">{group.title}</h3>
+              <ul className="space-y-1.5 text-sm text-slate-500">
                 {group.items.map((item) => (
                   <li key={item}>{item}</li>
                 ))}

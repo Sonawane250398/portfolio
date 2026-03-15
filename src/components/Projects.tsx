@@ -24,6 +24,8 @@ const caseStudies = [
   },
 ];
 
+const labelClass = "text-[10px] font-semibold tracking-[0.2em] text-slate-500 uppercase";
+
 export default function Projects() {
   return (
     <section id="projects" className="py-20 px-6 lg:px-12 relative z-10">
@@ -53,23 +55,23 @@ export default function Projects() {
               transition={{ duration: 0.4, delay: index * 0.05 }}
               className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 md:p-7"
             >
-              <h3 className="text-lg font-semibold text-white mb-5">{cs.title}</h3>
-              <dl className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm">
+              <h3 className="text-lg font-semibold text-white mb-6">{cs.title}</h3>
+              <dl className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-sm">
                 <div>
-                  <dt className="text-[11px] font-semibold tracking-wider text-slate-500 uppercase mb-1">Problem</dt>
-                  <dd className="text-slate-300">{cs.problem}</dd>
+                  <dt className={labelClass + " mb-0.5"}>Problem</dt>
+                  <dd className="text-slate-300 leading-relaxed">{cs.problem}</dd>
                 </div>
                 <div>
-                  <dt className="text-[11px] font-semibold tracking-wider text-slate-500 uppercase mb-1">Built</dt>
-                  <dd className="text-slate-300">{cs.built}</dd>
+                  <dt className={labelClass + " mb-0.5"}>Built</dt>
+                  <dd className="text-slate-300 leading-relaxed">{cs.built}</dd>
                 </div>
                 <div className="md:col-span-2">
-                  <dt className="text-[11px] font-semibold tracking-wider text-slate-500 uppercase mb-1">Impact</dt>
-                  <dd className="text-slate-300">{cs.impact}</dd>
+                  <dt className={labelClass + " mb-0.5"}>Impact</dt>
+                  <dd className="text-slate-300 leading-relaxed">{cs.impact}</dd>
                 </div>
                 <div>
-                  <dt className="text-[11px] font-semibold tracking-wider text-slate-500 uppercase mb-1">Tools</dt>
-                  <dd className="text-slate-500">{cs.tools}</dd>
+                  <dt className={labelClass + " mb-0.5"}>Tools</dt>
+                  <dd className="text-slate-500 text-[13px]">{cs.tools}</dd>
                 </div>
               </dl>
             </motion.article>
