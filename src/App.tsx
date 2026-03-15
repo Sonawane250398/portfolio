@@ -18,7 +18,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 export default function App() {
-  const [showSplash, setShowSplash] = useState(true);
+  const [showSplash, setShowSplash] = useState(false);
 
   useEffect(() => {
     // Prevent scrolling while splash is active
