@@ -6,7 +6,7 @@ export default function EducationAbout() {
   const { education } = resumeData;
 
   return (
-    <section className="relative z-10 border-t border-slate-200/60 px-6 py-24 dark:border-white/5 lg:px-12">
+    <section className="relative z-10 px-6 py-24 lg:px-12">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
