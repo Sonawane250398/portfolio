@@ -19,7 +19,7 @@ export default function Skills({ pageLayout }: SkillsProps) {
 
   return (
     <section
-      className={`relative z-10 px-6 py-24 dark:border-white/5 lg:px-12 ${
+      className={`relative z-10 px-6 py-24 lg:px-12 ${
         pageLayout
           ? 'bg-transparent'
           : 'bg-slate-200/40 backdrop-blur-sm dark:bg-slate-950/50'
@@ -32,7 +32,7 @@ export default function Skills({ pageLayout }: SkillsProps) {
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className="mx-auto max-w-5xl"
       >
-        <div className={`z-10 mb-16 bg-slate-950/80 py-3 backdrop-blur-xl ${pageLayout ? '' : 'text-center'}`}>
+        <div className={`mb-16 py-3 ${pageLayout ? '' : 'text-center'}`}>
           <h2 className="mb-4 text-4xl font-bold tracking-tight text-slate-900 dark:text-white md:text-5xl">
             {pageLayout ? 'Skills' : 'Technical Skills & Data Stack'}
           </h2>
