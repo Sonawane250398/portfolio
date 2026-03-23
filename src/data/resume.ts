@@ -3,7 +3,7 @@ export const resumeData = {
     name: "Yash Sonawane",
     title: "Business Analyst",
     subtitle: "Financial Reporting · Reconciliation · UAT & Reporting Controls",
-    summary: "Business Analyst with 4+ years of experience in financial reporting, reconciliation, UAT, and reporting controls. Reduced reporting discrepancies by 20%, cut break investigation time by 30%, shortened reporting cycles by 2 days, and supported 6 consecutive releases with zero critical post-deployment issues. Strong in SQL-based validation, requirements translation, exception monitoring, and release-ready reporting delivery.",
+    summary: "Business Analyst with 4+ years building financial reporting systems that teams can trust. I work across the full BA lifecycle — requirements, SQL validation, UAT, and release readiness — connecting finance teams, engineering, and stakeholders. Reduced reconciliation discrepancies by 20%, eliminated 6–8 hrs of manual reporting weekly, and delivered 6 releases with zero critical issues. Currently open to BA and BSA roles in fintech, banking, or enterprise SaaS.",
     location: "Fullerton, California, United States",
     email: "yashsonawane25.work@gmail.com",
     phone: "(562) 455-7892",
@@ -11,7 +11,7 @@ export const resumeData = {
       { name: "LinkedIn", url: "https://www.linkedin.com/in/yash-sonawane25" },
       { name: "GitHub", url: "https://github.com/Sonawane250398" }
     ],
-    openTo: ["Business Analyst", "Senior Business Analyst", "Business Systems Analyst", "Financial Systems Analyst"]
+    openTo: ["Business Analyst", "Business Systems Analyst", "Financial Systems Analyst"]
   },
   architecture: {
     title: "Financial Reporting Data Architecture",
@@ -82,13 +82,13 @@ LEFT JOIN reporting_table r
   ON s.account_id = r.account_id
 GROUP BY s.account_id
 HAVING SUM(s.amount) <> SUM(r.amount);`,
-      exampleOutput: {
-        source: "$1,205,432",
-        reporting: "$1,201,211",
-        variance: "$4,221",
-        status: "MISMATCH",
-        severity: "HIGH"
-      },
+      demoRows: [
+        { account: "ACC-1001", source: "$1,205,432", reporting: "$1,201,211", variance: "$4,221", status: "MISMATCH", severity: "HIGH" },
+        { account: "ACC-1002", source: "$843,100", reporting: "$843,100", variance: "$0", status: "MATCHED", severity: "NONE" },
+        { account: "ACC-1003", source: "$512,000", reporting: "$0", variance: "$512,000", status: "MISSING", severity: "CRITICAL" },
+        { account: "ACC-1004", source: "$320,750", reporting: "$319,900", variance: "$850", status: "MISMATCH", severity: "MEDIUM" },
+        { account: "ACC-1005", source: "$198,400", reporting: "$198,400", variance: "$0", status: "MATCHED", severity: "NONE" }
+      ],
       links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/sql-reconciliation-framework" }]
     },
     {
@@ -114,6 +114,13 @@ SELECT domain,
 FROM control_status
 GROUP BY domain
 ORDER BY failures DESC;`,
+      demoRows: [
+        { domain: "P&L", totalChecks: 4, passed: 2, failed: 2, passRate: "50%", risk: "CRITICAL" },
+        { domain: "Inventory", totalChecks: 4, passed: 3, failed: 1, passRate: "75%", risk: "HIGH" },
+        { domain: "Expenses", totalChecks: 4, passed: 3, failed: 1, passRate: "75%", risk: "HIGH" },
+        { domain: "Payroll", totalChecks: 4, passed: 4, failed: 0, passRate: "100%", risk: "LOW" },
+        { domain: "Revenue", totalChecks: 4, passed: 4, failed: 0, passRate: "100%", risk: "LOW" }
+      ],
       links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/financial-reporting-control-framework" }]
     },
     {
@@ -146,6 +153,15 @@ WHERE transaction_id IN (
   GROUP BY transaction_id
   HAVING COUNT(*) > 1
 );`,
+      demoRows: [
+        { testId: "TC-001", scenario: "Row count validation", type: "Data Validation", status: "PASS", severity: "HIGH" },
+        { testId: "TC-002", scenario: "Null field detection", type: "Edge Case", status: "PASS", severity: "HIGH" },
+        { testId: "TC-003", scenario: "Duplicate transaction IDs", type: "Edge Case", status: "FAIL", severity: "CRITICAL" },
+        { testId: "TC-004", scenario: "Aggregate balance match", type: "Reconciliation", status: "PASS", severity: "HIGH" },
+        { testId: "TC-005", scenario: "Negative amount detection", type: "Edge Case", status: "PASS", severity: "MEDIUM" },
+        { testId: "TC-006", scenario: "Source vs reporting totals", type: "Reconciliation", status: "FAIL", severity: "HIGH" }
+      ],
+      releaseReadiness: { total: 25, passed: 22, failed: 2, blocked: 1, score: "88%", status: "CONDITIONAL APPROVAL" },
       links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/financial-reporting-uat-framework" }]
     },
     {
@@ -169,6 +185,13 @@ WHERE transaction_id IN (
 FROM rtm
 GROUP BY category
 ORDER BY total_reqs DESC;`,
+      demoRows: [
+        { category: "Reconciliation Logic", totalReqs: 5, testCases: 8, covered: 5, coveragePct: "100%" },
+        { category: "Reporting Controls", totalReqs: 4, testCases: 6, covered: 4, coveragePct: "100%" },
+        { category: "UAT Validation", totalReqs: 3, testCases: 5, covered: 3, coveragePct: "100%" },
+        { category: "Release Readiness", totalReqs: 1, testCases: 3, covered: 1, coveragePct: "100%" }
+      ],
+      rtmSummary: { totalReqs: 13, covered: 13, sprints: 4, openDefects: 0, coveragePct: "100%" },
       links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/requirements-traceability-matrix" }]
     }
   ],
@@ -181,7 +204,10 @@ ORDER BY total_reqs DESC;`,
         "Acceptance criteria",
         "Requirements traceability",
         "Stakeholder management",
-        "SDLC support"
+        "SDLC support",
+        "Process Mapping",
+        "Workflow Documentation",
+        "Stakeholder Reporting"
       ]
     },
     {
@@ -202,7 +228,8 @@ ORDER BY total_reqs DESC;`,
         "Reporting controls",
         "Variance analysis",
         "Data lineage",
-        "Source-to-report validation"
+        "Source-to-report validation",
+        "Data Governance"
       ]
     },
     {
@@ -214,7 +241,9 @@ ORDER BY total_reqs DESC;`,
         "ETL validation",
         "Jira",
         "Confluence",
-        "Agile/Scrum"
+        "Agile/Scrum",
+        "Power BI",
+        "Python (Basic)"
       ]
     }
   ],
@@ -241,6 +270,6 @@ ORDER BY total_reqs DESC;`,
   ],
   awards: [],
   extra: [
-    "Open to: Business Analyst | Senior Business Analyst | Business Systems Analyst | Financial Systems Analyst"
+    "Open to: Business Analyst | Business Systems Analyst | Financial Systems Analyst"
   ]
 };

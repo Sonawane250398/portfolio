@@ -4,23 +4,19 @@
  */
 
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import AnimatedBackground from './components/AnimatedBackground';
 import Splash from './components/Splash';
-import Hero from './components/Hero';
-import Experience from './components/Experience';
-import Achievements from './components/Achievements';
-import Projects from './components/Projects';
-import DataArchitecture from './components/DataArchitecture';
-import Skills from './components/Skills';
-import Education from './components/Education';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import About from './pages/About';
+import ProjectsPage from './pages/ProjectsPage';
+import Contact from './pages/Contact';
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
-    // Prevent scrolling while splash is active
     if (showSplash) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -29,27 +25,22 @@ export default function App() {
   }, [showSplash]);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 font-sans selection:bg-emerald-500/30 selection:text-emerald-200">
+    <div className="min-h-screen bg-slate-100 text-slate-900 font-sans selection:bg-emerald-500/20 selection:text-emerald-900 dark:bg-transparent dark:text-slate-50 dark:selection:bg-emerald-500/30 dark:selection:text-emerald-200">
+      <div className="dark:opacity-100 opacity-30 transition-opacity duration-300">
+        <AnimatedBackground />
+      </div>
       {showSplash && <Splash onComplete={() => setShowSplash(false)} />}
-      
-      <AnimatedBackground />
-      
+
       {!showSplash && (
-        <>
-          <Navbar />
-          <main className="relative z-10">
-            <Hero />
-            <Experience />
-            <Achievements />
-            <DataArchitecture />
-            <Projects />
-            <Skills />
-            <Education />
-          </main>
-          <Footer />
-        </>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/contact" element={<Contact />} />
+          </Route>
+        </Routes>
       )}
     </div>
   );
 }
-

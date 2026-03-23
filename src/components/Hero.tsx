@@ -1,16 +1,71 @@
 import { motion } from 'motion/react';
-import { ArrowDown, Download, Github, Linkedin, ExternalLink } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { ArrowRight, Download, Github, Linkedin, ExternalLink, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { resumeData } from '../data/resume';
 
 export default function Hero() {
   const { name, title, subtitle, summary, links, openTo } = resumeData.basics;
+  const statsRef = useRef<HTMLDivElement | null>(null);
+  const [statsInView, setStatsInView] = useState(false);
+  const [animatedMetrics, setAnimatedMetrics] = useState(['0%', '6–8 hrs', '0', '0+']);
 
   const stats = [
-    { metric: "20%", label: "fewer reconciliation discrepancies" },
-    { metric: "6–8 hrs", label: "manual reporting eliminated/week" },
-    { metric: "0", label: "critical issues across 6 releases" },
-    { metric: "4+", label: "years in financial data systems" },
+    { metric: '20%', label: 'fewer reconciliation discrepancies' },
+    { metric: '6–8 hrs', label: 'manual reporting eliminated/week' },
+    { metric: '0', label: 'critical issues across 6 releases' },
+    { metric: '4+', label: 'years in financial data systems' },
   ];
+
+  const resumeUrl =
+    'https://drive.google.com/file/d/1zu_mg474cROYei6JutU4z9pi0wDtER83/view?usp=sharing';
+
+  useEffect(() => {
+    const el = statsRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setStatsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.35 },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!statsInView) return;
+
+    const duration = 1500;
+    const start = performance.now();
+
+    const frame = (now: number) => {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+
+      const p20 = Math.round(20 * eased);
+      const p4 = Math.round(4 * eased);
+
+      setAnimatedMetrics([
+        `${p20}%`,
+        '6–8 hrs',
+        `${Math.round(0 * eased)}`,
+        `${p4}+`,
+      ]);
+
+      if (t < 1) {
+        requestAnimationFrame(frame);
+      }
+    };
+
+    const rafId = requestAnimationFrame(frame);
+    return () => cancelAnimationFrame(rafId);
+  }, [statsInView]);
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-6 lg:px-12 overflow-hidden">
@@ -21,86 +76,102 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex flex-col items-start gap-6"
         >
-          {/* Availability badge */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-emerald-400 text-sm font-medium tracking-wide uppercase"
-          >
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            Available for new opportunities
-          </motion.div>
-
-          {/* Name */}
           <div className="space-y-3">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white">
+            <h1 className="text-5xl font-bold tracking-tighter text-slate-900 dark:text-white md:text-7xl lg:text-8xl">
               {name}
             </h1>
-            {/* Primary title */}
-            <h2 className="text-2xl md:text-3xl font-semibold text-slate-300">
-              {title}
-            </h2>
-            {/* Subtitle / specialisation line */}
-            <p className="text-base md:text-lg text-emerald-400 font-medium tracking-wide">
-              {subtitle}
+            <h2 className="text-2xl font-semibold text-slate-700 dark:text-slate-300 md:text-3xl">{title}</h2>
+            <p className="text-base font-medium tracking-wide text-emerald-600 dark:text-emerald-400 md:text-lg">
+              {subtitle.split('').map((char, i) => (
+                <motion.span
+                  key={`${char}-${i}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.04, delay: 0.5 + i * 0.03, ease: 'easeOut' }}
+                  className="inline-block"
+                  style={{ whiteSpace: char === ' ' ? 'pre' : undefined }}
+                >
+                  {char === ' ' ? '\u00A0' : char}
+                </motion.span>
+              ))}
             </p>
           </div>
 
-          {/* Summary */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="max-w-2xl text-lg md:text-xl text-slate-300 leading-relaxed"
+            className="max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300 md:text-xl"
           >
             {summary}
           </motion.p>
 
-          {/* Key stats row */}
           <motion.div
+            ref={statsRef}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.75 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full mt-2"
           >
             {stats.map((s, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="rounded-xl bg-white/[0.03] border border-white/10 px-5 py-4 flex flex-col gap-1"
+                className="flex flex-col gap-1 rounded-xl border border-slate-200/80 bg-white/70 px-5 py-4 dark:border-white/10 dark:bg-white/[0.03]"
+                style={{
+                  boxShadow: '0 0 24px rgba(16, 185, 129, 0.12)',
+                  border: '1px solid rgba(16, 185, 129, 0.15)',
+                }}
+                initial={i === 1 ? { opacity: 0 } : undefined}
+                animate={i === 1 ? { opacity: statsInView ? 1 : 0 } : undefined}
+                transition={i === 1 ? { duration: 0.6, ease: 'easeOut' } : undefined}
               >
-                <span className="text-2xl font-bold text-emerald-400">{s.metric}</span>
-                <span className="text-xs text-slate-400 leading-snug">{s.label}</span>
-              </div>
+                <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
+                  {animatedMetrics[i] ?? s.metric}
+                </span>
+                <span className="text-xs leading-snug text-slate-500 dark:text-slate-400">{s.label}</span>
+              </motion.div>
             ))}
           </motion.div>
 
-          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
-            className="flex flex-col sm:flex-row items-center gap-4 mt-4 w-full sm:w-auto"
+            className="flex flex-col sm:flex-row flex-wrap items-stretch gap-4 mt-4 w-full sm:w-auto"
           >
-            <a
-              href="#experience"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-slate-950 font-semibold hover:bg-slate-200 transition-colors flex items-center justify-center gap-2 group"
+            <Link
+              to="/about"
+              className="group flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 px-8 py-4 font-semibold text-white transition-transform duration-200 hover:scale-105 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 sm:w-auto"
             >
               View Experience
-              <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
-            </a>
+              <span className="hero-arrow-pulse inline-flex">
+                <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+            <Link
+              to="/contact"
+              className="group flex w-full items-center justify-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-8 py-4 font-semibold text-emerald-700 transition-all duration-300 hover:bg-emerald-500/20 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] dark:border-emerald-500/35 dark:bg-emerald-500/15 dark:text-emerald-300 dark:hover:bg-emerald-500/25 sm:w-auto"
+            >
+              <motion.span
+                animate={{ scale: [1, 1.15, 1] }}
+                transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+                className="inline-flex"
+              >
+                <Mail className="w-4 h-4" />
+              </motion.span>
+              Get in Touch
+            </Link>
             <a
-              href="https://drive.google.com/file/d/1zu_mg474cROYei6JutU4z9pi0wDtER83/view?usp=sharing"
+              href={resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/5 text-white border border-white/10 hover:bg-white/10 transition-colors flex items-center justify-center gap-2 group"
+              className="hero-shimmer-btn group flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-100 px-8 py-4 text-slate-800 transition-colors hover:bg-slate-200 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 sm:w-auto"
             >
               Download Resume
               <Download className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
             </a>
           </motion.div>
 
-          {/* Social Links */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -113,7 +184,7 @@ export default function Hero() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 group"
+                className="group flex items-center gap-2 text-slate-500 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
               >
                 {link.name === 'LinkedIn' ? <Linkedin className="w-5 h-5" /> : <Github className="w-5 h-5" />}
                 <span className="text-sm font-medium">{link.name}</span>
@@ -122,7 +193,6 @@ export default function Hero() {
             ))}
           </motion.div>
 
-          {/* Open to roles */}
           {openTo && openTo.length > 0 && (
             <motion.div
               initial={{ opacity: 0 }}
@@ -130,11 +200,13 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 1.2 }}
               className="flex flex-wrap items-center gap-2 mt-2"
             >
-              <span className="text-xs text-slate-500 uppercase tracking-widest font-medium mr-1">Open to</span>
+              <span className="mr-1 text-xs font-medium uppercase tracking-widest text-slate-500 dark:text-slate-500">
+                Open to
+              </span>
               {openTo.map((role, i) => (
                 <span
                   key={i}
-                  className="px-3 py-1 text-xs font-medium text-slate-300 bg-white/5 rounded-full border border-white/10"
+                  className="rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-xs font-medium text-slate-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
                 >
                   {role}
                 </span>
@@ -143,8 +215,6 @@ export default function Hero() {
           )}
         </motion.div>
       </div>
-
-    
     </section>
   );
 }

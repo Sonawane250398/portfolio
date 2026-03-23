@@ -2,7 +2,11 @@ import { motion } from 'motion/react';
 import { resumeData } from '../data/resume';
 import { Code2, Database, LineChart, Target, Layers, Wrench } from 'lucide-react';
 
-export default function Skills() {
+type SkillsProps = {
+  pageLayout?: boolean;
+};
+
+export default function Skills({ pageLayout }: SkillsProps) {
   const { skills } = resumeData;
   const icons = [
     <Code2 className="w-6 h-6 text-emerald-400" />,
@@ -14,35 +18,47 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-24 px-6 lg:px-12 relative z-10 bg-slate-950/50 backdrop-blur-sm border-y border-white/5">
-      <div className="max-w-5xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
-            Technical Skills & Data Stack
+    <section
+      className={`relative z-10 border-y border-slate-200/60 px-6 py-24 dark:border-white/5 lg:px-12 ${
+        pageLayout
+          ? 'bg-transparent'
+          : 'bg-slate-200/40 backdrop-blur-sm dark:bg-slate-950/50'
+      }`}
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+        className="mx-auto max-w-5xl"
+      >
+        <div className={`sticky top-0 z-10 mb-16 bg-slate-950/80 py-3 backdrop-blur-xl ${pageLayout ? '' : 'text-center'}`}>
+          <h2 className="mb-4 text-4xl font-bold tracking-tight text-slate-900 dark:text-white md:text-5xl">
+            {pageLayout ? 'Skills' : 'Technical Skills & Data Stack'}
           </h2>
-          <div className="h-1 w-20 bg-emerald-500 rounded-full mx-auto" />
-        </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className={`h-1 w-20 rounded-full bg-emerald-500 ${pageLayout ? '' : 'mx-auto'}`} />
+        </div>
+        <div
+          className={
+            pageLayout
+              ? 'grid grid-cols-1 gap-8 md:grid-cols-2'
+              : 'grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'
+          }
+        >
           {skills.map((skillGroup, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] hover:border-emerald-500/20 transition-all duration-300 group"
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.1 }}
+              className="group rounded-2xl border border-slate-200/80 bg-white/80 p-8 transition-all duration-300 hover:border-emerald-500/30 dark:border-white/10 dark:bg-white/[0.02] dark:hover:border-emerald-500/20 dark:hover:bg-white/[0.04]"
             >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:scale-110 transition-transform duration-300">
+              <div className="mb-6 flex items-center gap-4">
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 transition-transform duration-300 group-hover:scale-110 dark:border-white/10 dark:bg-white/5">
                   {icons[index % icons.length]}
                 </div>
-                <h3 className="text-xl font-bold text-white tracking-tight">
+                <h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
                   {skillGroup.category}
                 </h3>
               </div>
@@ -50,7 +66,7 @@ export default function Skills() {
                 {skillGroup.items.map((item, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1.5 text-sm font-medium text-slate-300 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 hover:text-white transition-colors cursor-default"
+                    className="cursor-default rounded-lg border border-slate-200/80 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-600 transition-all duration-200 hover:border-emerald-500/40 hover:bg-slate-100 hover:text-emerald-400 hover:shadow-[0_0_10px_rgba(16,185,129,0.2)] dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-emerald-400"
                   >
                     {item}
                   </span>
@@ -59,7 +75,7 @@ export default function Skills() {
             </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

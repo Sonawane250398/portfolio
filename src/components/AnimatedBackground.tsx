@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { memo, useEffect, useRef } from 'react';
 
-export default function AnimatedBackground() {
+function AnimatedBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -106,10 +106,11 @@ export default function AnimatedBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-[-1] pointer-events-none bg-slate-950 overflow-hidden">
+    <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden bg-slate-100 dark:bg-slate-950">
       {/* Soft gradient mesh */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-900/20 via-slate-950 to-slate-950"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-emerald-900/10 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-200/40 via-slate-100 to-slate-100 dark:from-indigo-900/20 dark:via-slate-950 dark:to-slate-950" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-emerald-200/25 via-transparent to-transparent dark:from-emerald-900/10" />
+      <div className="absolute inset-0 hidden dark:block bg-[radial-gradient(circle,rgba(16,185,129,0.06)_1px,transparent_1px)] [background-size:32px_32px]" />
       
       <canvas
         ref={canvasRef}
@@ -118,3 +119,5 @@ export default function AnimatedBackground() {
     </div>
   );
 }
+
+export default memo(AnimatedBackground);

@@ -1,57 +1,97 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Github, Code2, ChevronDown, ChevronUp, FolderGit2 } from 'lucide-react';
 import { resumeData } from '../data/resume';
 
+const expandTransition = { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const };
+
 export default function Projects() {
   const { projects } = resumeData;
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [expandedCardIndex, setExpandedCardIndex] = useState<number | null>(null);
+  const [sqlOpenIndex, setSqlOpenIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    setSqlOpenIndex(null);
+  }, [expandedCardIndex]);
 
   return (
-    <section id="projects" className="py-24 px-6 lg:px-12 relative z-10">
-      <div className="max-w-5xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="mb-6"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
+    <section className="relative z-10 px-6 py-24 lg:px-12">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+        className="mx-auto max-w-5xl"
+      >
+        <div className="mb-6">
+          <h2 className="mb-4 text-4xl font-bold tracking-tight text-slate-900 dark:text-white md:text-5xl">
             Featured Projects
           </h2>
-          <div className="h-1 w-20 bg-emerald-500 rounded-full mb-6" />
-          <p className="text-slate-400 text-base md:text-lg max-w-2xl">
+          <div className="mb-6 h-1 w-20 rounded-full bg-emerald-500" />
+          <p className="max-w-2xl text-base text-slate-600 dark:text-slate-400 md:text-lg">
             The projects below simulate real enterprise financial reporting workflows used in data pipelines,
             reconciliation systems, and audit-ready reporting environments.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
-          {projects.map((project, index) => (
+        <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
+          {projects.map((project, index) => {
+            const isCardExpanded = expandedCardIndex === index;
+            const hasExpandable =
+              Boolean(
+                ('demoRows' in project && project.demoRows && project.demoRows.length > 0) ||
+                  project.sqlSnippet ||
+                  (project.links && project.links.length > 0),
+              );
+
+            return (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative rounded-2xl bg-white/[0.02] border border-white/10 p-8 hover:bg-white/[0.04] hover:border-emerald-500/30 transition-all duration-300 flex flex-col h-full"
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.1 }}
+              role={hasExpandable && !isCardExpanded ? 'button' : undefined}
+              tabIndex={hasExpandable && !isCardExpanded ? 0 : undefined}
+              onClick={
+                hasExpandable
+                  ? () =>
+                      setExpandedCardIndex((prev) => (prev === index ? null : index))
+                  : undefined
+              }
+              onKeyDown={
+                hasExpandable && !isCardExpanded
+                  ? (e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setExpandedCardIndex((prev) => (prev === index ? null : index));
+                      }
+                    }
+                  : undefined
+              }
+              style={
+                isCardExpanded
+                  ? { boxShadow: '0 0 20px rgba(16, 185, 129, 0.15)' }
+                  : undefined
+              }
+              className={`group relative flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white/80 p-8 transition-all duration-300 hover:border-[rgba(16,185,129,0.4)] hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] hover:bg-white dark:border-[rgba(255,255,255,0.05)] dark:bg-white/[0.02] dark:hover:border-[rgba(16,185,129,0.4)] dark:hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] dark:hover:bg-white/[0.04] ${
+                hasExpandable ? 'cursor-pointer' : ''
+              }`}
             >
               {/* Header */}
-              <div className="flex items-start justify-between mb-6">
-                <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-400">
-                  <FolderGit2 className="w-8 h-8" />
+              <div className="mb-6 flex items-start justify-between">
+                <div className="rounded-xl bg-emerald-500/10 p-3 text-emerald-600 dark:text-emerald-400">
+                  <FolderGit2 className="h-8 w-8" />
                 </div>
-                {/* GitHub button */}
-                {project.links && project.links.length > 0 && (
-                  <div className="flex gap-2">
+                {isCardExpanded && project.links && project.links.length > 0 && (
+                  <div className="flex gap-2" onClick={(e) => e.stopPropagation()}>
                     {project.links.map((link, i) => (
                       <a
                         key={i}
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-emerald-400 hover:border-emerald-400/30 transition-colors text-sm font-medium"
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200/80 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-600 transition-colors hover:border-emerald-400/40 hover:text-emerald-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:text-emerald-400"
                       >
                         <Github className="w-4 h-4" />
                         {link.label}
@@ -62,47 +102,276 @@ export default function Projects() {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-colors">
+              <h3 className="mb-4 text-xl font-bold text-slate-900 transition-colors group-hover:text-emerald-600 dark:text-white dark:group-hover:text-emerald-400">
                 {project.title}
               </h3>
 
               {/* Bullets */}
               <div className="flex-grow">
-                <ul className="space-y-3 mb-6">
+                <ul className="mb-6 space-y-3">
                   {project.bullets.map((bullet, i) => (
-                    <li key={i} className="text-slate-300 leading-relaxed text-sm">
+                    <li key={i} className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                       {bullet}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Example Output (if present) */}
-              {project.exampleOutput && (
-                <div className="mb-6 rounded-xl bg-slate-900/80 border border-white/10 p-4">
-                  <p className="text-xs text-slate-500 uppercase tracking-widest font-medium mb-3">Sample Output</p>
-                  <div className="space-y-1 font-mono text-xs">
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">Source Amount</span>
-                      <span className="text-slate-200">{project.exampleOutput.source}</span>
+              <AnimatePresence initial={false}>
+                {isCardExpanded && (
+                  <motion.div
+                    key="project-expanded-extra"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={expandTransition}
+                    className="overflow-hidden"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+              {/* Demo tables — distinct styling per project */}
+              {'demoRows' in project && project.demoRows && project.demoRows.length > 0 && (
+                <div className="mb-6 min-w-0">
+                  {'account' in project.demoRows[0] && (
+                    <div className="overflow-x-auto rounded-xl border border-emerald-500/20 bg-slate-900 p-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
+                      <div className="mb-3 flex items-center gap-2">
+                        <span className="rounded border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+                          Sample output
+                        </span>
+                        <span className="text-[10px] uppercase tracking-widest text-slate-600">Demo</span>
+                      </div>
+                      <table className="w-full min-w-[640px] text-left text-xs">
+                        <thead>
+                          <tr className="border-b border-[0.5px] border-white/15">
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Account</th>
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Source amount</th>
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Reporting amount</th>
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Variance</th>
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Status</th>
+                            <th className="pb-2.5 text-[10px] font-medium uppercase tracking-wider text-slate-500">Severity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {(project.demoRows as { account: string; source: string; reporting: string; variance: string; status: string; severity: string }[]).map((row, ri) => (
+                            <tr key={ri} className="border-b border-[0.5px] border-white/10">
+                              <td className="py-2.5 pr-3 font-mono text-slate-200">{row.account}</td>
+                              <td className="py-2.5 pr-3 font-mono text-slate-300">{row.source}</td>
+                              <td className="py-2.5 pr-3 font-mono text-slate-300">{row.reporting}</td>
+                              <td className="py-2.5 pr-3 font-mono text-slate-300">{row.variance}</td>
+                              <td className="py-2.5 pr-3 font-mono">
+                                <span
+                                  className={
+                                    row.status === 'MATCHED'
+                                      ? 'text-emerald-400'
+                                      : row.status === 'MISSING'
+                                        ? 'text-red-400'
+                                        : 'text-yellow-400'
+                                  }
+                                >
+                                  {row.status}
+                                </span>
+                              </td>
+                              <td className="py-2.5 font-mono">
+                                <span
+                                  className={
+                                    row.severity === 'CRITICAL'
+                                      ? 'text-red-400'
+                                      : row.severity === 'HIGH'
+                                        ? 'text-orange-400'
+                                        : row.severity === 'MEDIUM'
+                                          ? 'text-yellow-400'
+                                          : 'text-slate-500'
+                                  }
+                                >
+                                  {row.severity}
+                                </span>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">Reporting Amount</span>
-                      <span className="text-slate-200">{project.exampleOutput.reporting}</span>
+                  )}
+
+                  {'domain' in project.demoRows[0] && (
+                    <div className="overflow-x-auto rounded-xl border border-sky-500/25 bg-slate-900 p-4">
+                      <div className="mb-3 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                        <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">Control scorecard</span>
+                        <span className="w-fit rounded border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+                          Demo
+                        </span>
+                      </div>
+                      <table className="w-full min-w-[600px] text-left text-xs">
+                        <thead>
+                          <tr className="border-b border-[0.5px] border-white/15">
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Domain</th>
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Total checks</th>
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Passed</th>
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Failed</th>
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Pass rate</th>
+                            <th className="pb-2.5 text-[10px] font-medium uppercase tracking-wider text-slate-500">Risk</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {(project.demoRows as { domain: string; totalChecks: number; passed: number; failed: number; passRate: string; risk: string }[]).map((row, ri) => (
+                            <tr key={ri} className="border-b border-[0.5px] border-white/10">
+                              <td className="py-2.5 pr-3 text-sm font-medium text-slate-200">{row.domain}</td>
+                              <td className="py-2.5 pr-3 font-mono text-slate-300">{row.totalChecks}</td>
+                              <td className="py-2.5 pr-3 font-mono text-emerald-400/90">{row.passed}</td>
+                              <td className="py-2.5 pr-3 font-mono text-red-400/90">{row.failed}</td>
+                              <td className="py-2.5 pr-3 font-mono text-slate-300">{row.passRate}</td>
+                              <td className="py-2.5 font-mono">
+                                <span
+                                  className={
+                                    row.risk === 'LOW'
+                                      ? 'text-emerald-400'
+                                      : row.risk === 'HIGH'
+                                        ? 'text-orange-400'
+                                        : 'text-red-400 font-semibold'
+                                  }
+                                >
+                                  {row.risk}
+                                </span>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">Variance</span>
-                      <span className="text-amber-400 font-semibold">{project.exampleOutput.variance}</span>
+                  )}
+
+                  {'testId' in project.demoRows[0] && (
+                    <div className="overflow-x-auto rounded-xl border border-amber-500/25 bg-slate-900 p-4">
+                      <div className="mb-3 flex items-center gap-2">
+                        <span className="rounded border border-white/10 bg-amber-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-amber-200/80">
+                          Sample output
+                        </span>
+                      </div>
+                      <table className="w-full min-w-[720px] text-left text-xs">
+                        <thead>
+                          <tr className="border-b border-[0.5px] border-white/15">
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Test ID</th>
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Scenario</th>
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Type</th>
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Status</th>
+                            <th className="pb-2.5 text-[10px] font-medium uppercase tracking-wider text-slate-500">Severity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {(project.demoRows as { testId: string; scenario: string; type: string; status: string; severity: string }[]).map((row, ri) => (
+                            <tr key={ri} className="border-b border-[0.5px] border-white/10">
+                              <td className="py-2.5 pr-3 font-mono text-slate-200">{row.testId}</td>
+                              <td className="py-2.5 pr-3 text-slate-300">{row.scenario}</td>
+                              <td className="py-2.5 pr-3 font-mono text-slate-500">{row.type}</td>
+                              <td className="py-2.5 pr-3 font-mono">
+                                <span
+                                  className={
+                                    row.status === 'PASS'
+                                      ? 'text-emerald-400'
+                                      : row.status === 'BLOCKED'
+                                        ? 'text-orange-400'
+                                        : 'text-red-400 font-semibold'
+                                  }
+                                >
+                                  {row.status}
+                                </span>
+                              </td>
+                              <td className="py-2.5 font-mono text-slate-500">{row.severity}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                      {'releaseReadiness' in project && project.releaseReadiness && (
+                        <div className="mt-4 border-t border-[0.5px] border-white/10 pt-4">
+                          <div className="mb-3 flex flex-wrap gap-2">
+                            {[
+                              { label: 'Total', value: project.releaseReadiness.total, mono: 'text-slate-200' },
+                              { label: 'Passed', value: project.releaseReadiness.passed, mono: 'text-emerald-400' },
+                              { label: 'Failed', value: project.releaseReadiness.failed, mono: 'text-red-400' },
+                              { label: 'Blocked', value: project.releaseReadiness.blocked, mono: 'text-orange-400' },
+                              { label: 'Score', value: project.releaseReadiness.score, mono: 'text-emerald-300' },
+                            ].map((chip) => (
+                              <span
+                                key={chip.label}
+                                className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-slate-950/80 px-3 py-1.5 text-[11px] text-slate-400"
+                              >
+                                <span className="uppercase tracking-wide">{chip.label}</span>
+                                <span className={`font-mono text-xs font-semibold ${chip.mono}`}>{chip.value}</span>
+                              </span>
+                            ))}
+                          </div>
+                          <div className="rounded-lg border border-amber-500/35 bg-amber-500/10 px-4 py-3 text-center">
+                            <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-200/70">Status</p>
+                            <p className="mt-1 text-base font-bold tracking-tight text-amber-400 md:text-lg">
+                              {project.releaseReadiness.status}
+                            </p>
+                          </div>
+                        </div>
+                      )}
                     </div>
-                    <div className="border-t border-white/5 pt-2 mt-2 flex justify-between">
-                      <span className="text-slate-400">Status</span>
-                      <span className="text-red-400 font-semibold">{project.exampleOutput.status}</span>
+                  )}
+
+                  {'category' in project.demoRows[0] && (
+                    <div className="overflow-x-auto rounded-xl border border-violet-500/25 bg-slate-900 p-4">
+                      <div className="mb-3 flex items-center gap-2">
+                        <span className="rounded border border-violet-400/20 bg-violet-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-violet-200/80">
+                          Demo
+                        </span>
+                        <span className="text-[10px] uppercase tracking-widest text-slate-600">Traceability</span>
+                      </div>
+                      <table className="w-full min-w-[640px] text-left text-xs">
+                        <thead>
+                          <tr className="border-b border-[0.5px] border-white/15">
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Category</th>
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Requirements</th>
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Test cases</th>
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Covered</th>
+                            <th className="pb-2.5 text-[10px] font-medium uppercase tracking-wider text-slate-500">Coverage %</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {(project.demoRows as { category: string; totalReqs: number; testCases: number; covered: number; coveragePct: string }[]).map((row, ri) => {
+                            const pct = Math.min(100, Math.max(0, parseInt(row.coveragePct.replace(/\D/g, ''), 10) || 0));
+                            return (
+                              <tr key={ri} className="border-b border-[0.5px] border-white/10">
+                                <td className="py-2.5 pr-3 text-sm font-medium text-slate-200">{row.category}</td>
+                                <td className="py-2.5 pr-3 font-mono text-slate-300">{row.totalReqs}</td>
+                                <td className="py-2.5 pr-3 font-mono text-slate-300">{row.testCases}</td>
+                                <td className="py-2.5 pr-3 font-mono text-slate-300">{row.covered}</td>
+                                <td className="py-2.5 min-w-[120px]">
+                                  <div className="flex items-center gap-2">
+                                    <div className="h-2 min-w-[72px] flex-1 overflow-hidden rounded-full bg-slate-800">
+                                      <div
+                                        className="h-full rounded-full bg-emerald-500 transition-[width]"
+                                        style={{ width: `${pct}%` }}
+                                      />
+                                    </div>
+                                    <span className="shrink-0 font-mono text-emerald-400">{row.coveragePct}</span>
+                                  </div>
+                                </td>
+                              </tr>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                      {'rtmSummary' in project && project.rtmSummary && (
+                        <div className="mt-4 flex flex-wrap gap-2 border-t border-[0.5px] border-white/10 pt-4">
+                          {[
+                            `${project.rtmSummary.totalReqs} Requirements`,
+                            `${project.rtmSummary.coveragePct} Coverage`,
+                            `${project.rtmSummary.sprints} Sprints`,
+                            `${project.rtmSummary.openDefects} Open Defects`,
+                          ].map((label) => (
+                            <span
+                              key={label}
+                              className="inline-flex rounded-full border border-white/10 bg-slate-950/90 px-3 py-1.5 text-[11px] font-mono text-slate-300"
+                            >
+                              {label}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">Severity</span>
-                      <span className="text-red-400 font-semibold">{project.exampleOutput.severity}</span>
-                    </div>
-                  </div>
+                  )}
                 </div>
               )}
 
@@ -110,23 +379,27 @@ export default function Projects() {
               {project.sqlSnippet && (
                 <div className="mb-6">
                   <button
-                    onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
-                    className="inline-flex items-center gap-2 text-xs font-medium text-emerald-400 hover:text-emerald-300 transition-colors mb-2"
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSqlOpenIndex((prev) => (prev === index ? null : index));
+                    }}
+                    className="mb-2 inline-flex items-center gap-2 text-xs font-medium text-emerald-600 transition-colors hover:text-emerald-500 dark:text-emerald-400 dark:hover:text-emerald-300"
                   >
                     <Code2 className="w-4 h-4" />
-                    {expandedIndex === index ? 'Hide SQL' : 'View SQL'}
-                    {expandedIndex === index ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+                    {sqlOpenIndex === index ? 'Hide SQL' : 'View SQL'}
+                    {sqlOpenIndex === index ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
                   </button>
-                  <AnimatePresence>
-                    {expandedIndex === index && (
+                  <AnimatePresence initial={false}>
+                    {sqlOpenIndex === index && (
                       <motion.div
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
+                        transition={expandTransition}
                         className="overflow-hidden"
                       >
-                        <pre className="rounded-xl bg-slate-900 border border-white/10 p-4 text-xs font-mono text-emerald-300 overflow-x-auto leading-relaxed">
+                        <pre className="overflow-x-auto rounded-xl border border-slate-200/80 bg-slate-900 p-4 font-mono text-xs leading-relaxed text-emerald-300 dark:border-white/10">
                           <code>{project.sqlSnippet}</code>
                         </pre>
                       </motion.div>
@@ -134,22 +407,42 @@ export default function Projects() {
                   </AnimatePresence>
                 </div>
               )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* Stack tags */}
-              <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-white/5">
+              <div className="mt-auto flex flex-wrap gap-2 border-t border-slate-200/60 pt-6 dark:border-white/5">
                 {project.stack.map((tech, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 text-xs font-medium text-emerald-400 bg-emerald-400/10 rounded-full border border-emerald-400/20"
+                    className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-700 dark:border-emerald-400/20 dark:text-emerald-400"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
+
+              {hasExpandable &&
+                (isCardExpanded ? (
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setExpandedCardIndex(null);
+                    }}
+                    className="mt-4 text-sm font-medium text-emerald-600 dark:text-emerald-400"
+                  >
+                    Collapse ↑
+                  </button>
+                ) : (
+                  <p className="mt-4 text-sm text-emerald-600/70 dark:text-emerald-400/60">View Demo →</p>
+                ))}
             </motion.div>
-          ))}
+            );
+          })}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
