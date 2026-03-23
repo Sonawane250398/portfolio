@@ -32,9 +32,9 @@ export default function Experience({ mode = 'accordion' }: ExperienceProps) {
   return (
     <section className="relative z-10 px-6 py-24 lg:px-12">
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-100px' }}
+        viewport={{ once: true, margin: '0px' }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className="mx-auto max-w-5xl"
       >
@@ -52,9 +52,9 @@ export default function Experience({ mode = 'accordion' }: ExperienceProps) {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-100px' }}
+                viewport={{ once: true, margin: '0px' }}
                 transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.1 }}
                 className={`relative overflow-hidden rounded-2xl border transition-all duration-300 ${
                   expanded
