@@ -38,7 +38,7 @@ export default function Experience({ mode = 'accordion' }: ExperienceProps) {
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className="mx-auto max-w-5xl"
       >
-        <div className="sticky top-0 z-10 mb-16 bg-slate-950/80 py-3 backdrop-blur-xl">
+        <div className="z-10 mb-16 bg-slate-950/80 py-3 backdrop-blur-xl">
           <h2 className="mb-4 text-4xl font-bold tracking-tight text-slate-900 dark:text-white md:text-5xl">
             Experience
           </h2>
