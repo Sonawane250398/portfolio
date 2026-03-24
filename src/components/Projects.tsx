@@ -192,6 +192,45 @@ export default function Projects() {
                     </div>
                   )}
 
+                  {'check' in project.demoRows[0] && (
+                    <div className="overflow-x-auto rounded-xl border border-emerald-500/25 bg-slate-900 p-4">
+                      <div className="mb-3 flex items-center gap-2">
+                        <span className="rounded border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+                          Pipeline checks
+                        </span>
+                        <span className="text-[10px] uppercase tracking-widest text-slate-600">Demo</span>
+                      </div>
+                      <table className="w-full min-w-[700px] text-left text-xs">
+                        <thead>
+                          <tr className="border-b border-[0.5px] border-white/15">
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Check type</th>
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Total</th>
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Passed</th>
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Failed</th>
+                            <th className="pb-2.5 pr-3 text-[10px] font-medium uppercase tracking-wider text-slate-500">Pass rate</th>
+                            <th className="pb-2.5 text-[10px] font-medium uppercase tracking-wider text-slate-500">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {(project.demoRows as { check: string; total: number; passed: number; failed: number; passRate: string; status: string }[]).map((row, ri) => (
+                            <tr key={ri} className="border-b border-[0.5px] border-white/10">
+                              <td className="py-2.5 pr-3 text-sm font-medium text-slate-200">{row.check}</td>
+                              <td className="py-2.5 pr-3 font-mono text-slate-300">{row.total}</td>
+                              <td className="py-2.5 pr-3 font-mono text-emerald-400/90">{row.passed}</td>
+                              <td className="py-2.5 pr-3 font-mono text-red-400/90">{row.failed}</td>
+                              <td className="py-2.5 pr-3 font-mono text-slate-300">{row.passRate}</td>
+                              <td className="py-2.5 font-mono">
+                                <span className={row.status === 'PASS' ? 'text-emerald-400' : 'text-red-400 font-semibold'}>
+                                  {row.status}
+                                </span>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+
                   {'domain' in project.demoRows[0] && (
                     <div className="overflow-x-auto rounded-xl border border-sky-500/25 bg-slate-900 p-4">
                       <div className="mb-3 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">

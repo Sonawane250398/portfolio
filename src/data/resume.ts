@@ -80,11 +80,11 @@ export const resumeData = {
         "Processed 1,000 transactions end-to-end, detected and classified 100 discrepancies, and achieved 90% pass rate on variance checks."
       ],
       demoRows: [
-        { account: "ACC-1001", source: "$1,205,432", reporting: "$1,201,211", variance: "$4,221", status: "MISMATCH", severity: "HIGH" },
-        { account: "ACC-1002", source: "$843,100", reporting: "$843,100", variance: "$0", status: "MATCHED", severity: "NONE" },
-        { account: "ACC-1003", source: "$512,000", reporting: "$0", variance: "$512,000", status: "MISSING", severity: "CRITICAL" },
-        { account: "ACC-1004", source: "$320,750", reporting: "$319,900", variance: "$850", status: "MISMATCH", severity: "MEDIUM" },
-        { account: "ACC-1005", source: "$198,400", reporting: "$198,400", variance: "$0", status: "MATCHED", severity: "NONE" }
+        { check: "Null Check", total: 1000, passed: 1000, failed: 0, passRate: "100%", status: "PASS" },
+        { check: "Duplicate Check", total: 1000, passed: 1000, failed: 0, passRate: "100%", status: "PASS" },
+        { check: "Variance Check", total: 1000, passed: 900, failed: 100, passRate: "90%", status: "FAIL" },
+        { check: "Category Validation", total: 1000, passed: 1000, failed: 0, passRate: "100%", status: "PASS" },
+        { check: "Currency Validation", total: 1000, passed: 1000, failed: 0, passRate: "100%", status: "PASS" }
       ],
       links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/financial-reporting-pipeline" }]
     },
