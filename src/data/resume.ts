@@ -62,6 +62,33 @@ export const resumeData = {
   ],
   projects: [
     {
+      title: "Financial Data Quality & Reporting Pipeline",
+      date: "Jan 2026 – Mar 2026",
+      description: "Built an automated Python pipeline to validate financial transaction data across source and reporting systems. Runs 5 automated validation checks — null detection, duplicate checks, variance analysis, category and currency validation — and classifies every exception by severity (CRITICAL/HIGH/MEDIUM/LOW). Outputs a structured exception report and visual dashboard showing pass rates by department, variance by category, and exception trends over time.",
+      stack: ["Python", "Pandas", "Matplotlib", "Seaborn", "Faker", "Data Validation", "ETL"],
+      github: "https://github.com/Sonawane250398/financial-reporting-pipeline",
+      highlights: [
+        "1,000 transactions processed end-to-end",
+        "100 discrepancies detected and classified automatically",
+        "90% pass rate on variance checks",
+        "0 manual steps — fully automated from ingestion to dashboard"
+      ],
+      bullets: [
+        "Built an automated Python pipeline to validate financial transaction data across source and reporting systems.",
+        "Implemented 5 automated validation checks — null detection, duplicate checks, variance analysis, category validation, and currency validation.",
+        "Classified each exception by severity (CRITICAL/HIGH/MEDIUM/LOW) and generated structured reports and dashboards.",
+        "Processed 1,000 transactions end-to-end, detected and classified 100 discrepancies, and achieved 90% pass rate on variance checks."
+      ],
+      demoRows: [
+        { account: "ACC-1001", source: "$1,205,432", reporting: "$1,201,211", variance: "$4,221", status: "MISMATCH", severity: "HIGH" },
+        { account: "ACC-1002", source: "$843,100", reporting: "$843,100", variance: "$0", status: "MATCHED", severity: "NONE" },
+        { account: "ACC-1003", source: "$512,000", reporting: "$0", variance: "$512,000", status: "MISSING", severity: "CRITICAL" },
+        { account: "ACC-1004", source: "$320,750", reporting: "$319,900", variance: "$850", status: "MISMATCH", severity: "MEDIUM" },
+        { account: "ACC-1005", source: "$198,400", reporting: "$198,400", variance: "$0", status: "MATCHED", severity: "NONE" }
+      ],
+      links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/financial-reporting-pipeline" }]
+    },
+    {
       title: "Source-to-Report Financial Reconciliation Platform",
       stack: ["SQL", "CTEs", "Window Functions", "Aggregations"],
       bullets: [
