@@ -18,7 +18,7 @@ export default function Hero() {
   ];
 
   const resumeUrl =
-    'https://drive.google.com/file/d/1zu_mg474cROYei6JutU4z9pi0wDtER83/view?usp=sharing';
+    'https://drive.google.com/file/d/11OrM51iCn21Uh6rPhRO9j55B_dPmCn7Y/view?usp=sharing';
 
   useEffect(() => {
     const el = statsRef.current;
