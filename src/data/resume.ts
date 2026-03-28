@@ -83,7 +83,8 @@ export const resumeData = {
       links: [
         { label: "Live", url: "https://financial-dashboard-bu2r.onrender.com" },
         { label: "GitHub", url: "https://github.com/Sonawane250398/financial-dashboard" }
-      ]
+      ],
+      liveEmbedUrl: "https://financial-dashboard-bu2r.onrender.com"
     },
     {
       title: "Financial Data Quality & Reporting Pipeline",

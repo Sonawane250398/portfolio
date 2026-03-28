@@ -9,9 +9,21 @@ export default function Projects() {
   const { projects } = resumeData;
   const [expandedCardIndex, setExpandedCardIndex] = useState<number | null>(null);
   const [sqlOpenIndex, setSqlOpenIndex] = useState<number | null>(null);
+  const [embedLoadedByIndex, setEmbedLoadedByIndex] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
     setSqlOpenIndex(null);
+  }, [expandedCardIndex]);
+
+  useEffect(() => {
+    setEmbedLoadedByIndex((prev) => {
+      const next = { ...prev };
+      for (const key of Object.keys(next)) {
+        const idx = Number(key);
+        if (expandedCardIndex !== idx) delete next[idx];
+      }
+      return next;
+    });
   }, [expandedCardIndex]);
 
   return (
@@ -128,6 +140,26 @@ export default function Projects() {
                     className="overflow-hidden"
                     onClick={(e) => e.stopPropagation()}
                   >
+              {'liveEmbedUrl' in project && project.liveEmbedUrl && (
+                <div className="relative mb-6 min-h-[500px] w-full min-w-0">
+                  {!embedLoadedByIndex[index] && (
+                    <div
+                      className="absolute inset-0 z-10 flex items-center justify-center rounded-[8px] bg-slate-100 text-sm font-medium text-slate-600 dark:bg-slate-900 dark:text-slate-300"
+                      aria-live="polite"
+                    >
+                      Loading dashboard...
+                    </div>
+                  )}
+                  <iframe
+                    title={`${project.title} — live dashboard`}
+                    src={project.liveEmbedUrl}
+                    className="block h-[500px] w-full rounded-[8px] border-0 bg-white dark:bg-slate-950"
+                    onLoad={() =>
+                      setEmbedLoadedByIndex((prev) => ({ ...prev, [index]: true }))
+                    }
+                  />
+                </div>
+              )}
               {/* Demo tables — distinct styling per project */}
               {'demoRows' in project && project.demoRows && project.demoRows.length > 0 && (
                 <div className="mb-6 min-w-0">
