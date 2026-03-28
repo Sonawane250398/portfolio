@@ -10,6 +10,20 @@ const DASHBOARD_EMBED_BASE_W = 1400;
 const DASHBOARD_EMBED_BASE_H = 1000;
 const DASHBOARD_EMBED_VIEWPORT_H = 700;
 
+function useShowDashboardEmbed() {
+  const [show, setShow] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(min-width: 769px)').matches,
+  );
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 769px)');
+    const onChange = () => setShow(mq.matches);
+    setShow(mq.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+  return show;
+}
+
 function LiveDashboardEmbed({
   src,
   title,
@@ -41,7 +55,7 @@ function LiveDashboardEmbed({
   return (
     <div
       ref={containerRef}
-      className="dashboard-iframe relative h-[700px] w-full overflow-hidden rounded-[8px] bg-white dark:bg-slate-950"
+      className="relative h-[700px] w-full overflow-hidden rounded-[8px] bg-white dark:bg-slate-950"
     >
       {!loaded && (
         <div
@@ -69,6 +83,7 @@ function LiveDashboardEmbed({
 
 export default function Projects() {
   const { projects } = resumeData;
+  const showDashboardEmbed = useShowDashboardEmbed();
   const [expandedCardIndex, setExpandedCardIndex] = useState<number | null>(null);
   const [sqlOpenIndex, setSqlOpenIndex] = useState<number | null>(null);
   const [embedLoadedByIndex, setEmbedLoadedByIndex] = useState<Record<number, boolean>>({});
@@ -224,27 +239,53 @@ export default function Projects() {
                   >
                     Open Full Dashboard →
                   </a>
-                  <a
-                    href={project.liveEmbedUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="dashboard-mobile-btn mb-3 min-h-11 w-full rounded-lg border border-emerald-500/50 bg-emerald-500/15 py-3 text-center text-sm font-semibold leading-none text-emerald-800 transition-colors hover:border-emerald-500/70 hover:bg-emerald-500/25 dark:border-emerald-400/40 dark:bg-emerald-500/15 dark:text-emerald-300 dark:hover:bg-emerald-400/15"
-                  >
-                    Open Live Dashboard →
-                  </a>
-                  <div className="-mx-5 w-[calc(100%+2.5rem)] max-w-none min-[769px]:-mx-8 min-[769px]:w-[calc(100%+4rem)]">
-                    <LiveDashboardEmbed
-                      src={project.liveEmbedUrl}
-                      title={`${project.title} — live dashboard`}
-                      loaded={Boolean(embedLoadedByIndex[index])}
-                      onLoad={() =>
-                        setEmbedLoadedByIndex((prev) => ({ ...prev, [index]: true }))
+                  <div className="mb-3 flex flex-col gap-3 min-[769px]:hidden" onClick={(e) => e.stopPropagation()}>
+                    <p className="text-center text-[12px] leading-snug text-slate-500 dark:text-slate-400">
+                      Interactive dashboard — best viewed on desktop
+                    </p>
+                    <a
+                      href={project.liveEmbedUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-12 w-full items-center justify-center rounded-lg bg-emerald-600 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400"
+                    >
+                      🚀 Open Live Dashboard
+                    </a>
+                    <a
+                      href={
+                        project.links?.find((l) => l.label === 'GitHub')?.url ??
+                        'https://github.com/Sonawane250398/financial-dashboard'
                       }
-                    />
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-12 w-full items-center justify-center rounded-lg border-2 border-emerald-600 bg-transparent text-sm font-semibold text-emerald-700 transition-colors hover:bg-emerald-500/10 dark:border-emerald-400 dark:text-emerald-400 dark:hover:bg-emerald-500/10"
+                    >
+                      📂 View Code on GitHub
+                    </a>
                   </div>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
-                    First load may take 30–50 seconds to wake up (free hosting)
+                  {!embedLoadedByIndex[index] && (
+                    <p
+                      className="mb-2 hidden text-center text-xs font-medium leading-snug text-amber-800 dark:text-amber-300 min-[769px]:block"
+                      role="status"
+                      aria-live="polite"
+                    >
+                      ⏳ First load takes 30–60 seconds to wake up — free hosting. Please wait.
+                    </p>
+                  )}
+                  {showDashboardEmbed && (
+                    <div className="-mx-5 w-[calc(100%+2.5rem)] max-w-none min-[769px]:-mx-8 min-[769px]:w-[calc(100%+4rem)]">
+                      <LiveDashboardEmbed
+                        src={project.liveEmbedUrl}
+                        title={`${project.title} — live dashboard`}
+                        loaded={Boolean(embedLoadedByIndex[index])}
+                        onLoad={() =>
+                          setEmbedLoadedByIndex((prev) => ({ ...prev, [index]: true }))
+                        }
+                      />
+                    </div>
+                  )}
+                  <p className="mt-2 hidden text-sm leading-relaxed text-slate-500 dark:text-slate-400 min-[769px]:block">
+                    First load may take 30–60 seconds to wake up (free hosting)
                   </p>
                 </div>
               )}

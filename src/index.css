@@ -101,20 +101,7 @@ body {
   animation: hero-shimmer 0.6s ease-out;
 }
 
-/* Financial Analytics Dashboard: hide iframe on small viewports; show full-width CTA instead */
-@media (max-width: 768px) {
-  .dashboard-iframe {
-    display: none;
-  }
-  .dashboard-mobile-btn {
-    display: block;
-  }
-}
-@media (min-width: 769px) {
-  .dashboard-mobile-btn {
-    display: none;
-  }
-}
+/* Financial Analytics Dashboard iframe only rendered on desktop (769px+) in React — no mobile iframe CSS needed */
 
 @media (max-width: 768px) {
   .project-demo-panel th,
