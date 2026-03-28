@@ -1,9 +1,71 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Github, Code2, ChevronDown, ChevronUp, FolderGit2 } from 'lucide-react';
 import { resumeData } from '../data/resume';
 
 const expandTransition = { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const };
+
+/** Logical size of the embedded Dash layout; scaled down to fit container without inner scrollbars. */
+const DASHBOARD_EMBED_BASE_W = 1400;
+const DASHBOARD_EMBED_BASE_H = 1000;
+const DASHBOARD_EMBED_VIEWPORT_H = 700;
+
+function LiveDashboardEmbed({
+  src,
+  title,
+  loaded,
+  onLoad,
+}: {
+  src: string;
+  title: string;
+  loaded: boolean;
+  onLoad: () => void;
+}) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+
+  useLayoutEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const update = () => {
+      const w = el.clientWidth;
+      const s = Math.min(w / DASHBOARD_EMBED_BASE_W, DASHBOARD_EMBED_VIEWPORT_H / DASHBOARD_EMBED_BASE_H);
+      setScale(s > 0 ? s : 1);
+    };
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      className="relative h-[700px] w-full overflow-hidden rounded-[8px] bg-white dark:bg-slate-950"
+    >
+      {!loaded && (
+        <div
+          className="absolute inset-0 z-10 flex items-center justify-center rounded-[8px] bg-slate-100 text-sm font-medium text-slate-600 dark:bg-slate-900 dark:text-slate-300"
+          aria-live="polite"
+        >
+          Loading dashboard...
+        </div>
+      )}
+      <iframe
+        title={title}
+        src={src}
+        className="pointer-events-auto absolute left-0 top-0 border-0"
+        style={{
+          width: DASHBOARD_EMBED_BASE_W,
+          height: DASHBOARD_EMBED_BASE_H,
+          transform: `scale(${scale})`,
+          transformOrigin: 'top left',
+        }}
+        onLoad={onLoad}
+      />
+    </div>
+  );
+}
 
 export default function Projects() {
   const { projects } = resumeData;
@@ -88,6 +150,10 @@ export default function Projects() {
               }
               className={`group relative flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white/80 p-8 transition-all duration-300 hover:border-[rgba(16,185,129,0.4)] hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] hover:bg-white dark:border-[rgba(255,255,255,0.05)] dark:bg-white/[0.02] dark:hover:border-[rgba(16,185,129,0.4)] dark:hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] dark:hover:bg-white/[0.04] ${
                 hasExpandable ? 'cursor-pointer' : ''
+              } ${
+                isCardExpanded && 'liveEmbedUrl' in project && project.liveEmbedUrl
+                  ? 'z-[2] lg:col-span-2'
+                  : ''
               }`}
             >
               {/* Header */}
@@ -137,27 +203,37 @@ export default function Projects() {
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={expandTransition}
-                    className="overflow-hidden"
+                    className={
+                      isCardExpanded && 'liveEmbedUrl' in project && project.liveEmbedUrl
+                        ? 'overflow-visible'
+                        : 'overflow-hidden'
+                    }
                     onClick={(e) => e.stopPropagation()}
                   >
               {'liveEmbedUrl' in project && project.liveEmbedUrl && (
-                <div className="relative mb-6 min-h-[500px] w-full min-w-0">
-                  {!embedLoadedByIndex[index] && (
-                    <div
-                      className="absolute inset-0 z-10 flex items-center justify-center rounded-[8px] bg-slate-100 text-sm font-medium text-slate-600 dark:bg-slate-900 dark:text-slate-300"
-                      aria-live="polite"
-                    >
-                      Loading dashboard...
-                    </div>
-                  )}
-                  <iframe
-                    title={`${project.title} — live dashboard`}
-                    src={project.liveEmbedUrl}
-                    className="block h-[500px] w-full rounded-[8px] border-0 bg-white dark:bg-slate-950"
-                    onLoad={() =>
-                      setEmbedLoadedByIndex((prev) => ({ ...prev, [index]: true }))
-                    }
-                  />
+                <div className="mb-6 min-w-0 w-full">
+                  <a
+                    href={project.liveEmbedUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="mb-3 inline-flex items-center gap-1 rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-4 py-2.5 text-sm font-semibold text-emerald-700 transition-colors hover:border-emerald-500/70 hover:bg-emerald-500/15 dark:border-emerald-400/35 dark:bg-emerald-500/10 dark:text-emerald-400 dark:hover:border-emerald-400/55 dark:hover:bg-emerald-400/10"
+                  >
+                    Open Full Dashboard →
+                  </a>
+                  <div className="-mx-8 w-[calc(100%+4rem)] max-w-none">
+                    <LiveDashboardEmbed
+                      src={project.liveEmbedUrl}
+                      title={`${project.title} — live dashboard`}
+                      loaded={Boolean(embedLoadedByIndex[index])}
+                      onLoad={() =>
+                        setEmbedLoadedByIndex((prev) => ({ ...prev, [index]: true }))
+                      }
+                    />
+                  </div>
+                  <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+                    First load may take 30–50 seconds to wake up (free hosting)
+                  </p>
                 </div>
               )}
               {/* Demo tables — distinct styling per project */}
