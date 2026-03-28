@@ -62,6 +62,30 @@ export const resumeData = {
   ],
   projects: [
     {
+      title: "Financial Analytics Dashboard",
+      date: "Mar 2026",
+      description:
+        "Interactive financial performance dashboard analyzing $174M in sales across 5 segments, 5 countries, and 3 years — with 8 dynamic charts that update in real time.",
+      stack: ["Python", "Dash", "Plotly", "Pandas", "Data Analytics"],
+      github: "https://github.com/Sonawane250398/financial-dashboard",
+      highlights: [
+        "$174M in sales analyzed across segments, countries, and years",
+        "5 segments · 5 countries · 3 years of performance data",
+        "8 dynamic Plotly charts with real-time updates",
+        "Python Dash app with Pandas-driven analytics"
+      ],
+      bullets: [
+        "Interactive financial performance dashboard analyzing $174M in sales across 5 segments, 5 countries, and 3 years.",
+        "Eight dynamic charts built with Plotly update in real time as users explore filters and selections.",
+        "Aggregations and segment views powered by Pandas for multi-year, multi-country analysis.",
+        "Deployed as a live web app so stakeholders can explore KPIs without static report cycles."
+      ],
+      links: [
+        { label: "Live", url: "https://financial-dashboard-bu2r.onrender.com" },
+        { label: "GitHub", url: "https://github.com/Sonawane250398/financial-dashboard" }
+      ]
+    },
+    {
       title: "Financial Data Quality & Reporting Pipeline",
       date: "Jan 2026 – Mar 2026",
       description: "Built an automated Python pipeline to validate financial transaction data across source and reporting systems. Runs 5 automated validation checks — null detection, duplicate checks, variance analysis, category and currency validation — and classifies every exception by severity (CRITICAL/HIGH/MEDIUM/LOW). Outputs a structured exception report and visual dashboard showing pass rates by department, variance by category, and exception trends over time.",
