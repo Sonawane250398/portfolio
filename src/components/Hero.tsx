@@ -68,7 +68,7 @@ export default function Hero() {
   }, [statsInView]);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-6 lg:px-12 overflow-hidden">
+    <section id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pb-16 pt-20 min-[769px]:px-6 lg:px-12">
       <div className="max-w-5xl mx-auto w-full z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -77,11 +77,11 @@ export default function Hero() {
           className="flex flex-col items-start gap-6"
         >
           <div className="space-y-3">
-            <h1 className="text-5xl font-bold tracking-tighter text-slate-900 dark:text-white md:text-7xl lg:text-8xl">
+            <h1 className="text-4xl font-bold tracking-tighter text-slate-900 dark:text-white min-[769px]:text-5xl md:text-7xl lg:text-8xl">
               {name}
             </h1>
-            <h2 className="text-2xl font-semibold text-slate-700 dark:text-slate-300 md:text-3xl">{title}</h2>
-            <p className="text-base font-medium tracking-wide text-emerald-600 dark:text-emerald-400 md:text-lg">
+            <h2 className="text-xl font-semibold text-slate-700 dark:text-slate-300 min-[769px]:text-2xl md:text-3xl">{title}</h2>
+            <p className="text-sm font-medium tracking-wide text-emerald-600 dark:text-emerald-400 min-[769px]:text-base md:text-lg">
               {subtitle.split('').map((char, i) => (
                 <motion.span
                   key={`${char}-${i}`}
@@ -101,7 +101,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300 md:text-xl"
+            className="max-w-2xl text-sm leading-relaxed text-slate-600 dark:text-slate-300 min-[769px]:text-lg md:text-xl"
           >
             {summary}
           </motion.p>
@@ -128,7 +128,7 @@ export default function Hero() {
                 <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
                   {animatedMetrics[i] ?? s.metric}
                 </span>
-                <span className="text-xs leading-snug text-slate-500 dark:text-slate-400">{s.label}</span>
+                <span className="text-sm leading-snug text-slate-500 dark:text-slate-400">{s.label}</span>
               </motion.div>
             ))}
           </motion.div>
@@ -141,7 +141,7 @@ export default function Hero() {
           >
             <Link
               to="/about"
-              className="group flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 px-8 py-4 font-semibold text-white transition-transform duration-200 hover:scale-105 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 sm:w-auto"
+              className="group flex min-h-11 w-full items-center justify-center gap-2 rounded-xl bg-slate-900 px-8 py-4 text-sm font-semibold text-white transition-transform duration-200 hover:scale-105 hover:bg-slate-800 min-[769px]:text-base dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 sm:w-auto"
             >
               View Experience
               <span className="hero-arrow-pulse inline-flex">
@@ -150,7 +150,7 @@ export default function Hero() {
             </Link>
             <Link
               to="/contact"
-              className="group flex w-full items-center justify-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-8 py-4 font-semibold text-emerald-700 transition-all duration-300 hover:bg-emerald-500/20 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] dark:border-emerald-500/35 dark:bg-emerald-500/15 dark:text-emerald-300 dark:hover:bg-emerald-500/25 sm:w-auto"
+              className="group flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-8 py-4 text-sm font-semibold text-emerald-700 transition-all duration-300 hover:bg-emerald-500/20 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] min-[769px]:text-base dark:border-emerald-500/35 dark:bg-emerald-500/15 dark:text-emerald-300 dark:hover:bg-emerald-500/25 sm:w-auto"
             >
               <motion.span
                 animate={{ scale: [1, 1.15, 1] }}
@@ -165,7 +165,7 @@ export default function Hero() {
               href={resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hero-shimmer-btn group flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-100 px-8 py-4 text-slate-800 transition-colors hover:bg-slate-200 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 sm:w-auto"
+              className="hero-shimmer-btn group flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-100 px-8 py-4 text-sm text-slate-800 transition-colors hover:bg-slate-200 min-[769px]:text-base dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 sm:w-auto"
             >
               Download Resume
               <Download className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
@@ -176,7 +176,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 1.05 }}
-            className="flex items-center gap-6 mt-6"
+            className="mt-6 flex flex-wrap items-center gap-4 min-[769px]:gap-6"
           >
             {links.map((link) => (
               <a
@@ -184,7 +184,7 @@ export default function Hero() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 text-slate-500 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+                className="group flex min-h-11 items-center gap-2 text-slate-500 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
               >
                 {link.name === 'LinkedIn' ? <Linkedin className="w-5 h-5" /> : <Github className="w-5 h-5" />}
                 <span className="text-sm font-medium">{link.name}</span>
@@ -200,13 +200,13 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 1.2 }}
               className="flex flex-wrap items-center gap-2 mt-2"
             >
-              <span className="mr-1 text-xs font-medium uppercase tracking-widest text-slate-500 dark:text-slate-500">
+              <span className="mr-1 text-sm font-medium uppercase tracking-widest text-slate-500 dark:text-slate-500">
                 Open to
               </span>
               {openTo.map((role, i) => (
                 <span
                   key={i}
-                  className="rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-xs font-medium text-slate-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
+                  className="rounded-full border border-slate-200 bg-white/80 px-3 py-1.5 text-sm font-medium text-slate-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
                 >
                   {role}
                 </span>

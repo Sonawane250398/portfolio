@@ -30,7 +30,7 @@ export default function Experience({ mode = 'accordion' }: ExperienceProps) {
   const isStatic = mode === 'static';
 
   return (
-    <section className="relative z-10 px-6 py-24 lg:px-12">
+    <section className="relative z-10 px-4 py-24 min-[769px]:px-6 lg:px-12">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ export default function Experience({ mode = 'accordion' }: ExperienceProps) {
         className="mx-auto max-w-5xl"
       >
         <div className="mb-16 py-3">
-          <h2 className="mb-4 text-4xl font-bold tracking-tight text-slate-900 dark:text-white md:text-5xl">
+          <h2 className="mb-4 text-3xl font-bold tracking-tight text-slate-900 dark:text-white min-[769px]:text-4xl md:text-5xl">
             Experience
           </h2>
           <div className="h-1 w-20 rounded-full bg-emerald-500" />
@@ -63,9 +63,9 @@ export default function Experience({ mode = 'accordion' }: ExperienceProps) {
                 }`}
               >
                 {isStatic ? (
-                  <div className="p-6 sm:p-8">
+                  <div className="p-5 min-[769px]:p-6 sm:p-8">
                     <div className="mb-8 space-y-2">
-                      <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">{job.role}</h3>
+                      <h3 className="text-xl font-semibold text-slate-900 dark:text-white min-[769px]:text-2xl">{job.role}</h3>
                       <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
                         <span className="flex items-center gap-1.5 font-medium text-slate-700 dark:text-slate-300">
                           <Building2 className="w-4 h-4" />
@@ -95,10 +95,10 @@ export default function Experience({ mode = 'accordion' }: ExperienceProps) {
                     <button
                       type="button"
                       onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
-                      className="flex w-full flex-col gap-4 p-6 text-left focus:outline-none sm:flex-row sm:items-center sm:justify-between sm:p-8"
+                      className="flex min-h-11 w-full flex-col gap-4 p-5 text-left focus:outline-none min-[769px]:min-h-0 sm:flex-row sm:items-center sm:justify-between sm:p-8"
                     >
                       <div className="space-y-2">
-                        <h3 className="text-2xl font-semibold text-slate-900 transition-colors group-hover:text-emerald-600 dark:text-white dark:group-hover:text-emerald-400">
+                        <h3 className="text-xl font-semibold text-slate-900 transition-colors group-hover:text-emerald-600 min-[769px]:text-2xl dark:text-white dark:group-hover:text-emerald-400">
                           {job.role}
                         </h3>
                         <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-400">

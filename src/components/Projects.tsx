@@ -41,7 +41,7 @@ function LiveDashboardEmbed({
   return (
     <div
       ref={containerRef}
-      className="relative h-[700px] w-full overflow-hidden rounded-[8px] bg-white dark:bg-slate-950"
+      className="dashboard-iframe relative h-[700px] w-full overflow-hidden rounded-[8px] bg-white dark:bg-slate-950"
     >
       {!loaded && (
         <div
@@ -89,7 +89,7 @@ export default function Projects() {
   }, [expandedCardIndex]);
 
   return (
-    <section className="relative z-10 px-6 py-24 lg:px-12">
+    <section className="relative z-10 px-4 py-24 min-[769px]:px-6 lg:px-12">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -98,11 +98,11 @@ export default function Projects() {
         className="mx-auto max-w-5xl"
       >
         <div className="mb-6">
-          <h2 className="mb-4 text-4xl font-bold tracking-tight text-slate-900 dark:text-white md:text-5xl">
+          <h2 className="mb-4 text-3xl font-bold tracking-tight text-slate-900 dark:text-white min-[769px]:text-4xl md:text-5xl">
             Featured Projects
           </h2>
           <div className="mb-6 h-1 w-20 rounded-full bg-emerald-500" />
-          <p className="max-w-2xl text-base text-slate-600 dark:text-slate-400 md:text-lg">
+          <p className="max-w-2xl text-sm leading-relaxed text-slate-600 dark:text-slate-400 min-[769px]:text-base md:text-lg">
             The projects below simulate real enterprise financial reporting workflows used in data pipelines,
             reconciliation systems, and audit-ready reporting environments.
           </p>
@@ -148,7 +148,7 @@ export default function Projects() {
                   ? { boxShadow: '0 0 20px rgba(16, 185, 129, 0.15)' }
                   : undefined
               }
-              className={`group relative flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white/80 p-8 transition-all duration-300 hover:border-[rgba(16,185,129,0.4)] hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] hover:bg-white dark:border-[rgba(255,255,255,0.05)] dark:bg-white/[0.02] dark:hover:border-[rgba(16,185,129,0.4)] dark:hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] dark:hover:bg-white/[0.04] ${
+              className={`group relative flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white/80 p-5 transition-all duration-300 hover:border-[rgba(16,185,129,0.4)] hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] hover:bg-white min-[769px]:p-8 dark:border-[rgba(255,255,255,0.05)] dark:bg-white/[0.02] dark:hover:border-[rgba(16,185,129,0.4)] dark:hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] dark:hover:bg-white/[0.04] ${
                 hasExpandable ? 'cursor-pointer' : ''
               } ${
                 isCardExpanded && 'liveEmbedUrl' in project && project.liveEmbedUrl
@@ -157,21 +157,24 @@ export default function Projects() {
               }`}
             >
               {/* Header */}
-              <div className="mb-6 flex items-start justify-between">
+              <div className="mb-6 flex flex-col gap-3 min-[769px]:flex-row min-[769px]:items-start min-[769px]:justify-between">
                 <div className="rounded-xl bg-emerald-500/10 p-3 text-emerald-600 dark:text-emerald-400">
                   <FolderGit2 className="h-8 w-8" />
                 </div>
                 {isCardExpanded && project.links && project.links.length > 0 && (
-                  <div className="flex gap-2" onClick={(e) => e.stopPropagation()}>
+                  <div
+                    className="flex w-full flex-col gap-2 min-[769px]:w-auto min-[769px]:flex-row min-[769px]:justify-end"
+                    onClick={(e) => e.stopPropagation()}
+                  >
                     {project.links.map((link, i) => (
                       <a
                         key={i}
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200/80 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-600 transition-colors hover:border-emerald-400/40 hover:text-emerald-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:text-emerald-400"
+                        className="inline-flex min-h-11 w-full items-center justify-center gap-1.5 rounded-lg border border-slate-200/80 bg-slate-50 px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:border-emerald-400/40 hover:text-emerald-600 min-[769px]:w-auto min-[769px]:min-h-0 min-[769px]:py-1.5 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:text-emerald-400"
                       >
-                        <Github className="w-4 h-4" />
+                        <Github className="w-4 h-4 shrink-0" />
                         {link.label}
                       </a>
                     ))}
@@ -180,7 +183,7 @@ export default function Projects() {
               </div>
 
               {/* Title */}
-              <h3 className="mb-4 text-xl font-bold text-slate-900 transition-colors group-hover:text-emerald-600 dark:text-white dark:group-hover:text-emerald-400">
+              <h3 className="mb-4 text-lg font-bold text-slate-900 transition-colors group-hover:text-emerald-600 min-[769px]:text-xl dark:text-white dark:group-hover:text-emerald-400">
                 {project.title}
               </h3>
 
@@ -217,11 +220,20 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="mb-3 inline-flex items-center gap-1 rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-4 py-2.5 text-sm font-semibold text-emerald-700 transition-colors hover:border-emerald-500/70 hover:bg-emerald-500/15 dark:border-emerald-400/35 dark:bg-emerald-500/10 dark:text-emerald-400 dark:hover:border-emerald-400/55 dark:hover:bg-emerald-400/10"
+                    className="mb-3 hidden min-h-11 min-[769px]:inline-flex items-center justify-center gap-1 rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-4 py-2.5 text-sm font-semibold text-emerald-700 transition-colors hover:border-emerald-500/70 hover:bg-emerald-500/15 dark:border-emerald-400/35 dark:bg-emerald-500/10 dark:text-emerald-400 dark:hover:border-emerald-400/55 dark:hover:bg-emerald-400/10"
                   >
                     Open Full Dashboard →
                   </a>
-                  <div className="-mx-8 w-[calc(100%+4rem)] max-w-none">
+                  <a
+                    href={project.liveEmbedUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="dashboard-mobile-btn mb-3 min-h-11 w-full rounded-lg border border-emerald-500/50 bg-emerald-500/15 py-3 text-center text-sm font-semibold leading-none text-emerald-800 transition-colors hover:border-emerald-500/70 hover:bg-emerald-500/25 dark:border-emerald-400/40 dark:bg-emerald-500/15 dark:text-emerald-300 dark:hover:bg-emerald-400/15"
+                  >
+                    Open Live Dashboard →
+                  </a>
+                  <div className="-mx-5 w-[calc(100%+2.5rem)] max-w-none min-[769px]:-mx-8 min-[769px]:w-[calc(100%+4rem)]">
                     <LiveDashboardEmbed
                       src={project.liveEmbedUrl}
                       title={`${project.title} — live dashboard`}
@@ -231,14 +243,14 @@ export default function Projects() {
                       }
                     />
                   </div>
-                  <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+                  <p className="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
                     First load may take 30–50 seconds to wake up (free hosting)
                   </p>
                 </div>
               )}
               {/* Demo tables — distinct styling per project */}
               {'demoRows' in project && project.demoRows && project.demoRows.length > 0 && (
-                <div className="mb-6 min-w-0">
+                <div className="project-demo-panel mb-6 min-w-0">
                   {'account' in project.demoRows[0] && (
                     <div className="overflow-x-auto rounded-xl border border-emerald-500/20 bg-slate-900 p-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
                       <div className="mb-3 flex items-center gap-2">
@@ -531,7 +543,7 @@ export default function Projects() {
                       e.stopPropagation();
                       setSqlOpenIndex((prev) => (prev === index ? null : index));
                     }}
-                    className="mb-2 inline-flex items-center gap-2 text-xs font-medium text-emerald-600 transition-colors hover:text-emerald-500 dark:text-emerald-400 dark:hover:text-emerald-300"
+                    className="mb-2 inline-flex min-h-11 items-center gap-2 rounded-lg px-1 text-sm font-medium text-emerald-600 transition-colors hover:text-emerald-500 min-[769px]:min-h-0 min-[769px]:px-0 min-[769px]:text-xs dark:text-emerald-400 dark:hover:text-emerald-300"
                   >
                     <Code2 className="w-4 h-4" />
                     {sqlOpenIndex === index ? 'Hide SQL' : 'View SQL'}
@@ -546,7 +558,7 @@ export default function Projects() {
                         transition={expandTransition}
                         className="overflow-hidden"
                       >
-                        <pre className="overflow-x-auto rounded-xl border border-slate-200/80 bg-slate-900 p-4 font-mono text-xs leading-relaxed text-emerald-300 dark:border-white/10">
+                        <pre className="overflow-x-auto rounded-xl border border-slate-200/80 bg-slate-900 p-4 font-mono text-sm leading-relaxed text-emerald-300 min-[769px]:text-xs dark:border-white/10">
                           <code>{project.sqlSnippet}</code>
                         </pre>
                       </motion.div>
@@ -563,7 +575,7 @@ export default function Projects() {
                 {project.stack.map((tech, i) => (
                   <span
                     key={i}
-                    className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-700 dark:border-emerald-400/20 dark:text-emerald-400"
+                    className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-2 text-sm font-medium leading-tight text-emerald-700 min-[769px]:py-1 min-[769px]:text-xs dark:border-emerald-400/20 dark:text-emerald-400"
                   >
                     {tech}
                   </span>
@@ -578,12 +590,14 @@ export default function Projects() {
                       e.stopPropagation();
                       setExpandedCardIndex(null);
                     }}
-                    className="mt-4 text-sm font-medium text-emerald-600 dark:text-emerald-400"
+                    className="mt-4 min-h-11 rounded-lg px-1 text-sm font-medium text-emerald-600 dark:text-emerald-400"
                   >
                     Collapse ↑
                   </button>
                 ) : (
-                  <p className="mt-4 text-sm text-emerald-600/70 dark:text-emerald-400/60">View Demo →</p>
+                  <p className="mt-4 flex min-h-11 items-center text-sm text-emerald-600/70 dark:text-emerald-400/60">
+                    View Demo →
+                  </p>
                 ))}
             </motion.div>
             );

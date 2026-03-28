@@ -11,19 +11,19 @@ export default function Home() {
     <>
       <Hero />
       <SkillsTicker />
-      <div id="experience" className="scroll-mt-28 md:scroll-mt-32">
+      <div id="experience" className="scroll-mt-24 min-[769px]:scroll-mt-28 md:scroll-mt-32">
         <Experience />
       </div>
-      <div id="projects" className="scroll-mt-28 md:scroll-mt-32">
+      <div id="projects" className="scroll-mt-24 min-[769px]:scroll-mt-28 md:scroll-mt-32">
         <Projects />
       </div>
-      <div id="skills" className="scroll-mt-28 md:scroll-mt-32">
+      <div id="skills" className="scroll-mt-24 min-[769px]:scroll-mt-28 md:scroll-mt-32">
         <Skills pageLayout />
       </div>
-      <div id="education" className="scroll-mt-28 md:scroll-mt-32">
+      <div id="education" className="scroll-mt-24 min-[769px]:scroll-mt-28 md:scroll-mt-32">
         <EducationAbout />
       </div>
-      <div id="contact" className="scroll-mt-28 md:scroll-mt-32">
+      <div id="contact" className="scroll-mt-24 min-[769px]:scroll-mt-28 md:scroll-mt-32">
         <Contact />
       </div>
     </>

@@ -19,7 +19,7 @@ export default function SkillsTicker() {
   return (
     <section
       aria-label="Skills"
-      className="relative z-10 w-full overflow-hidden border-y border-slate-200/70 bg-slate-100/95 py-5 dark:border-white/10 dark:bg-slate-950/90"
+      className="relative z-10 w-full overflow-hidden border-y border-slate-200/70 bg-slate-100/95 px-4 py-5 min-[769px]:px-6 dark:border-white/10 dark:bg-slate-950/90"
     >
       <div className="skills-ticker-track gap-3 pr-3">
         {sequence.map((skill, i) => (

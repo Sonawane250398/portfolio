@@ -47,7 +47,7 @@ export default function Achievements() {
   ];
 
   return (
-    <section id="achievements" className="py-24 px-6 lg:px-12 relative z-10 bg-slate-950/50 backdrop-blur-sm border-y border-white/5">
+    <section id="achievements" className="relative z-10 border-y border-white/5 bg-slate-950/50 px-4 py-24 backdrop-blur-sm min-[769px]:px-6 lg:px-12">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ export default function Achievements() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
+          <h2 className="mb-4 text-3xl font-bold tracking-tight text-white min-[769px]:text-4xl md:text-5xl">
             Impact & Achievements
           </h2>
           <div className="h-1 w-20 bg-emerald-500 rounded-full mx-auto" />
@@ -81,10 +81,10 @@ export default function Achievements() {
                 </div>
                 
                 <div>
-                  <h3 className="text-4xl font-bold text-white mb-3 tracking-tight">
+                  <h3 className="mb-3 text-3xl font-bold tracking-tight text-white min-[769px]:text-4xl">
                     <AnimatedCounter value={achievement.metric} />
                   </h3>
-                  <p className="text-slate-400 font-medium leading-relaxed">
+                  <p className="text-sm font-medium leading-relaxed text-slate-400 min-[769px]:text-base">
                     {achievement.context}
                   </p>
                 </div>
