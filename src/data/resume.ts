@@ -114,6 +114,32 @@ export const resumeData = {
       links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/financial-reporting-pipeline" }]
     },
     {
+      title: "Tableau Financial Performance Dashboard",
+      date: "Mar 2026",
+      description:
+        "Interactive Tableau dashboard analyzing $174M in sales across 5 countries and 3 years — visualizing profit margin trends, year-over-year sales vs profit, and country-level performance breakdowns.",
+      stack: ["Tableau", "Data Visualization", "Financial Analytics", "Dashboard"],
+      github: "https://github.com/Sonawane250398/financial-dashboard",
+      highlights: [
+        "$174M in sales analyzed across 5 countries and 3 years",
+        "Profit margin trends and year-over-year sales vs profit",
+        "Country-level performance breakdowns",
+        "Interactive views published on Tableau Public"
+      ],
+      bullets: [
+        "Interactive Tableau dashboard analyzing $174M in sales across 5 countries and 3 years — visualizing profit margin trends, year-over-year sales vs profit, and country-level performance breakdowns.",
+        "Profit margin and year-over-year sales vs profit views support multi-year trend analysis.",
+        "Country-level breakdowns highlight geographic performance across markets.",
+        "Published to Tableau Public so stakeholders can explore the dashboard interactively without static report cycles."
+      ],
+      links: [
+        { label: "Live", url: "https://public.tableau.com/app/profile/yash.sonawane4448/viz/FinancialPerformanceAnalysis-YashSonawane/FinancialPerformanceAnalysisYashSonawane" },
+        { label: "GitHub", url: "https://github.com/Sonawane250398/financial-dashboard" }
+      ],
+      liveEmbedUrl:
+        "https://public.tableau.com/app/profile/yash.sonawane4448/viz/FinancialPerformanceAnalysis-YashSonawane/FinancialPerformanceAnalysisYashSonawane"
+    },
+    {
       title: "Source-to-Report Financial Reconciliation Platform",
       stack: ["SQL", "CTEs", "Window Functions", "Aggregations"],
       bullets: [
