@@ -22,7 +22,7 @@ export default function About() {
             About me
           </h1>
           <p className="mb-6 max-w-3xl text-sm text-slate-600 dark:text-slate-400 min-[769px]:text-lg">
-            I translate messy business requirements into clean, auditable reporting workflows.
+            Fixing data problems before they become someone else's emergency.
           </p>
           <p className="max-w-3xl text-sm leading-relaxed text-slate-700 dark:text-slate-300 min-[769px]:text-lg">{summary}</p>
         </motion.div>

@@ -3,7 +3,7 @@ export const resumeData = {
     name: "Yash Sonawane",
     title: "Business Analyst",
     subtitle: "Financial Reporting · SQL Reconciliation · UAT · AI-Powered Delivery",
-    summary: "Business Analyst specializing in financial reporting, SQL reconciliation, and UAT — with a habit of asking why the manual work still exists, then building something to replace it. 4+ years across enterprise and consulting environments building SQL frameworks, Python pipelines, and dashboards that make manual workflows disappear. I pick up new tools fast, care deeply about the details that break at month-end, and use AI daily to move faster without cutting corners. The data problems I fix usually never make it to the stakeholder's desk — which is exactly the point.",
+    summary: "I'm a Business Analyst who builds things instead of just documenting them. SQL frameworks, Python pipelines, Tableau dashboards — if the manual work exists, I automate it. 4+ years in financial reporting and reconciliation, now powered by AI tools that let me move faster than ever. Off the clock I'm chasing the next tool, the next device, the next better way to do things. That curiosity never really switches off — which is probably why the data problems I fix never make it to the stakeholder's desk. Currently open to BA and BSA roles in fintech, banking, and enterprise SaaS.",
     location: "Fullerton, California, United States",
     email: "yashsonawane25.work@gmail.com",
     phone: "(562) 455-7892",
