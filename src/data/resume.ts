@@ -2,8 +2,8 @@ export const resumeData = {
   basics: {
     name: "Yash Sonawane",
     title: "Business Analyst",
-    subtitle: "Financial Reporting · Reconciliation · UAT & Reporting Controls",
-    summary: "Business Analyst with 4+ years building financial reporting systems that teams can trust. I work across the full BA lifecycle — requirements, SQL validation, UAT, and release readiness — connecting finance teams, engineering, and stakeholders. Reduced reconciliation discrepancies by 20%, eliminated 6–8 hrs of manual reporting weekly, and delivered 6 releases with zero critical issues. Currently open to BA and BSA roles in fintech, banking, or enterprise SaaS.",
+    subtitle: "Financial Reporting · SQL Reconciliation · UAT · AI-Powered Delivery",
+    summary: "Business Analyst specializing in financial reporting, SQL reconciliation, and UAT — with a habit of asking why the manual work still exists, then building something to replace it. 4+ years across enterprise and consulting environments building SQL frameworks, Python pipelines, and dashboards that make manual workflows disappear. I pick up new tools fast, care deeply about the details that break at month-end, and use AI daily to move faster without cutting corners. The data problems I fix usually never make it to the stakeholder's desk — which is exactly the point.",
     location: "Fullerton, California, United States",
     email: "yashsonawane25.work@gmail.com",
     phone: "(562) 455-7892",
@@ -11,7 +11,7 @@ export const resumeData = {
       { name: "LinkedIn", url: "https://www.linkedin.com/in/yash-sonawane25" },
       { name: "GitHub", url: "https://github.com/Sonawane250398" }
     ],
-    openTo: ["Business Analyst", "Business Systems Analyst", "Financial Systems Analyst"]
+    openTo: ["Business Analyst", "Business Systems Analyst", "Financial Systems Analyst", "Data Analyst", "Reporting Analyst"]
   },
   architecture: {
     title: "Financial Reporting Data Architecture",
@@ -19,9 +19,10 @@ export const resumeData = {
     steps: [
       { label: "Source Transaction Systems", detail: "Raw financial & operational data" },
       { label: "SQL Reconciliation Framework", detail: "CTEs · Joins · Aggregations · Variance Detection" },
+      { label: "Python Validation Pipeline", detail: "Pandas · Automated checks · Exception classification" },
       { label: "Reporting Control Framework", detail: "5 domains · Checkpoint validation · Audit trails" },
-      { label: "UAT Validation Framework", detail: "Edge case coverage · Release stability" },
-      { label: "Executive Dashboards", detail: "Tableau · 12 KPIs · Finance & Engineering leadership" }
+      { label: "UAT Validation Framework", detail: "Edge case coverage · Release stability · Zero critical issues" },
+      { label: "Executive Dashboards", detail: "Tableau · Power BI · Dash · 12 KPIs · AI-powered delivery" }
     ]
   },
   experience: [
@@ -31,10 +32,10 @@ export const resumeData = {
       dates: "Sep 2024 – Present",
       location: "Fullerton, CA",
       bullets: [
-        "Reduced recurring reporting discrepancies by 20% and break investigation time by 30% by building a reusable SQL reconciliation framework across source, transformed, and reporting-layer datasets.",
-        "Led requirements clarification for 3 financial reporting systems, translating finance and business needs into structured validation logic, reporting rules, and delivery scope.",
+        "Reduced recurring reporting discrepancies by 20% and break investigation time by 30% by building a reusable SQL reconciliation framework across source, transformed, and reporting-layer datasets — saving an estimated 10+ hours of manual investigation weekly.",
+        "Owned end-to-end requirements for 3 financial reporting systems — producing BRDs, user stories, and traceability matrices that accelerated sprint delivery to 8–10 stories per sprint.",
         "Delivered Tableau dashboards tracking 12 KPIs across reporting accuracy, cycle time, and delivery performance, improving visibility into exceptions, delays, and reporting quality.",
-        "Supported 6 consecutive releases with zero critical post-deployment issues by defining UAT scenarios, validating business rules, documenting defects, and coordinating release-readiness checks across dependent workflows."
+        "Supported 6 consecutive releases with zero critical post-deployment issues by defining UAT scenarios, validating business rules, documenting defects, and coordinating release-readiness checks across dependent workflows serving 3 business units."
       ]
     },
     {
@@ -44,21 +45,21 @@ export const resumeData = {
       location: "Pune, India",
       bullets: [
         "Reduced month-end reporting errors by 15% and shortened reporting cycle time by 2 days by analyzing trade and transactional data across 3 product lines using SQL and Excel.",
-        "Eliminated 6–8 hours of weekly manual reporting by building Tableau dashboards for revenue, inventory velocity, and operational throughput used by 4 stakeholder groups.",
-        "Documented data lineage and reporting logic across operational systems, reporting databases, and BI layers, improving traceability and accelerating analyst onboarding.",
+        "Eliminated 6–8 hours of weekly manual reporting by building Tableau dashboards for revenue, inventory velocity, and operational throughput — used by 4 stakeholder groups across finance, operations, and management teams.",
+        "Documented data lineage and reporting logic across operational systems, reporting databases, and BI layers — reducing analyst onboarding time by an estimated 30% through clearer source-to-report mapping.",
         "Reconciled operational records against summarized financial outputs each month, identifying discrepancies before management review and improving reporting accuracy for P&L inputs."
       ]
     }
   ],
   achievements: [
     { metric: "20%", context: "reduction in recurring reconciliation discrepancies" },
-    { metric: "6–8 hrs", context: "of manual reporting effort eliminated weekly" },
+    { metric: "30%", context: "faster break investigation time" },
+    { metric: "10+", context: "hours of manual investigation saved weekly" },
+    { metric: "6–8 hrs", context: "of manual reporting eliminated weekly" },
     { metric: "Zero", context: "critical post-deployment issues across 6 consecutive releases" },
     { metric: "15%", context: "reduction in month-end reporting errors" },
     { metric: "2 days", context: "shortened reporting cycle time" },
-    { metric: "25%", context: "reduction in manual adjustment rate" },
-    { metric: "30%", context: "reduced break investigation time" },
-    { metric: "20%", context: "improved reporting cycle predictability" }
+    { metric: "30%", context: "faster analyst onboarding through clearer data lineage" }
   ],
   projects: [
     {
@@ -280,12 +281,15 @@ ORDER BY total_reqs DESC;`,
         "Requirements gathering",
         "User stories",
         "Acceptance criteria",
+        "BRD",
         "Requirements traceability",
         "Stakeholder management",
+        "Financial analysis",
+        "Stakeholder reporting",
+        "AI-assisted delivery",
         "SDLC support",
-        "Process Mapping",
-        "Workflow Documentation",
-        "Stakeholder Reporting"
+        "Process mapping",
+        "Workflow documentation"
       ]
     },
     {
@@ -315,13 +319,19 @@ ORDER BY total_reqs DESC;`,
       items: [
         "SQL",
         "Tableau",
+        "Power BI",
+        "Python",
+        "Pandas",
+        "Dash",
+        "Plotly",
         "Advanced Excel",
-        "ETL validation",
+        "ETL Validation",
         "Jira",
         "Confluence",
         "Agile/Scrum",
-        "Power BI",
-        "Python (Basic)"
+        "Cursor",
+        "GitHub Copilot",
+        "Claude"
       ]
     }
   ],
@@ -342,12 +352,13 @@ ORDER BY total_reqs DESC;`,
     }
   ],
   certifications: [
-    {
-      name: "AWS Academy Graduate - AWS Academy MLU Machine Learning through Application"
-    }
+    { name: "Tableau Public — Financial Performance Dashboard, 2026" },
+    { name: "Advanced SQL — Kaggle" },
+    { name: "Pandas — Kaggle, Mar 2026" },
+    { name: "Microsoft Get Started with Data Analytics — Microsoft, Mar 2026" }
   ],
   awards: [],
   extra: [
-    "Open to: Business Analyst | Business Systems Analyst | Financial Systems Analyst"
+    "Open to BA, BSA, and Data Analyst roles in fintech, banking, and enterprise SaaS — available immediately"
   ]
 };
