@@ -85,7 +85,31 @@ export const resumeData = {
         { label: "Dashboard", url: "https://public.tableau.com/app/profile/yash.sonawane4448/viz/FinancialReportingFailureDetectionExceptionDashboard/FinancialReportingFailureDetectionExceptionDashboard?publish=yes" }
       ],
       liveEmbedUrl:
-        "https://public.tableau.com/views/FinancialReportingFailureDetectionExceptionDashboard/FinancialReportingFailureDetectionExceptionDashboard?:embed=yes&:showVizHome=no"
+        "https://public.tableau.com/views/FinancialReportingFailureDetectionExceptionDashboard/FinancialReportingFailureDetectionExceptionDashboard?:embed=yes&:showVizHome=no",
+      caseStudy: `Every month-end close carries the same risk: data that looked clean in 
+the source layer arrives broken at the reporting layer. Records get 
+dropped in ETL. Amounts get inflated by conversion bugs. Categories get 
+mapped to UNKNOWN and fail to hit the GL. None of it surfaces until a 
+stakeholder flags a number that doesn't add up — by which point the 
+damage is already done.
+
+I built this system to catch those failures before they reach anyone.
+
+The pipeline simulates three layers of a real financial reporting 
+workflow — Source, ETL-Transformed, and Reporting — with five 
+real-world failure types injected at different stages. A SQL 
+reconciliation engine runs five checks across all three layers 
+simultaneously. Every exception gets timestamped, classified by 
+severity (CRITICAL, HIGH, MEDIUM), and written to an audit-ready 
+output before any data reaches a stakeholder.
+
+80 exceptions caught across 1,000 transactions. 50 CRITICAL. 
+30 HIGH. Zero manual steps.
+
+The business case is simple: one undetected balance variance in a 
+month-end report can trigger a restatement. One missing record in 
+an AR aging report can misstate cash flow. This system is the 
+control layer that sits between the pipeline and the boardroom.`
     },
     {
       title: "Financial Analytics Dashboard",
