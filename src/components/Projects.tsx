@@ -87,6 +87,7 @@ export default function Projects() {
   const [expandedCardIndex, setExpandedCardIndex] = useState<number | null>(null);
   const [sqlOpenIndex, setSqlOpenIndex] = useState<number | null>(null);
   const [embedLoadedByIndex, setEmbedLoadedByIndex] = useState<Record<number, boolean>>({});
+  const [caseStudyOpenIndex, setCaseStudyOpenIndex] = useState<number | null>(null);
 
   useEffect(() => {
     setSqlOpenIndex(null);
@@ -126,6 +127,7 @@ export default function Projects() {
         <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
           {projects.map((project, index) => {
             const isCardExpanded = expandedCardIndex === index;
+            const hasCaseStudy = 'caseStudy' in project && Boolean((project as any).caseStudy);
             const hasExpandable =
               Boolean(
                 ('demoRows' in project && project.demoRows && project.demoRows.length > 0) ||
@@ -211,6 +213,31 @@ export default function Projects() {
                     </li>
                   ))}
                 </ul>
+
+                {hasCaseStudy && (
+                  <div className="mb-4 border-t border-slate-200/70 pt-3 text-slate-600 dark:border-white/10 dark:text-slate-300">
+                    <div className="mb-1 flex items-center justify-between gap-2">
+                      <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+                        Case Study
+                      </span>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setCaseStudyOpenIndex((prev) => (prev === index ? null : index));
+                        }}
+                        className="text-[11px] font-medium text-emerald-700 hover:text-emerald-600 dark:text-emerald-400 dark:hover:text-emerald-300"
+                      >
+                        {caseStudyOpenIndex === index ? 'Hide Case Study ↑' : 'Read Case Study ↓'}
+                      </button>
+                    </div>
+                    {caseStudyOpenIndex === index && (
+                      <p className="mt-1 whitespace-pre-line text-xs leading-relaxed text-slate-600 dark:text-slate-300">
+                        {(project as any).caseStudy}
+                      </p>
+                    )}
+                  </div>
+                )}
               </div>
 
               <AnimatePresence initial={false}>
