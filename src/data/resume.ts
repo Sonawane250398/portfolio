@@ -65,7 +65,7 @@ export const resumeData = {
     {
       title: "Financial Reporting Failure Detection System",
       description:
-        "Built an end-to-end automated detection system simulating a 3-layer financial pipeline (Source -> ETL -> Reporting) with real-world failures injected. Engineered 5 SQL reconciliation checks and a Python severity classification engine that detected 80 exceptions across 1,000 transactions with zero manual steps, producing audit-ready exception reports before stakeholder delivery.",
+        "Built an end-to-end automated detection system across a 3-layer financial pipeline (Source → ETL → Reporting) with real-world failures injected — missing records, duplicates, amount mismatches, invalid GL category mappings, and balance variances. Engineered 5 SQL reconciliation checks and a Python severity classification engine (CRITICAL/HIGH/MEDIUM) that caught 80 exceptions across 1,000 transactions with zero manual steps. Outputs audit-ready exception reports before stakeholder delivery.",
       stack: ["Python", "SQL", "Pandas", "Tableau"],
       github: "https://github.com/Sonawane250398/financial-failure-detection-system",
       highlights: [
@@ -80,7 +80,12 @@ export const resumeData = {
         "Zero manual steps — fully automated detection engine",
         "Audit-ready CSV exception report output"
       ],
-      links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/financial-failure-detection-system" }]
+      links: [
+        { label: "GitHub", url: "https://github.com/Sonawane250398/financial-failure-detection-system" },
+        { label: "Dashboard", url: "https://public.tableau.com/app/profile/yash.sonawane4448/viz/FinancialReportingFailureDetectionExceptionDashboard/FinancialReportingFailureDetectionExceptionDashboard?publish=yes" }
+      ],
+      liveEmbedUrl:
+        "https://public.tableau.com/views/FinancialReportingFailureDetectionExceptionDashboard/FinancialReportingFailureDetectionExceptionDashboard?:embed=yes&:showVizHome=no"
     },
     {
       title: "Financial Analytics Dashboard",
@@ -133,32 +138,6 @@ export const resumeData = {
         { check: "Currency Validation", total: 1000, passed: 1000, failed: 0, passRate: "100%", status: "PASS" }
       ],
       links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/financial-reporting-pipeline" }]
-    },
-    {
-      title: "Tableau Financial Performance Dashboard",
-      date: "Mar 2026",
-      description:
-        "Interactive Tableau dashboard analyzing $174M in sales across 5 countries and 3 years — visualizing profit margin trends, year-over-year sales vs profit, and country-level performance breakdowns.",
-      stack: ["Tableau", "Data Visualization", "Financial Analytics", "Dashboard"],
-      github: "https://github.com/Sonawane250398/financial-dashboard",
-      highlights: [
-        "$174M in sales analyzed across 5 countries and 3 years",
-        "Profit margin trends and year-over-year sales vs profit",
-        "Country-level performance breakdowns",
-        "Interactive views published on Tableau Public"
-      ],
-      bullets: [
-        "Interactive Tableau dashboard analyzing $174M in sales across 5 countries and 3 years — visualizing profit margin trends, year-over-year sales vs profit, and country-level performance breakdowns.",
-        "Profit margin and year-over-year sales vs profit views support multi-year trend analysis.",
-        "Country-level breakdowns highlight geographic performance across markets.",
-        "Published to Tableau Public so stakeholders can explore the dashboard interactively without static report cycles."
-      ],
-      links: [
-        { label: "Live", url: "https://public.tableau.com/app/profile/yash.sonawane4448/viz/FinancialPerformanceAnalysis-YashSonawane/FinancialPerformanceAnalysisYashSonawane" },
-        { label: "GitHub", url: "https://github.com/Sonawane250398/financial-dashboard" }
-      ],
-      liveEmbedUrl:
-        "https://public.tableau.com/app/profile/yash.sonawane4448/viz/FinancialPerformanceAnalysis-YashSonawane/FinancialPerformanceAnalysisYashSonawane"
     },
     {
       title: "Source-to-Report Financial Reconciliation Platform",
