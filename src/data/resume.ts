@@ -272,6 +272,26 @@ ORDER BY total_reqs DESC;`,
       ],
       rtmSummary: { totalReqs: 13, covered: 13, sprints: 4, openDefects: 0, coveragePct: "100%" },
       links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/requirements-traceability-matrix" }]
+    },
+    {
+      title: "Financial Reporting Failure Detection System",
+      description:
+        "Built an end-to-end automated detection system simulating a 3-layer financial pipeline (Source -> ETL -> Reporting) with real-world failures injected. Engineered 5 SQL reconciliation checks and a Python severity classification engine that detected 80 exceptions across 1,000 transactions with zero manual steps, producing audit-ready exception reports before stakeholder delivery.",
+      stack: ["Python", "SQL", "Pandas", "Tableau"],
+      github: "https://github.com/Sonawane250398/financial-failure-detection-system",
+      highlights: [
+        "3-layer pipeline simulation (Source -> ETL -> Reporting)",
+        "5 SQL reconciliation checks with severity classification",
+        "80 exceptions detected across 1,000 transactions (zero manual steps)",
+        "Audit-ready CSV exception report output for stakeholder delivery"
+      ],
+      bullets: [
+        "80 exceptions detected — 50 CRITICAL, 30 HIGH",
+        "5 failure types: missing records, duplicates, amount mismatches, invalid category mapping, balance variances",
+        "Zero manual steps — fully automated detection engine",
+        "Audit-ready CSV exception report output"
+      ],
+      links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/financial-failure-detection-system" }]
     }
   ],
   skills: [
