@@ -16,7 +16,7 @@ function highlightMetrics(bullet: string) {
   const metricRe =
     /\d+%|\d+–\d+(?:\s*(?:hrs?|hours?))?|\d+\s+consecutive(?:\s+releases)?|\bzero\b|\d+\s+days?|\d+\s+KPIs?|\d+\s+financial|\d+\s+product|\d+\s+stakeholder|\d+\s+groups?/gi;
   return escaped.replace(metricRe, (m) => {
-    return `<span class="text-emerald-400 font-semibold bg-emerald-400/10 px-1 rounded">${m}</span>`;
+    return `<span class="text-emerald-400 font-semibold bg-emerald-400/10 rounded">${m}</span>`;
   });
 }
 

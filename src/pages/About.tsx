@@ -23,7 +23,7 @@ export default function About() {
           </p>
           <p className="max-w-3xl text-sm leading-relaxed text-slate-700 dark:text-slate-300 min-[769px]:text-lg">
             I'm a Business Analyst who builds things instead of just documenting them. SQL frameworks, Python pipelines,
-            Tableau dashboards  - If the manual work exists, I automate it. 4+ years in financial reporting and reconciliation,
+            Tableau dashboards -If the manual work exists, I automate it. 4+ years in financial reporting and reconciliation,
             now powered by AI tools that let me move faster than ever.
             <br />
             <br />
