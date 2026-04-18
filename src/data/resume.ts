@@ -32,7 +32,7 @@ export const resumeData = {
       dates: "Sep 2024 – Present",
       location: "Fullerton, CA",
       bullets: [
-        "Built a SQL reconciliation framework across source, transformed, and reporting-layer datasets -validating 5,000+ records monthly, catching mismatches, missing records, and variances before data reaches reporting. Reduced discrepancies by 20%, cut investigation time by 30%, saved 10+ hours of manual work weekly.",
+        "Built a SQL reconciliation framework across source, transformed, and reporting-layer datasets - validating 5,000+ records monthly, catching mismatches, missing records, and variances before data reaches reporting. Reduced discrepancies by 20%, cut investigation time by 30%, saved 10+ hours of manual work weekly.",
         "Defined system requirements and validation logic for 3 financial reporting pipelines - standardized acceptance criteria eliminated mid-sprint requirement changes across 8–-10 stories per cycle.",
         "Deployed Tableau dashboards tracking 12 KPIs across reporting accuracy and exception visibility - surfaced pipeline failures before stakeholder delivery and cut manual investigation by 30%.",
         "Delivered 6 consecutive zero-defect releases across 3 business units -UAT scenarios, business rule validation, and defect tracking built into every sprint cycle."
