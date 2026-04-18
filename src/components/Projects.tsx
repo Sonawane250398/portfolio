@@ -119,8 +119,8 @@ export default function Projects() {
           </h2>
           <div className="mb-6 h-1 w-20 rounded-full bg-emerald-500" />
           <p className="max-w-2xl text-sm leading-relaxed text-slate-600 dark:text-slate-400 min-[769px]:text-base md:text-lg">
-            The projects below simulate real enterprise financial reporting workflows used in data pipelines,
-            reconciliation systems, and audit-ready reporting environments.
+            Each system below models a real financial reporting workflow — built to catch the failures that surface at
+            month-end before they reach anyone who asked for the numbers.
           </p>
         </div>
 
