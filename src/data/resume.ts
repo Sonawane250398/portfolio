@@ -15,7 +15,7 @@ export const resumeData = {
   },
   architecture: {
     title: "Financial Reporting Data Architecture",
-    description: "End-to-end data pipeline I designed and own -from raw transaction sources to executive dashboards.",
+    description: "End-to-end data pipeline I designed and own — from raw transaction sources to executive dashboards.",
     steps: [
       { label: "Source Transaction Systems", detail: "Raw financial & operational data" },
       { label: "SQL Reconciliation Framework", detail: "CTEs · Joins · Aggregations · Variance Detection" },
@@ -32,10 +32,10 @@ export const resumeData = {
       dates: "Sep 2024 – Present",
       location: "Fullerton, CA",
       bullets: [
-        "Built a SQL reconciliation framework across source, transformed, and reporting-layer datasets - validating 5,000+ records monthly, catching mismatches, missing records, and variances before data reaches reporting. Reduced discrepancies by 20%, cut investigation time by 30%, saved 10+ hours of manual work weekly.",
-        "Defined system requirements and validation logic for 3 financial reporting pipelines - standardized acceptance criteria eliminated mid-sprint requirement changes across 8–10 stories per cycle.",
-        "Deployed Tableau dashboards tracking 12 KPIs across reporting accuracy and exception visibility - surfaced pipeline failures before stakeholder delivery and cut manual investigation by 30%.",
-        "Delivered 6 consecutive zero-defect releases across 3 business units - UAT scenarios, business rule validation, and defect tracking built into every sprint cycle."
+        "Built a SQL reconciliation framework across source, transformed, and reporting-layer datasets — validating 5,000+ records monthly, catching mismatches, missing records, and variances before data reaches reporting. Reduced discrepancies by 20%, cut investigation time by 30%, saved 10+ hours of manual work weekly.",
+        "Defined system requirements and validation logic for 3 financial reporting pipelines — standardized acceptance criteria eliminated mid-sprint requirement changes across 8–10 stories per cycle.",
+        "Deployed Tableau dashboards tracking 12 KPIs across reporting accuracy and exception visibility — surfaced pipeline failures before stakeholder delivery and cut manual investigation by 30%.",
+        "Delivered 6 consecutive zero-defect releases across 3 business units — UAT scenarios, business rule validation, and defect tracking built into every sprint cycle."
       ]
     },
     {
@@ -44,9 +44,9 @@ export const resumeData = {
       dates: "May 2019 – Jul 2022",
       location: "Pune, India",
       bullets: [
-        "Built SQL-based financial reporting workflows across procurement, inventory, and revenue data for 3 product lines - reduced month-end close errors by 15% and shortened reporting cycle by 2 days.",
-        "Eliminated 6–8 hours of weekly manual reporting by building Tableau dashboards for revenue, inventory velocity, and operational throughput - used by 4 stakeholder groups across finance, operations, and management teams.",
-        "Documented data lineage and reporting logic across operational systems, reporting databases, and BI layers - reducing analyst onboarding time by an estimated 30% through clearer source-to-report mapping.",
+        "Built SQL-based financial reporting workflows across procurement, inventory, and revenue data for 3 product lines — reduced month-end close errors by 15% and shortened reporting cycle by 2 days.",
+        "Eliminated 6–8 hours of weekly manual reporting by building Tableau dashboards for revenue, inventory velocity, and operational throughput — used by 4 stakeholder groups across finance, operations, and management teams.",
+        "Documented data lineage and reporting logic across operational systems, reporting databases, and BI layers — reducing analyst onboarding time by an estimated 30% through clearer source-to-report mapping.",
         "Reconciled operational records against summarized financial outputs each month, identifying discrepancies before management review and improving reporting accuracy for P&L inputs."
       ]
     }
@@ -65,7 +65,7 @@ export const resumeData = {
     {
       title: "Financial Reporting Failure Detection System",
       description:
-        "Built an end-to-end automated detection system across a 3-layer financial pipeline (Source → ETL → Reporting) with real-world failures injected - missing records, duplicates, amount mismatches, invalid GL category mappings, and balance variances. Engineered 5 SQL reconciliation checks and a Python severity classification engine (CRITICAL/HIGH/MEDIUM) that caught 80 exceptions across 1,000 transactions with zero manual steps. Outputs audit-ready exception reports before stakeholder delivery.",
+        "Built an end-to-end automated detection system across a 3-layer financial pipeline (Source → ETL → Reporting) with real-world failures injected — missing records, duplicates, amount mismatches, invalid GL category mappings, and balance variances. Engineered 5 SQL reconciliation checks and a Python severity classification engine (CRITICAL/HIGH/MEDIUM) that caught 80 exceptions across 1,000 transactions with zero manual steps. Outputs audit-ready exception reports before stakeholder delivery.",
       stack: ["Python", "SQL", "Pandas", "Tableau"],
       github: "https://github.com/Sonawane250398/financial-failure-detection-system",
       highlights: [
@@ -75,9 +75,9 @@ export const resumeData = {
         "Audit-ready CSV exception report output for stakeholder delivery"
       ],
       bullets: [
-        "80 exceptions detected - 50 CRITICAL, 30 HIGH",
+        "80 exceptions detected — 50 CRITICAL, 30 HIGH",
         "5 failure types: missing records, duplicates, amount mismatches, invalid category mapping, balance variances",
-        "Zero manual steps - fully automated detection engine",
+        "Zero manual steps — fully automated detection engine",
         "Audit-ready CSV exception report output"
       ],
       links: [
@@ -90,13 +90,13 @@ export const resumeData = {
 the source layer arrives broken at the reporting layer. Records get 
 dropped in ETL. Amounts get inflated by conversion bugs. Categories get 
 mapped to UNKNOWN and fail to hit the GL. None of it surfaces until a 
-stakeholder flags a number that doesn't add up - by which point the 
+stakeholder flags a number that doesn't add up — by which point the 
 damage is already done.
 
 I built this system to catch those failures before they reach anyone.
 
 The pipeline simulates three layers of a real financial reporting 
-workflow - Source, ETL-Transformed, and Reporting - with five 
+workflow — Source, ETL-Transformed, and Reporting — with five 
 real-world failure types injected at different stages. A SQL 
 reconciliation engine runs five checks across all three layers 
 simultaneously. Every exception gets timestamped, classified by 
@@ -115,7 +115,7 @@ control layer that sits between the pipeline and the boardroom.`
       title: "Financial Analytics Dashboard",
       date: "Mar 2026",
       description:
-        "Interactive financial performance dashboard analyzing $174M in sales across 5 segments, 5 countries, and 3 years - with 8 dynamic charts that update in real time.",
+        "Interactive financial performance dashboard analyzing $174M in sales across 5 segments, 5 countries, and 3 years — with 8 dynamic charts that update in real time.",
       stack: ["Python", "Dash", "Plotly", "Pandas", "Data Analytics"],
       github: "https://github.com/Sonawane250398/financial-dashboard",
       highlights: [
@@ -139,19 +139,19 @@ control layer that sits between the pipeline and the boardroom.`
     {
       title: "Financial Data Quality & Reporting Pipeline",
       date: "Jan 2026 – Mar 2026",
-      description: "Built an automated Python pipeline to validate financial transaction data across source and reporting systems. Runs 5 automated validation checks - null detection, duplicate checks, variance analysis, category and currency validation -and classifies every exception by severity (CRITICAL/HIGH/MEDIUM/LOW). Outputs a structured exception report and visual dashboard showing pass rates by department, variance by category, and exception trends over time.",
+      description: "Built an automated Python pipeline to validate financial transaction data across source and reporting systems. Runs 5 automated validation checks — null detection, duplicate checks, variance analysis, category and currency validation — and classifies every exception by severity (CRITICAL/HIGH/MEDIUM/LOW). Outputs a structured exception report and visual dashboard showing pass rates by department, variance by category, and exception trends over time.",
       stack: ["Python", "Pandas", "Matplotlib", "Seaborn", "Faker", "Data Validation", "ETL"],
       github: "https://github.com/Sonawane250398/financial-reporting-pipeline",
       highlights: [
         "1,000 transactions processed end-to-end",
         "100 discrepancies detected and classified automatically",
         "90% pass rate on variance checks",
-        "0 manual steps - fully automated from ingestion to dashboard"
+        "0 manual steps — fully automated from ingestion to dashboard"
       ],
       bullets: [
-        "Automated end-to-end Python pipeline validating financial transaction data across source and reporting layers - 5 validation checks covering null detection, duplicate records, variance thresholds, category mapping, and currency integrity.",
-        "Classified 100 exceptions across 1,000 transactions by severity (CRITICAL/HIGH/MEDIUM/LOW) - structured exception reports generated automatically with zero manual triage steps.",
-        "Achieved 90% pass rate on variance checks across the full transaction set - pipeline outputs audit-ready reports and dashboards without manual intervention."
+        "Automated end-to-end Python pipeline validating financial transaction data across source and reporting layers — 5 validation checks covering null detection, duplicate records, variance thresholds, category mapping, and currency integrity.",
+        "Classified 100 exceptions across 1,000 transactions by severity (CRITICAL/HIGH/MEDIUM/LOW) — structured exception reports generated automatically with zero manual triage steps.",
+        "Achieved 90% pass rate on variance checks across the full transaction set — pipeline outputs audit-ready reports and dashboards without manual intervention."
       ],
       demoRows: [
         { check: "Null Check", total: 1000, passed: 1000, failed: 0, passRate: "100%", status: "PASS" },
@@ -166,8 +166,8 @@ control layer that sits between the pipeline and the boardroom.`
       title: "Source-to-Report Financial Reconciliation Platform",
       stack: ["SQL", "CTEs", "Window Functions", "Aggregations"],
       bullets: [
-        "Built a SQL reconciliation workflow comparing source, transformed, and reporting-layer finance data across validation checkpoints - detecting missing records, duplicate entries, GL mapping errors, and balance variances before data reaches final reporting.",
-        "Produced structured exception outputs and reconciliation summaries at each pipeline stage - giving audit teams a clear record of what failed, where it failed, and what the variance was."
+        "Built a SQL reconciliation workflow comparing source, transformed, and reporting-layer finance data across validation checkpoints — detecting missing records, duplicate entries, GL mapping errors, and balance variances before data reaches final reporting.",
+        "Produced structured exception outputs and reconciliation summaries at each pipeline stage — giving audit teams a clear record of what failed, where it failed, and what the variance was."
       ],
       sqlSnippet: `SELECT
   s.account_id,
@@ -197,8 +197,8 @@ HAVING SUM(s.amount) <> SUM(r.amount);`,
       title: "Financial Reporting Controls Monitoring Model",
       stack: ["Validation Templates", "Control Checkpoints", "SQL", "Audit Trails"],
       bullets: [
-        "Built a SQL-based controls layer monitoring reporting exceptions across revenue, P&L, inventory, expenses, and payroll - standardized variance thresholds and exception checkpoints applied consistently across all financial domains.",
-        "Designed for audit-ready output - every exception flagged with a control checkpoint reference, variance amount, and timestamp before management review."
+        "Built a SQL-based controls layer monitoring reporting exceptions across revenue, P&L, inventory, expenses, and payroll — standardized variance thresholds and exception checkpoints applied consistently across all financial domains.",
+        "Designed for audit-ready output — every exception flagged with a control checkpoint reference, variance amount, and timestamp before management review."
       ],
       sqlSnippet: `WITH control_status AS (
   SELECT
@@ -230,8 +230,8 @@ ORDER BY failures DESC;`,
       title: "Financial Reporting UAT and Release Readiness Framework",
       stack: ["UAT Methodology", "Test Scenarios", "Edge Case Coverage", "Release Validation"],
       bullets: [
-        "Designed a structured UAT framework for a financial reporting enhancement - business requirements mapped directly to user stories, acceptance criteria, edge case test scenarios, and defect tracking across the full release cycle.",
-        "Achieved zero open defects at UAT sign-off -release readiness confirmed across all dependent reporting workflows before each deployment checkpoint."
+        "Designed a structured UAT framework for a financial reporting enhancement — business requirements mapped directly to user stories, acceptance criteria, edge case test scenarios, and defect tracking across the full release cycle.",
+        "Achieved zero open defects at UAT sign-off — release readiness confirmed across all dependent reporting workflows before each deployment checkpoint."
       ],
       sqlSnippet: `-- Edge case: negative amount detection
 SELECT
@@ -272,8 +272,8 @@ WHERE transaction_id IN (
       title: "Requirements Traceability Matrix (RTM)",
       stack: ["Requirements Management", "Excel", "SQL", "Agile", "UAT"],
       bullets: [
-        "Built a complete RTM mapping 13 functional requirements to user stories, test cases, and sprint delivery for a SQL-based financial reconciliation system - 100% requirement coverage confirmed across 4 sprints with zero open defects at UAT sign-off.",
-        "Includes a Coverage Summary dashboard with auto-calculated pass rates and a Sprint Tracker showing delivery status per sprint - built for audit review and stakeholder sign-off."
+        "Built a complete RTM mapping 13 functional requirements to user stories, test cases, and sprint delivery for a SQL-based financial reconciliation system — 100% requirement coverage confirmed across 4 sprints with zero open defects at UAT sign-off.",
+        "Includes a Coverage Summary dashboard with auto-calculated pass rates and a Sprint Tracker showing delivery status per sprint — built for audit review and stakeholder sign-off."
       ],
       sqlSnippet: `SELECT
   category,
