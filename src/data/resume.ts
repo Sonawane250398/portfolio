@@ -11,6 +11,8 @@ export const resumeData = {
       { name: "LinkedIn", url: "https://www.linkedin.com/in/yash-sonawane25" },
       { name: "GitHub", url: "https://github.com/Sonawane250398" }
     ],
+    resumePdfUrl:
+      "https://drive.google.com/file/d/1-YeMViS_T4v7dXd79aRbrnbpKZVIL1xW/view?usp=sharing",
     openTo: ["Business Analyst", "Business Systems Analyst", "Financial Systems Analyst", "Data Analyst", "Reporting Analyst"]
   },
   architecture: {
