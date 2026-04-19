@@ -33,7 +33,7 @@ export const resumeData = {
       location: "Fullerton, CA",
       bullets: [
         "Built a SQL reconciliation framework across source, transformed, and reporting-layer datasets - validating 5,000+ records monthly, catching mismatches, missing records, and variances before data reaches reporting. Reduced discrepancies by 20%, cut investigation time by 30%, saved 10+ hours of manual work weekly.",
-        "Defined system requirements and validation logic for 3 financial reporting pipelines - standardized acceptance criteria eliminated mid-sprint requirement changes across 8–-10 stories per cycle.",
+        "Defined system requirements and validation logic for 3 financial reporting pipelines - standardized acceptance criteria eliminated mid-sprint requirement changes across 8–10 stories per cycle.",
         "Deployed Tableau dashboards tracking 12 KPIs across reporting accuracy and exception visibility - surfaced pipeline failures before stakeholder delivery and cut manual investigation by 30%.",
         "Delivered 6 consecutive zero-defect releases across 3 business units - UAT scenarios, business rule validation, and defect tracking built into every sprint cycle."
       ]
@@ -45,7 +45,7 @@ export const resumeData = {
       location: "Pune, India",
       bullets: [
         "Built SQL-based financial reporting workflows across procurement, inventory, and revenue data for 3 product lines - reduced month-end close errors by 15% and shortened reporting cycle by 2 days.",
-        "Eliminated 6–-8 hours of weekly manual reporting by building Tableau dashboards for revenue, inventory velocity, and operational throughput - used by 4 stakeholder groups across finance, operations, and management teams.",
+        "Eliminated 6–8 hours of weekly manual reporting by building Tableau dashboards for revenue, inventory velocity, and operational throughput - used by 4 stakeholder groups across finance, operations, and management teams.",
         "Documented data lineage and reporting logic across operational systems, reporting databases, and BI layers - reducing analyst onboarding time by an estimated 30% through clearer source-to-report mapping.",
         "Reconciled operational records against summarized financial outputs each month, identifying discrepancies before management review and improving reporting accuracy for P&L inputs."
       ]
@@ -55,7 +55,7 @@ export const resumeData = {
     { metric: "20%", context: "reduction in recurring reconciliation discrepancies" },
     { metric: "30%", context: "faster break investigation time" },
     { metric: "10+", context: "hours of manual investigation saved weekly" },
-    { metric: "6–-8 hrs", context: "of manual reporting eliminated weekly" },
+    { metric: "6–8 hrs", context: "of manual reporting eliminated weekly" },
     { metric: "Zero", context: "critical post-deployment issues across 6 consecutive releases" },
     { metric: "15%", context: "reduction in month-end reporting errors" },
     { metric: "2 days", context: "shortened reporting cycle time" },
@@ -191,7 +191,7 @@ HAVING SUM(s.amount) <> SUM(r.amount);`,
         { account: "ACC-1004", source: "$320,750", reporting: "$319,900", variance: "$850", status: "MISMATCH", severity: "MEDIUM" },
         { account: "ACC-1005", source: "$198,400", reporting: "$198,400", variance: "$0", status: "MATCHED", severity: "NONE" }
       ],
-      links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/sql-reconciliation-framework" }]
+      links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/source-to-report-financial-reconciliation-platform" }]
     },
     {
       title: "Financial Reporting Controls Monitoring Model",
@@ -224,7 +224,7 @@ ORDER BY failures DESC;`,
         { domain: "Payroll", totalChecks: 4, passed: 4, failed: 0, passRate: "100%", risk: "LOW" },
         { domain: "Revenue", totalChecks: 4, passed: 4, failed: 0, passRate: "100%", risk: "LOW" }
       ],
-      links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/financial-reporting-control-framework" }]
+      links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/financial-reporting-controls-monitoring-model" }]
     },
     {
       title: "Financial Reporting UAT and Release Readiness Framework",
@@ -266,7 +266,7 @@ WHERE transaction_id IN (
         { testId: "TC-006", scenario: "Source vs reporting totals", type: "Reconciliation", status: "FAIL", severity: "HIGH" }
       ],
       releaseReadiness: { total: 25, passed: 22, failed: 2, blocked: 1, score: "88%", status: "CONDITIONAL APPROVAL" },
-      links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/financial-reporting-uat-framework" }]
+      links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/financial-reporting-uat-release-readiness-framework" }]
     },
     {
       title: "Requirements Traceability Matrix (RTM)",
