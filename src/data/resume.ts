@@ -22,7 +22,7 @@ export const resumeData = {
       { label: "Python Validation Pipeline", detail: "Pandas · Automated checks · Exception classification" },
       { label: "Reporting Control Framework", detail: "5 domains · Checkpoint validation · Audit trails" },
       { label: "UAT Validation Framework", detail: "Edge case coverage · Release stability · Zero critical issues" },
-      { label: "Executive Dashboards", detail: "Tableau · Power BI · Dash · 12 KPIs · AI-powered delivery" }
+      { label: "Executive Dashboards", detail: "Tableau · Dash · 12 KPIs" }
     ]
   },
   experience: [
