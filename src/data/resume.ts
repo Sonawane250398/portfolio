@@ -9,10 +9,9 @@ export const resumeData = {
     phone: "(562) 455-7892",
     links: [
       { name: "LinkedIn", url: "https://www.linkedin.com/in/yash-sonawane25" },
-      { name: "GitHub", url: "https://github.com/Sonawane250398" }
+      { name: "GitHub", url: "https://github.com/Sonawane250398" },
+      { name: "Resume", url: "https://drive.google.com/file/d/1fWzD7dzUlcyzrfhWFeQxbc6hxjmB-l1z/view?usp=sharing" }
     ],
-    resumePdfUrl:
-      "https://drive.google.com/file/d/1-YeMViS_T4v7dXd79aRbrnbpKZVIL1xW/view?usp=sharing",
     openTo: ["Business Analyst", "Business Systems Analyst", "Financial Systems Analyst", "Data Analyst", "Reporting Analyst"]
   },
   architecture: {
