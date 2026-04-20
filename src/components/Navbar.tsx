@@ -19,7 +19,7 @@ export default function Navbar() {
   const { name } = resumeData.basics;
 
   const resumeUrl =
-    'https://drive.google.com/file/d/1pWoGGWehnWGzoNPxJ-4-ON3iZWoWtO2P/view?usp=sharing';
+    'https://drive.google.com/file/d/1HmP_SbYNrtcPkCClFQ_9-2huYdqnCZ1Z/view?usp=sharing';
 
   useEffect(() => {
     const handleScroll = () => {
