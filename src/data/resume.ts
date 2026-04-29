@@ -373,10 +373,30 @@ ORDER BY total_reqs DESC;`,
     }
   ],
   certifications: [
-    { name: "Tableau Public — Financial Performance Dashboard, 2026" },
-    { name: "Advanced SQL — Kaggle" },
-    { name: "Pandas — Kaggle, Mar 2026" },
-    { name: "Microsoft Get Started with Data Analytics — Microsoft, Mar 2026" }
+    {
+      name: "Google Advanced Data Analytics",
+      issuer: "Google",
+      date: "Apr 2026",
+      url: "https://www.coursera.org/account/accomplishments/specialization/C3QIW8MGM190"
+    },
+    {
+      name: "Google Business Intelligence",
+      issuer: "Google",
+      date: "Apr 2026",
+      url: "https://www.coursera.org/account/accomplishments/professional-cert/certificate/Q6QAQ58G11DY"
+    },
+    {
+      name: "SQL Advanced",
+      issuer: "HackerRank",
+      date: "Apr 2026",
+      url: "https://www.hackerrank.com/certificates/8eecf25c6664"
+    },
+    {
+      name: "SQL for Data Analysis",
+      issuer: "Kaggle",
+      date: "Mar 2026",
+      url: ""
+    }
   ],
   awards: [],
   extra: [

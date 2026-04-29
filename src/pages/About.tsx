@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import Experience from '../components/Experience';
 import Skills from '../components/Skills';
 import EducationAbout from '../components/EducationAbout';
+import Certifications from '../components/Certifications';
 
 export default function About() {
   return (
@@ -37,6 +38,7 @@ export default function About() {
       <Experience mode="static" />
       <Skills pageLayout />
       <EducationAbout />
+      <Certifications />
     </>
   );
 }
