@@ -28,7 +28,7 @@ export const resumeData = {
   },
   experience: [
     {
-      company: "Kakar Ventures",
+      company: "kakarX",
       role: "Business Analyst – Financial Reporting Systems",
       dates: "Sep 2024 – Present",
       location: "Fullerton, CA",
