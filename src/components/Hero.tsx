@@ -11,10 +11,10 @@ export default function Hero() {
   const [animatedMetrics, setAnimatedMetrics] = useState(['0%', '6–8 hrs', '7.6x', '0+']);
 
   const stats = [
-    { metric: '20%', label: 'fewer reconciliation discrepancies' },
-    { metric: '6–8 hrs', label: 'manual reporting eliminated/week' },
-    { metric: '7.6x', label: 'faster reconciliation vs pandas baseline (published research)' },
-    { metric: '4+', label: 'years in financial data systems' },
+    { metric: '20%', label: 'fewer reconciliation discrepancies', static: false },
+    { metric: '6–8 hrs', label: 'manual reporting eliminated/week', static: true },
+    { metric: '7.6x', label: 'faster reconciliation vs pandas baseline (published research)', static: true },
+    { metric: '4+', label: 'years in financial data systems', static: false },
   ];
 
   const resumeUrl =
@@ -54,7 +54,7 @@ export default function Hero() {
       setAnimatedMetrics([
         `${p20}%`,
         '6–8 hrs',
-        `${Math.round(0 * eased)}`,
+        '7.6x',
         `${p4}+`,
       ]);
 
@@ -126,7 +126,7 @@ export default function Hero() {
                 transition={i === 1 ? { duration: 0.6, ease: 'easeOut' } : undefined}
               >
                 <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
-                  {animatedMetrics[i] ?? s.metric}
+                  {s.static ? s.metric : (animatedMetrics[i] ?? s.metric)}
                 </span>
                 <span className="text-sm leading-snug text-slate-500 dark:text-slate-400">{s.label}</span>
               </motion.div>
