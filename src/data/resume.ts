@@ -68,7 +68,7 @@ export const resumeData = {
     { metric: "30%", context: "faster break investigation time" },
     { metric: "10+", context: "hours of manual investigation saved weekly" },
     { metric: "6–8 hrs", context: "of manual reporting eliminated weekly" },
-    { metric: "Zero", context: "critical post-deployment issues across 6 consecutive releases" },
+    { metric: "7.6x", context: "faster reconciliation vs pandas baseline (published research)" },
     { metric: "15%", context: "reduction in month-end reporting errors" },
     { metric: "2 days", context: "shortened reporting cycle time" },
     { metric: "30%", context: "faster analyst onboarding through clearer data lineage" }

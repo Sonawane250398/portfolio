@@ -8,7 +8,7 @@ export default function Hero() {
   const { name, title, subtitle, summary, links, openTo } = resumeData.basics;
   const statsRef = useRef<HTMLDivElement | null>(null);
   const [statsInView, setStatsInView] = useState(false);
-  const [animatedMetrics, setAnimatedMetrics] = useState(['0%', '6–8 hrs', '0', '0+']);
+  const [animatedMetrics, setAnimatedMetrics] = useState(['0%', '6–8 hrs', '7.6x', '0+']);
 
   const stats = [
     { metric: '20%', label: 'fewer reconciliation discrepancies' },
