@@ -63,8 +63,8 @@ export default function Experience({ mode = 'accordion' }: ExperienceProps) {
                 }`}
               >
                 {isStatic ? (
-                  <div className="p-5 min-[769px]:p-6 sm:p-8">
-                    <div className="mb-8 space-y-2">
+                  <div className="p-6">
+                    <div className="mb-4 space-y-2">
                       <h3 className="text-xl font-semibold text-slate-900 dark:text-white min-[769px]:text-2xl">{job.role}</h3>
                       <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
                         <span className="flex items-center gap-1.5 font-medium text-slate-700 dark:text-slate-300">
@@ -95,7 +95,7 @@ export default function Experience({ mode = 'accordion' }: ExperienceProps) {
                     <button
                       type="button"
                       onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
-                      className="flex min-h-11 w-full flex-col gap-4 p-5 text-left focus:outline-none min-[769px]:min-h-0 sm:flex-row sm:items-center sm:justify-between sm:p-8"
+                      className="flex min-h-11 w-full flex-col gap-4 p-6 text-left focus:outline-none min-[769px]:min-h-0 sm:flex-row sm:items-center sm:justify-between"
                     >
                       <div className="space-y-2">
                         <h3 className="text-xl font-semibold text-slate-900 transition-colors group-hover:text-emerald-600 min-[769px]:text-2xl dark:text-white dark:group-hover:text-emerald-400">
@@ -135,8 +135,8 @@ export default function Experience({ mode = 'accordion' }: ExperienceProps) {
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
                       className="overflow-hidden"
                     >
-                      <div className="border-t border-slate-200/80 p-6 pt-0 dark:border-white/5 sm:p-8">
-                        <ul className="mt-6 space-y-4">
+                      <div className="border-t border-slate-200/80 px-6 pb-6 pt-0 dark:border-white/5">
+                        <ul className="mt-4 space-y-4">
                           {job.bullets.map((bullet, i) => (
                             <li key={i} className="flex items-start gap-4 leading-relaxed text-slate-600 dark:text-slate-300">
                               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />

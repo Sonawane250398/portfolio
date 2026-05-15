@@ -13,7 +13,7 @@ export default function Hero() {
   const stats = [
     { metric: '20%', label: 'fewer reconciliation discrepancies' },
     { metric: '6–8 hrs', label: 'manual reporting eliminated/week' },
-    { metric: '0', label: 'critical issues across 6 releases' },
+    { metric: '7.6x', label: 'faster reconciliation vs pandas baseline (published research)' },
     { metric: '4+', label: 'years in financial data systems' },
   ];
 

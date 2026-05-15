@@ -19,7 +19,7 @@ export default function Footer() {
             {name}
           </h2>
           <p className="text-sm text-slate-600 dark:text-slate-400">
-            Turning data into decisions.
+            Finding the breaks before they reach reporting.
           </p>
         </motion.div>
 
