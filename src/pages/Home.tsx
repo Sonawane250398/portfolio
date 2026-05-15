@@ -2,6 +2,7 @@ import Hero from '../components/Hero';
 import SkillsTicker from '../components/SkillsTicker';
 import Experience from '../components/Experience';
 import Projects from '../components/Projects';
+import Research from '../components/Research';
 import Certifications from '../components/Certifications';
 import Skills from '../components/Skills';
 import EducationAbout from '../components/EducationAbout';
@@ -17,6 +18,9 @@ export default function Home() {
       </div>
       <div id="projects" className="scroll-mt-24 min-[769px]:scroll-mt-28 md:scroll-mt-32">
         <Projects />
+      </div>
+      <div id="research" className="scroll-mt-24 min-[769px]:scroll-mt-28 md:scroll-mt-32">
+        <Research />
       </div>
       <div id="skills" className="scroll-mt-24 min-[769px]:scroll-mt-28 md:scroll-mt-32">
         <Skills pageLayout />

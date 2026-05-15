@@ -2,7 +2,7 @@ export const resumeData = {
   basics: {
     name: "Yash Sonawane",
     title: "Business Analyst",
-    subtitle: "Financial Reporting · SQL Reconciliation · UAT · Source-to-Report Validation",
+    subtitle: "Data Analyst · Business Analyst · SQL Reconciliation · UAT · Reporting Systems",
     summary: "I find the reconciliation breaks that don't surface until month-end, then build the controls that catch them at the source. 4+ years across financial reporting systems, SQL reconciliation frameworks, and UAT pipelines. The work that matters is upstream: validating data before it moves, not explaining why it's wrong after it reaches reporting.",
     location: "Fullerton, California, United States",
     email: "yashsonawane25.work@gmail.com",
@@ -12,7 +12,7 @@ export const resumeData = {
       { name: "GitHub", url: "https://github.com/Sonawane250398" },
       { name: "Resume", url: "https://drive.google.com/file/d/1276wZlKcsAGX5WMpkOAVX2vnCtDkPF1i/view?usp=sharing" }
     ],
-    openTo: ["Business Analyst", "Business Systems Analyst", "Financial Systems Analyst", "Data Analyst", "Reporting Analyst"]
+    openTo: ["Business Analyst", "Data Analyst", "Reporting Analyst", "Business Systems Analyst", "Financial Systems Analyst"]
   },
   architecture: {
     title: "Financial Reporting Data Architecture",
@@ -29,26 +29,37 @@ export const resumeData = {
   experience: [
     {
       company: "kakarX",
-      role: "Business Analyst – Financial Reporting Systems",
+      companyDescription: "Venture Capital & Private Equity",
+      role: "Business Analyst – Reporting & Reconciliation",
       dates: "Sep 2024 – Present",
       location: "Fullerton, CA",
       bullets: [
-        "Built a SQL reconciliation framework across source, transformed, and reporting-layer datasets — validating 5,000+ records monthly, catching mismatches, missing records, and variances before data reaches reporting. Reduced discrepancies by 20%, cut investigation time by 30%, saved 10+ hours of manual work weekly.",
-        "Defined system requirements and validation logic for 3 financial reporting pipelines — standardized acceptance criteria eliminated mid-sprint requirement changes across 8–10 stories per cycle.",
-        "Deployed Tableau dashboards tracking 12 KPIs across reporting accuracy and exception visibility — surfaced pipeline failures before stakeholder delivery and cut manual investigation by 30%.",
-        "Delivered 6 consecutive zero-defect releases across 3 business units — UAT scenarios, business rule validation, and defect tracking built into every sprint cycle."
+        "Built SQL reconciliation framework across 4–6 portfolio companies using CTEs and window functions — comparing source inputs against reporting outputs weekly and monthly. Reduced errors by 20%, cut investigation time by 30%.",
+        "Designed and executed 15–30 UAT scenarios per release across reporting logic, dashboard calculations, and reconciliation workflows. Delivered 6 consecutive zero-defect releases with no rollbacks, no post-deployment issues.",
+        "Built Tableau reporting layer surfacing 12 KPIs used by founders in monthly portfolio reviews — replaced manual pulls across 4–6 files with a single consolidated dashboard."
       ]
     },
     {
-      company: "Yash Industrials",
-      role: "Business Analyst",
-      dates: "May 2019 – Jul 2022",
+      company: "Niranjan Enterprises – Digital Solutions",
+      companyDescription: "Operations / Business Intelligence",
+      role: "Data Analyst",
+      dates: "Jan 2020 – Jul 2022",
       location: "Pune, India",
       bullets: [
-        "Built SQL-based financial reporting workflows across procurement, inventory, and revenue data for 3 product lines — reduced month-end close errors by 15% and shortened reporting cycle by 2 days.",
-        "Eliminated 6–8 hours of weekly manual reporting by building Tableau dashboards for revenue, inventory velocity, and operational throughput — used by 4 stakeholder groups across finance, operations, and management teams.",
-        "Documented data lineage and reporting logic across operational systems, reporting databases, and BI layers — reducing analyst onboarding time by an estimated 30% through clearer source-to-report mapping.",
-        "Reconciled operational records against summarized financial outputs each month, identifying discrepancies before management review and improving reporting accuracy for P&L inputs."
+        "Owned reconciliation across 15–25 monthly reporting outputs — validated up to 30,000 records across 3 business functions monthly. Reduced month-end errors by 15%, compressed close cycle by 2 days.",
+        "Replaced manual consolidation with MIS dashboards in Excel and Power BI used by 5–10 stakeholders — eliminated 6–8 hours of weekly manual prep.",
+        "Mapped 3 data pipelines end-to-end, standardized transformation logic — cut audit prep from 3 days to 1."
+      ]
+    },
+    {
+      company: "Netcom Solutions",
+      companyDescription: "MIS & Reporting",
+      role: "Data Analyst Intern",
+      dates: "May 2019 – Dec 2019",
+      location: "Mumbai, India",
+      bullets: [
+        "Built daily and monthly MIS reports covering sales, service activity, and operational KPIs.",
+        "Developed KPI dashboards in Excel and Power BI tracking service request volumes, turnaround time, and sales performance."
       ]
     }
   ],
@@ -299,6 +310,19 @@ ORDER BY total_reqs DESC;`,
       links: [{ label: "GitHub", url: "https://github.com/Sonawane250398/requirements-traceability-matrix" }]
     }
   ],
+  research: [
+    {
+      title: "A Scalable Framework for Financial Data Reconciliation in Multi-Layer Reporting Systems",
+      publisher: "SSRN + Zenodo",
+      date: "May 2026",
+      badge: "Published Research",
+      description: "Push-down SQL framework on 5M-row synthetic ledger achieving 7.6x latency reduction over pandas baseline. Empirically demonstrates 58% false-positive reduction via same-engine execution. Perfect precision/recall (1.000/1.000) across all discrepancy categories.",
+      links: [
+        { label: "SSRN", url: "https://ssrn.com/abstract=6680519" },
+        { label: "Zenodo", url: "https://doi.org/10.5281/zenodo.19909708" }
+      ]
+    }
+  ],
   skills: [
     {
       category: "Business Analysis",
@@ -390,12 +414,6 @@ ORDER BY total_reqs DESC;`,
       issuer: "HackerRank",
       date: "Apr 2026",
       url: "https://www.hackerrank.com/certificates/8eecf25c6664"
-    },
-    {
-      name: "SQL for Data Analysis",
-      issuer: "Kaggle",
-      date: "Mar 2026",
-      url: ""
     }
   ],
   awards: [],
