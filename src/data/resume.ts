@@ -325,16 +325,42 @@ ORDER BY total_reqs DESC;`,
   ],
   skills: [
     {
-      category: "Business Analysis",
+      category: "Data Engineering & Pipelines",
+      items: [
+        "ETL/ELT pipeline development",
+        "SQL query optimization",
+        "Python automation",
+        "Data pipeline validation",
+        "Apache Airflow concepts",
+        "Data modeling",
+        "DuckDB",
+        "Pandas",
+        "Cloud data workflows",
+        "Git version control"
+      ]
+    },
+    {
+      category: "Reconciliation & Controls",
       items: [
         "Source-to-report validation",
+        "Exception classification",
+        "Data lineage",
+        "Audit traceability",
+        "Variance analysis",
+        "Reporting controls",
+        "Data governance",
+        "Financial reconciliation"
+      ]
+    },
+    {
+      category: "Business Analysis",
+      items: [
+        "Requirements definition",
+        "BRD",
         "User stories",
         "Acceptance criteria",
-        "BRD",
-        "Requirements traceability",
+        "Traceability matrices",
         "Stakeholder management",
-        "Financial analysis",
-        "Exception classification",
         "SDLC support",
         "Process mapping",
         "Workflow documentation"
@@ -343,40 +369,27 @@ ORDER BY total_reqs DESC;`,
     {
       category: "Testing & Delivery",
       items: [
-        "UAT",
+        "UAT design and execution",
         "Test scenario design",
         "Defect documentation",
         "Release readiness",
-        "Cross-system validation"
+        "Cross-system validation",
+        "Agile/Scrum",
+        "Jira",
+        "Confluence"
       ]
     },
     {
-      category: "Financial & Reporting Systems",
+      category: "Reporting & Visualization",
       items: [
-        "Financial reporting",
-        "Reconciliation",
-        "Reporting controls",
-        "Variance analysis",
-        "Data lineage",
-        "Source-to-report validation",
-        "Data Governance"
-      ]
-    },
-    {
-      category: "Data & Tools",
-      items: [
-        "SQL",
         "Tableau",
         "Power BI",
-        "Python",
-        "Pandas",
         "Dash",
         "Plotly",
-        "Advanced Excel",
-        "ETL Validation",
-        "Jira",
-        "Confluence",
-        "Agile/Scrum"
+        "MIS reporting",
+        "KPI dashboards",
+        "Financial reporting",
+        "Advanced Excel"
       ]
     }
   ],
