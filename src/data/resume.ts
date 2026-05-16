@@ -2,7 +2,7 @@ export const resumeData = {
   basics: {
     name: "Yash Sonawane",
     title: "Business Analyst",
-    subtitle: "Data Analyst · Business Analyst · SQL Reconciliation · UAT · Reporting Systems",
+    subtitle: "Data Engineer · Data Analyst · SQL Reconciliation · UAT · Reporting Systems",
     summary: "I find the reconciliation breaks that don't surface until month-end, then build the controls that catch them at the source. 4+ years across financial reporting systems, SQL reconciliation frameworks, and UAT pipelines. The work that matters is upstream: validating data before it moves, not explaining why it's wrong after it reaches reporting.",
     location: "Fullerton, California, United States",
     email: "yashsonawane25.work@gmail.com",
@@ -12,7 +12,7 @@ export const resumeData = {
       { name: "GitHub", url: "https://github.com/Sonawane250398" },
       { name: "Resume", url: "https://drive.google.com/file/d/1nkGBvltsEcANwqcBy-ri4Xjz2K8p0dJX/view" }
     ],
-    openTo: ["Business Analyst", "Data Analyst", "Reporting Analyst", "Business Systems Analyst", "Financial Systems Analyst"]
+    openTo: ["Data Engineer", "Business Analyst", "Data Analyst", "Reporting Analyst", "Business Systems Analyst"]
   },
   architecture: {
     title: "Financial Reporting Data Architecture",
@@ -30,13 +30,13 @@ export const resumeData = {
     {
       company: "kakarX",
       companyDescription: "Venture Capital & Private Equity",
-      role: "Business Analyst – Reporting & Reconciliation",
+      role: "Data Engineer – Reporting & Reconciliation",
       dates: "Sep 2024 – Present",
       location: "Fullerton, CA",
       bullets: [
-        "Built SQL reconciliation framework across 4–6 portfolio companies using CTEs and window functions — comparing source inputs against reporting outputs weekly and monthly. Reduced errors by 20%, cut investigation time by 30%.",
-        "Designed and executed 15–30 UAT scenarios per release across reporting logic, dashboard calculations, and reconciliation workflows. Delivered 6 consecutive zero-defect releases with no rollbacks, no post-deployment issues.",
-        "Built Tableau reporting layer surfacing 12 KPIs used by founders in monthly portfolio reviews — replaced manual pulls across 4–6 files with a single consolidated dashboard."
+        "Engineered SQL reconciliation pipelines across 4–6 portfolio companies using CTEs and window functions — comparing source inputs against reporting outputs weekly and monthly. Reduced errors by 20%, cut investigation time by 30%. Discrepancies caught before fund leadership review, not after.",
+        "Designed and executed 15–30 UAT scenarios per release across data pipeline outputs, dashboard calculations, and reconciliation workflows -- validated business rules, identified edge cases in missing-data conditions, signed off release readiness. Delivered 6 consecutive zero-defect releases with no rollbacks, no post-deployment issues.",
+        "Built Tableau reporting layer surfacing 12 KPIs used by founders in monthly portfolio reviews -- replaced manual pulls across 4–6 files with a single consolidated dashboard."
       ]
     },
     {
