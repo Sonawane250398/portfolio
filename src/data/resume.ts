@@ -10,7 +10,7 @@ export const resumeData = {
     links: [
       { name: "LinkedIn", url: "https://www.linkedin.com/in/yash-sonawane25" },
       { name: "GitHub", url: "https://github.com/Sonawane250398" },
-      { name: "Resume", url: "https://drive.google.com/file/d/1EaStTUmPjIEet6Z0T3OFa2I51EHDrHHX/view" }
+      { name: "Resume", url: "https://drive.google.com/file/d/1DCGz-2bQ3tljWPf6w5RM6YCtK4PcAugR/view?usp=sharing" }
     ],
     openTo: ["Data Engineer", "Business Analyst", "Data Analyst", "Reporting Analyst", "Business Systems Analyst"]
   },
