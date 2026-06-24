@@ -3,16 +3,16 @@ export const resumeData = {
     name: "Yash Sonawane",
     title: "Business Analyst",
     subtitle: "Data Engineer · Data Analyst · SQL Reconciliation · UAT · Reporting Systems",
-    summary: "I find the reconciliation breaks that don't surface until month-end, then build the controls that catch them at the source. 4+ years across financial reporting systems, SQL reconciliation frameworks, and UAT pipelines. The work that matters is upstream: validating data before it moves, not explaining why it's wrong after it reaches reporting.",
+    summary: "I find the data errors that don't surface until they're someone else's problem — then build the controls that catch them at the source. 4 years as a Data Analyst / Business Systems Analyst: SQL, Python (Pandas), Tableau, Power BI — ETL pipelines, source-to-report validation, and UAT across 4–6 business units.",
     location: "Fullerton, California, United States",
     email: "yashsonawane25.work@gmail.com",
     phone: "(562) 455-7892",
     links: [
       { name: "LinkedIn", url: "https://www.linkedin.com/in/yash-sonawane25" },
       { name: "GitHub", url: "https://github.com/Sonawane250398" },
-      { name: "Resume", url: "https://drive.google.com/file/d/1DCGz-2bQ3tljWPf6w5RM6YCtK4PcAugR/view?usp=sharing" }
+      { name: "Resume", url: "https://drive.google.com/file/d/1i1-1LzUKHq22RJ6vB_VNgcQH-AJ62nVD/view?usp=sharing" }
     ],
-    openTo: ["Data Engineer", "Business Analyst", "Data Analyst", "Reporting Analyst", "Business Systems Analyst"]
+    openTo: ["Data Analyst", "Business Analyst", "Business Systems Analyst", "Reporting Analyst"]
   },
   architecture: {
     title: "Financial Reporting Data Architecture",
@@ -30,13 +30,15 @@ export const resumeData = {
     {
       company: "kakarX",
       companyDescription: "Venture Capital & Private Equity",
-      role: "Data Engineer – Reporting & Reconciliation",
+      role: "Data Analyst – Analytics & Reporting",
       dates: "Sep 2024 – Present",
-      location: "Fullerton, CA",
+      location: "Philadelphia, PA",
       bullets: [
-        "Engineered SQL reconciliation pipelines across 4–6 portfolio companies using CTEs and window functions — comparing source inputs against reporting outputs weekly and monthly. Reduced errors by 20%, cut investigation time by 30%. Discrepancies caught before fund leadership review, not after.",
-        "Designed and executed 15–30 UAT scenarios per release across data pipeline outputs, dashboard calculations, and reconciliation workflows -- validated business rules, identified edge cases in missing-data conditions, signed off release readiness. Delivered 6 consecutive zero-defect releases with no rollbacks, no post-deployment issues.",
-        "Built Tableau reporting layer surfacing 12 KPIs used by founders in monthly portfolio reviews -- replaced manual pulls across 4–6 files with a single consolidated dashboard."
+        "Cut data reporting errors 20% and investigation time 30% by building SQL ETL pipelines and source-to-report validation — CTEs and window functions reconciling inputs against weekly and monthly outputs across 4–6 business units, every discrepancy flagged before cross-functional partner review.",
+        "Replaced manual data exports with on-demand partner visibility into $174M across 5 segments and 3 fiscal years — led dashboard development in Tableau that loaded prior-period variance automatically and cut recurring reporting prep to zero.",
+        "Eliminated 4–6 manual file pulls per reporting cycle by gathering requirements from founders, defining 12 KPIs, and building the Tableau business intelligence reporting layer — cut overhead to one scheduled monthly review and stopped ad hoc data requests from executive stakeholders entirely.",
+        "Maintained 6 consecutive reporting cycles with zero data errors by running 15–30 UAT and validation checks per cycle — covered every calculation, aggregation, and source-to-output reconciliation across all dashboards and pipeline outputs before each delivery.",
+        "Cut manual data prep across 4–6 data sources to zero by automating extraction, data cleaning, and transformation in Python (Pandas) — built reusable preprocessing scripts that standardized inputs and fed directly into 6 consecutive zero-error reporting cycles."
       ]
     },
     {
@@ -46,9 +48,11 @@ export const resumeData = {
       dates: "Jan 2020 – Jul 2022",
       location: "Pune, India",
       bullets: [
-        "Owned reconciliation across 15–25 monthly reporting outputs — validated up to 30,000 records across 3 business functions monthly. Reduced month-end errors by 15%, compressed close cycle by 2 days.",
-        "Replaced manual consolidation with MIS dashboards in Excel and Power BI used by 5–10 stakeholders — eliminated 6–8 hours of weekly manual prep.",
-        "Mapped 3 data pipelines end-to-end, standardized transformation logic — cut audit prep from 3 days to 1."
+        "Reduced reporting errors 15% and cut the delivery cycle 2 days by validating 30,000 records monthly across 15–25 reporting outputs — caught every discrepancy across operations, client reporting, and delivery before management sign-off.",
+        "Eliminated 6–8 hours of weekly manual data prep by replacing multi-sheet Excel consolidation with Power BI and Excel dashboards — automated recurring performance reporting for 5–10 cross-functional stakeholders across client delivery, operations, and management reporting.",
+        "Standardized outputs across 15–25 monthly report types by building reusable SQL extraction and aggregation templates — cut recurring data pull turnaround, ensured audit-ready formatting across all client accounts, and eliminated repeated manual queries entirely.",
+        "Flagged performance trends and anomalies across 3 business functions before each client delivery — conducted monthly exploratory data analysis on operational and client metrics and delivered findings that supported data-driven strategy adjustments.",
+        "Cut audit preparation from 3 days to 1 by documenting and modeling 3 end-to-end data pipelines — standardized transformation logic, established data lineage across all reporting flows, and created reusable audit-ready documentation."
       ]
     },
     {
@@ -58,8 +62,9 @@ export const resumeData = {
       dates: "May 2019 – Dec 2019",
       location: "Mumbai, India",
       bullets: [
-        "Built daily and monthly MIS reports covering sales, service activity, and operational KPIs.",
-        "Developed KPI dashboards in Excel and Power BI tracking service request volumes, turnaround time, and sales performance."
+        "Delivered zero-revision daily and monthly MIS reports to weekly management reviews — built Excel and Power BI dashboards tracking sales activity, service KPIs, request volumes, and turnaround time; error-free from the second month, no rework required.",
+        "Eliminated recurring manual corrections by building a pre-cycle data validation and reconciliation process for customer and service records — caught format errors and data gaps before each reporting cycle and documented the workflow adopted as team standard for all future cycles.",
+        "Cut report build time and eliminated rework by automating recurring MIS report generation using Excel pivot tables, macros, and lookup formulas — replaced manual calculation steps across all monthly templates and delivered consistently formatted outputs with no corrections required."
       ]
     }
   ],

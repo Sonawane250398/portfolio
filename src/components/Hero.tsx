@@ -11,14 +11,14 @@ export default function Hero() {
   const [animatedMetrics, setAnimatedMetrics] = useState(['0%', '6–8 hrs', '7.6x', '0+']);
 
   const stats = [
-    { metric: '20%', label: 'fewer reconciliation discrepancies', static: false },
+    { metric: '20%', label: 'fewer errors, 30% faster investigation', static: false },
     { metric: '6–8 hrs', label: 'manual reporting eliminated/week', static: true },
     { metric: '7.6x', label: 'faster reconciliation vs pandas baseline (published research)', static: true },
-    { metric: '4+', label: 'years in financial data systems', static: false },
+    { metric: '4+', label: 'years as DA / BSA', static: false },
   ];
 
   const resumeUrl =
-    'https://drive.google.com/file/d/1DCGz-2bQ3tljWPf6w5RM6YCtK4PcAugR/view?usp=sharing';
+    'https://drive.google.com/file/d/1i1-1LzUKHq22RJ6vB_VNgcQH-AJ62nVD/view?usp=sharing';
 
   useEffect(() => {
     const el = statsRef.current;
