@@ -9,7 +9,7 @@ type TransitionDef = {
   transition: Transition;
 };
 
-/** Short, GPU-friendly transitions — no blur (costly) and sync mode in Layout avoids exit+enter stacking. */
+/** Short, GPU-friendly transitions, no blur (costly) and sync mode in Layout avoids exit+enter stacking. */
 const transitions: Record<string, TransitionDef> = {
   home: {
     initial: { opacity: 0, scale: 0.99 },

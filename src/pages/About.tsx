@@ -28,7 +28,7 @@ export default function About() {
             a Data Analyst. Became a BA. Never stopped doing both.
             <br />
             <br />
-            SQL frameworks, Python pipelines, Tableau dashboards — if the manual work exists, I automate it. The work that
+            SQL frameworks, Python pipelines, Tableau dashboards. If the manual work exists, I automate it. The work that
             matters is upstream: validating data before it moves, not explaining why it's wrong after it lands on a
             stakeholder's desk.
             <br />

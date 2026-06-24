@@ -101,7 +101,7 @@ body {
   animation: hero-shimmer 0.6s ease-out;
 }
 
-/* Financial Analytics Dashboard iframe only rendered on desktop (769px+) in React — no mobile iframe CSS needed */
+/* Financial Analytics Dashboard iframe only rendered on desktop (769px+) in React, no mobile iframe CSS needed */
 
 @media (max-width: 768px) {
   .project-demo-panel th,

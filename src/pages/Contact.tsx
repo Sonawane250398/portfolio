@@ -28,7 +28,7 @@ export default function Contact() {
         </h1>
         <p className="mb-10 text-sm leading-relaxed text-slate-600 dark:text-slate-300 min-[769px]:text-lg">
           If you&apos;re hiring for a Business Analyst, Data Analyst, or Reporting Systems role and need someone who catches
-          failures before they reach stakeholders — let&apos;s talk.
+          failures before they reach stakeholders, let&apos;s talk.
         </p>
         <div className="mb-10 flex flex-col flex-wrap items-stretch justify-center gap-4 sm:flex-row">
           <a href={`mailto:${EMAIL}`} className={outlineBtn}>

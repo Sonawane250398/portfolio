@@ -119,7 +119,7 @@ export default function Projects() {
           </h2>
           <div className="mb-6 h-1 w-20 rounded-full bg-emerald-500" />
           <p className="max-w-2xl text-sm leading-relaxed text-slate-600 dark:text-slate-400 min-[769px]:text-base md:text-lg">
-            Each system below models a real financial reporting workflow — built to catch the failures that surface at
+            Each system below models a real financial reporting workflow, built to catch the failures that surface at
             month-end before they reach anyone who asked for the numbers.
           </p>
         </div>
@@ -268,7 +268,7 @@ export default function Projects() {
                   </a>
                   <div className="mb-3 flex flex-col gap-3 min-[769px]:hidden" onClick={(e) => e.stopPropagation()}>
                     <p className="text-center text-[12px] leading-snug text-slate-500 dark:text-slate-400">
-                      Interactive dashboard — best viewed on desktop
+                      Interactive dashboard, best viewed on desktop
                     </p>
                     <a
                       href={project.liveEmbedUrl}
@@ -296,14 +296,14 @@ export default function Projects() {
                       role="status"
                       aria-live="polite"
                     >
-                      ⏳ First load takes 30–60 seconds to wake up — free hosting. Please wait.
+                      ⏳ First load takes 30–60 seconds to wake up, free hosting. Please wait.
                     </p>
                   )}
                   {showDashboardEmbed && (
                     <div className="-mx-5 w-[calc(100%+2.5rem)] max-w-none min-[769px]:-mx-8 min-[769px]:w-[calc(100%+4rem)]">
                       <LiveDashboardEmbed
                         src={project.liveEmbedUrl}
-                        title={`${project.title} — live dashboard`}
+                        title={`${project.title}, live dashboard`}
                         loaded={Boolean(embedLoadedByIndex[index])}
                         onLoad={() =>
                           setEmbedLoadedByIndex((prev) => ({ ...prev, [index]: true }))
@@ -316,7 +316,7 @@ export default function Projects() {
                   </p>
                 </div>
               )}
-              {/* Demo tables — distinct styling per project */}
+              {/* Demo tables, distinct styling per project */}
               {'demoRows' in project && project.demoRows && project.demoRows.length > 0 && (
                 <div className="project-demo-panel mb-6 min-w-0">
                   {'account' in project.demoRows[0] && (
