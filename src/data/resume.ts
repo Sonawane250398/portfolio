@@ -1,8 +1,8 @@
 export const resumeData = {
   basics: {
     name: "Yash Sonawane",
-    title: "Business Analyst",
-    subtitle: "Data Engineer · Data Analyst · SQL Reconciliation · UAT · Reporting Systems",
+    title: "Data Analyst",
+    subtitle: "Data Analyst · SQL Reconciliation · UAT · Reporting Systems",
     summary: "I find the data errors that don't surface until they're someone else's problem — then build the controls that catch them at the source. 4 years as a Data Analyst / Business Systems Analyst: SQL, Python (Pandas), Tableau, Power BI — ETL pipelines, source-to-report validation, and UAT across 4–6 business units.",
     location: "Fullerton, California, United States",
     email: "yashsonawane25.work@gmail.com",
